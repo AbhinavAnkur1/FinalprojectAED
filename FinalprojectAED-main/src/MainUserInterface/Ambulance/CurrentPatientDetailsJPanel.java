@@ -22,7 +22,7 @@ import javax.swing.WindowConstants;
 
 /**
  *
- * @author Siddh
+ * @author indian
  */
 public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
 
