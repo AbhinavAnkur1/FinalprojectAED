@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Siddh
+ * @author indian
  */
 public class AmbulanceInformationJPanel extends javax.swing.JPanel {
 
@@ -164,7 +164,7 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/ambulance_blue.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Ambulance_gif.gif"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, -10, 1350, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
