@@ -70,22 +70,23 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         ManageAmbulanceTable = new javax.swing.JTable();
         btnAssignPatient = new javax.swing.JButton();
         btnSubmit1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(86, 95, 147));
+        setBackground(new java.awt.Color(102, 98, 178));
         setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("EXISTING AMBULANCE DRIVERS DETAILS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 730, 80));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 770, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 1280, 10));
 
         btnCreateAmbulance.setBackground(new java.awt.Color(0, 0, 204));
-        btnCreateAmbulance.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnCreateAmbulance.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         btnCreateAmbulance.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateAmbulance.setText("Create Ambulance");
         btnCreateAmbulance.addActionListener(new java.awt.event.ActionListener() {
@@ -93,8 +94,9 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 btnCreateAmbulanceActionPerformed(evt);
             }
         });
-        add(btnCreateAmbulance, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 200, 30));
+        add(btnCreateAmbulance, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 150, 30));
 
+        ManageAmbulanceTable.setBackground(new java.awt.Color(255, 255, 204));
         ManageAmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -123,10 +125,10 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageAmbulanceTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 1220, 231));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 1190, 231));
 
         btnAssignPatient.setBackground(new java.awt.Color(0, 0, 204));
-        btnAssignPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnAssignPatient.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         btnAssignPatient.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignPatient.setText("Call Ambulance");
         btnAssignPatient.addActionListener(new java.awt.event.ActionListener() {
@@ -134,10 +136,10 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 btnAssignPatientActionPerformed(evt);
             }
         });
-        add(btnAssignPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 380, 230, 30));
+        add(btnAssignPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 160, 30));
 
         btnSubmit1.setBackground(new java.awt.Color(0, 0, 204));
-        btnSubmit1.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnSubmit1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         btnSubmit1.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit1.setText("Back");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,10 +147,14 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 btnSubmit1ActionPerformed(evt);
             }
         });
-        add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 80, 30));
+        add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/AMBULANCE_DRIVER1.gif"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 430, 330));
+        jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/AmbulanceDriver.gif"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 430, 420));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-emergency-50.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 50, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAmbulanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAmbulanceActionPerformed
@@ -197,6 +203,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
