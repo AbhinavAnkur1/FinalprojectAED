@@ -51,11 +51,12 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(102, 255, 51));
+        setBackground(new java.awt.Color(0, 0, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AmbulanceTable.setBackground(new java.awt.Color(153, 204, 0));
         AmbulanceTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         AmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,7 +86,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(AmbulanceTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1390, 191));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 1330, 191));
 
         btnCurrentPatient.setBackground(new java.awt.Color(0, 0, 204));
         btnCurrentPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -96,10 +97,11 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
                 btnCurrentPatientActionPerformed(evt);
             }
         });
-        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, 200, 40));
+        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 200, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("AMBULANCES DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 420, 80));
@@ -107,6 +109,10 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-ambulance-50.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 70, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/ambulancedetails2.gif"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 820, 200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void PopulateAmbulanceTable() {
@@ -154,6 +160,8 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCurrentPatient;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
