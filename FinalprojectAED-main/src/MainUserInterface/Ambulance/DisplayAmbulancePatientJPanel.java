@@ -118,12 +118,12 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Ambulance ambulance : ecoSystem.getAmbulanceDirectory().getAmbulances()) {
+        for (Ambulance ambulance : ecoSystem.getAmbulanceDirect().getAmbu()) {
 
             Object[] row = new Object[5];
             row[0] = ambulance;
-            row[1] = ambulance.getDriverLastName();
-            row[2] = ambulance.getDriverAge();
+            row[1] = ambulance.getDriverLName();
+            row[2] = ambulance.getAge_Driver();
             row[3] = ambulance.getVehicleNo();
             row[4] = ambulance.getStatus();
             model.addRow(row);
