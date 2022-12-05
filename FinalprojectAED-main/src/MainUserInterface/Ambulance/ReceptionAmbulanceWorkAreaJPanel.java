@@ -178,14 +178,14 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             patient.setpLabStatus("NewPatient");
             patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
             ambulance.setStatus("Busy");
-            ambulance.setAccidentLocation(txtPatientLocation.getText());
-            ambulance.getAmbulancePatientsList().add(patient);
+            ambulance.setAcciLocation(txtPatientLocation.getText());
+            ambulance.getAmbuPatientsList().add(patient);
 
             ecoSystem.getUserAccountDirectory().createUser(txtPatientUserName.getText(), txtPatientPassword.getText(), null, new Patient_role());
-            ecoSystem.getPatientDirectory().createPatient(patient);
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
+            ecoSystem.getPatientDirect().createPatient(patient);
+            for (Patient p : ecoSystem.getPatientDirect().getPatientList()) {
                 if (p.getpUserName().equals(txtPatientUserName.getText())) {
-                    ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
+                    ecoSystem.getPatientDirect().AddBill(p, "Bed Charge", "Hospital", "Ammount");
                 }
             }
         } else {
