@@ -2,7 +2,7 @@ package MainUserInterface;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.DB4OUtil.DB4OUtil;
-import BusinessModel.Pharmacy.Pharmacy;
+import BusinessModel.Pharma.Pharma;
 import BusinessModel.Roles.AmbulanceDriver;
 import BusinessModel.Roles.BloodBank;
 import BusinessModel.Roles.DoctorsAdministrator;

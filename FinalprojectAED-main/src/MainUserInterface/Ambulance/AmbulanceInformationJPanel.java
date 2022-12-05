@@ -190,12 +190,12 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
                 && (lblErrorAge.getText() == null || lblErrorAge.getText().equals(""))
                 && (lblErrorVNumber.getText() == null || lblErrorVNumber.getText().equals(""))) {
             Ambulance ambulance = new Ambulance();
-            ambulance.setDriverFirstName(txtFirstName.getText());
-            ambulance.setDriverLastName(txtLastName.getText());
-            ambulance.setDriverAge(Integer.parseInt(txtAge.getText()));
+            ambulance.setDriverFName(txtFirstName.getText());
+            ambulance.setDriverLName(txtLastName.getText());
+            ambulance.setAge_Driver(Integer.parseInt(txtAge.getText()));
             ambulance.setVehicleNo(txtVehicleNumber.getText());
             ambulance.setStatus("Ambulance Available");
-            ecoSystem.getAmbulanceDirectory().createAmbulance(ambulance);
+            ecoSystem.getAmbulanceDirect().createAmbulance(ambulance);
             JOptionPane.showMessageDialog(null, "Profile Created");
 
             AmbulanceWorkAreaJPanel ambulanceWorkAreaJPanel = new AmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
