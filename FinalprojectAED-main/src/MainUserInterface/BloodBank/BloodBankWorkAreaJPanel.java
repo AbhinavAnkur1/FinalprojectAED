@@ -4,7 +4,7 @@
  */
 package MainUserInterface.BloodBank;
 
-import BusinessModel.BloodBank.BloodBank;
+import BusinessModel.BBank.BBank;
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
@@ -26,7 +26,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
     private final JPanel userProcessContainer;
     private final Ecosystem ecoSystem;
     User userAccount;
-    BloodBank bloodBank;
+    BBank bloodBank;
     Patient billPatient;
 
     public BloodBankWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
@@ -65,7 +65,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
+        for (Patient patient : ecoSystem.getPatientDirect().getPatientList()) {
             if (patient.getpBloodBankStatus().equals("Requested") || patient.getpBloodBankStatus().equals("Unavailable")) {
                 Object[] row = new Object[10];
                 row[0] = patient.getpFirstName();
@@ -272,15 +272,15 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
             Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 9);
 
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
+            for (Patient p : ecoSystem.getPatientDirect().getPatientList()) {
                 if (patient.getpUserName().equals(p.getpUserName())) {
                     if (!((String) BloodRequestStatusBox.getSelectedItem()).equals("Select Status")) {
                         p.setpBloodBankStatus((String) BloodRequestStatusBox.getSelectedItem());
                         billPatient = p;
                         if (p.getpBloodBankStatus().equals("Blood Delivered")) {
                             for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getpBloodBagQuantity()); bloodBag++) {
-                                ecoSystem.getPatientDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
-                                ecoSystem.getBloodBank().AddTreatedPatientList(billPatient);
+                                ecoSystem.getPatientDirect().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
+                                ecoSystem.getBBank().AddTreatedPatientList(billPatient);
                             }
                         }
                         break;

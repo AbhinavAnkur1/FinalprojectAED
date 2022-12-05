@@ -37,10 +37,10 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
 
     public void setTextFields() {
 
-        txtName.setText(ecoSystem.getBloodBank().getBloodBankName());
-        txtAddress.setText(ecoSystem.getBloodBank().getBloodBankAddress());
-        txtPhoneNumber.setText(ecoSystem.getBloodBank().getBloodBankPhone());
-        txtEmail.setText(ecoSystem.getBloodBank().getBloodBankEmailAddress());
+        txtName.setText(ecoSystem.getBBank().getbbName());
+        txtAddress.setText(ecoSystem.getBBank().getbbAddress());
+        txtPhoneNumber.setText(ecoSystem.getBBank().getbbPhone());
+        txtEmail.setText(ecoSystem.getBBank().getbbEmail());
         
     }
 
