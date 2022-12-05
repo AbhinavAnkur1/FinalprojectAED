@@ -41,9 +41,9 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
         this.ecoSystem = system;
         this.ambulance = ambulance;
 
-        lblFirstName.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpFirstName());
-        lblLastName.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpLastName());
-        lblLocation.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpAccidentLocation());
+        lblFirstName.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpFirstName());
+        lblLastName.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpLastName());
+        lblLocation.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpAccidentLocation());
 
     }
 
