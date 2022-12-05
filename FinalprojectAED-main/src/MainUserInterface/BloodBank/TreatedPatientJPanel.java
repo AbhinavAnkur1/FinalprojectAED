@@ -38,7 +38,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Patient patient : ecoSystem.getBloodBank().getBloodrequestedPatients()) {
+        for (Patient patient : ecoSystem.getBBank().getbRequestedPatients()) {
 
             Object[] row = new Object[9];
             row[0] = patient.getpFirstName();
