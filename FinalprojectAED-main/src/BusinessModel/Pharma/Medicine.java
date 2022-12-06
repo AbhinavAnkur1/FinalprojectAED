@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author indian
+ * @author mayurchaudhari
  */
 public class Medicine {
     
