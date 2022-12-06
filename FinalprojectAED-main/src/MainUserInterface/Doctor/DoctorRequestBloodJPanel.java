@@ -54,16 +54,19 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         btnProcessRequest = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 204));
+        setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Request Blood");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 40, 1274, -1));
 
+        BloodRequestQuantityBox.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        BloodRequestQuantityBox.setForeground(new java.awt.Color(0, 102, 102));
+        BloodRequestQuantityBox.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
         BloodRequestQuantityBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BloodRequestQuantityBoxActionPerformed(evt);
@@ -72,15 +75,15 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         add(BloodRequestQuantityBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 162, 180, 40));
 
         lblRequestBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
-        lblRequestBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblRequestBloodQuantity.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         lblRequestBloodQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblRequestBloodQuantity.setText("Select Blood Bag Quantity");
         add(lblRequestBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 260, 40));
 
-        btnProcessRequest.setBackground(new java.awt.Color(255, 255, 255));
-        btnProcessRequest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnProcessRequest.setForeground(new java.awt.Color(0, 153, 204));
+        btnProcessRequest.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        btnProcessRequest.setForeground(new java.awt.Color(255, 0, 0));
         btnProcessRequest.setText("Process Request");
+        btnProcessRequest.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessRequestActionPerformed(evt);
@@ -88,10 +91,10 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         });
         add(btnProcessRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 197, 40));
 
-        Request1.setBackground(new java.awt.Color(255, 255, 255));
-        Request1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        Request1.setForeground(new java.awt.Color(0, 153, 204));
+        Request1.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        Request1.setForeground(new java.awt.Color(0, 102, 102));
         Request1.setText("<< BACK");
+        Request1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
         Request1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Request1ActionPerformed(evt);

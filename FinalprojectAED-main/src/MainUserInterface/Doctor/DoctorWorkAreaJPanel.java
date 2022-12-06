@@ -116,19 +116,21 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         PatientTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 204));
+        setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblManageCustomers.setBackground(new java.awt.Color(0, 153, 204));
-        lblManageCustomers.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblManageCustomers.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageCustomers.setText("Doctor WorkArea");
-        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 330, -1));
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 340, -1));
 
-        PatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        PatientTable.setBackground(new java.awt.Color(204, 255, 255));
+        PatientTable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
+        PatientTable.setForeground(new java.awt.Color(0, 102, 102));
         PatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -155,6 +157,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        PatientTable.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        PatientTable.setSelectionForeground(new java.awt.Color(204, 255, 255));
         jScrollPane2.setViewportView(PatientTable);
         if (PatientTable.getColumnModel().getColumnCount() > 0) {
             PatientTable.getColumnModel().getColumn(7).setMinWidth(0);
@@ -164,19 +168,22 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 740, 191));
 
-        btnVisitPatient.setBackground(new java.awt.Color(255, 255, 255));
-        btnVisitPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnVisitPatient.setForeground(new java.awt.Color(0, 153, 204));
+        btnVisitPatient.setBackground(new java.awt.Color(204, 255, 255));
+        btnVisitPatient.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        btnVisitPatient.setForeground(new java.awt.Color(0, 102, 102));
         btnVisitPatient.setText("Visit");
+        btnVisitPatient.setBorder(null);
         btnVisitPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVisitPatientActionPerformed(evt);
             }
         });
         add(btnVisitPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 120, 44));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 63, 1404, 10));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 100, 1404, 10));
 
-        PatientTable1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        PatientTable1.setBackground(new java.awt.Color(204, 255, 255));
+        PatientTable1.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
+        PatientTable1.setForeground(new java.awt.Color(0, 102, 102));
         PatientTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -203,6 +210,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        PatientTable1.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        PatientTable1.setSelectionForeground(new java.awt.Color(204, 255, 255));
         jScrollPane3.setViewportView(PatientTable1);
         if (PatientTable1.getColumnModel().getColumnCount() > 0) {
             PatientTable1.getColumnModel().getColumn(7).setMinWidth(0);
@@ -210,20 +219,21 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             PatientTable1.getColumnModel().getColumn(7).setMaxWidth(0);
         }
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 730, 191));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 730, 191));
 
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("My Previously Treated Patients");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 280, 34));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 280, 34));
 
-        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Patients Assigned to me");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 220, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 220, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-doctor-male-skin-type-4-48.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 13, 60, 40));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/doctor.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 70, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVisitPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisitPatientActionPerformed
@@ -258,7 +268,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnVisitPatient;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
