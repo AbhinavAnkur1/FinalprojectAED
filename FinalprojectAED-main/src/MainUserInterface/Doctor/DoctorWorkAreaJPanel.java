@@ -19,7 +19,7 @@ import MainUserInterface.Pharmacy.PharmacyWorkAreaJPanel;
 
 /**
  *
- * @author siddh
+ * @author mayurchaudhari
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
