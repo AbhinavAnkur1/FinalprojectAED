@@ -86,16 +86,16 @@ public class LabCRUDtests extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 204));
+        setBackground(new java.awt.Color(204, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Laboratory");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 150, 44));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 150, 44));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1390, 10));
 
+        tableTests.setBackground(new java.awt.Color(153, 255, 153));
         tableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableTests.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         tableTests.setModel(new javax.swing.table.DefaultTableModel(
@@ -126,99 +126,96 @@ public class LabCRUDtests extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableTests);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 1050, 260));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 1050, 210));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
         lblName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Test Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, -1, 30));
 
         lblName1.setBackground(new java.awt.Color(0, 0, 0));
         lblName1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblName1.setForeground(new java.awt.Color(255, 255, 255));
         lblName1.setText("Usage");
-        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, -1, 30));
+        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, -1, 30));
 
         lblName2.setBackground(new java.awt.Color(0, 0, 0));
         lblName2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblName2.setForeground(new java.awt.Color(255, 255, 255));
         lblName2.setText("Price");
-        add(lblName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, -1, 30));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 260, 40));
-        add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 260, 40));
+        add(lblName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 500, -1, 30));
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 530, 260, 40));
+        add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, 260, 40));
 
         txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPriceKeyReleased(evt);
             }
         });
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 580, 260, 40));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 260, 40));
 
-        btnSubmit.setBackground(new java.awt.Color(0, 102, 0));
+        btnSubmit.setBackground(new java.awt.Color(51, 204, 0));
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-add-40.png"))); // NOI18N
         btnSubmit.setText("Add Test");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 500, 170, 50));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, 150, -1));
 
         dBtn4.setBackground(new java.awt.Color(255, 0, 51));
         dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         dBtn4.setForeground(new java.awt.Color(255, 255, 255));
-        dBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-remove-40.png"))); // NOI18N
         dBtn4.setText("Delete");
         dBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dBtn4ActionPerformed(evt);
             }
         });
-        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 310, 157, 41));
+        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 380, 100, 41));
 
         upBtn.setBackground(new java.awt.Color(15, 85, 177));
         upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         upBtn.setForeground(new java.awt.Color(255, 255, 255));
-        upBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-update-40.png"))); // NOI18N
         upBtn.setText("Update");
         upBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upBtnActionPerformed(evt);
             }
         });
-        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 250, 151, 41));
+        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 380, 100, 41));
 
-        conBtn.setBackground(new java.awt.Color(0, 102, 0));
+        conBtn.setBackground(new java.awt.Color(153, 153, 153));
         conBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         conBtn.setForeground(new java.awt.Color(255, 255, 255));
-        conBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-save-40.png"))); // NOI18N
         conBtn.setText("Save Update");
         conBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 conBtnActionPerformed(evt);
             }
         });
-        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 170, 42));
+        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, 150, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 120, 32));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(51, 51, 255));
         jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-back-arrow-40.png"))); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-lab-50.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 13, 50, 50));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/lab.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -315,6 +312,10 @@ public class LabCRUDtests extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

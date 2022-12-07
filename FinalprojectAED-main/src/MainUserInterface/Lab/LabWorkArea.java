@@ -94,27 +94,28 @@ public class LabWorkArea extends javax.swing.JPanel {
         managePatientTable2 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 204));
+        setBackground(new java.awt.Color(204, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Laboratory Center");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 230, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Available Tests Info");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 240, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 210, -1));
 
+        managePatientTable1.setBackground(new java.awt.Color(153, 255, 153));
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -152,36 +153,37 @@ public class LabWorkArea extends javax.swing.JPanel {
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 255));
         jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Request");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 185, 50));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Past Requests");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 163, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 163, 30));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Current Requests");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 185, 25));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 185, 25));
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 255));
         jButton3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 153, 204));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("View Request");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 158, 53));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, 158, 30));
 
+        managePatientTable2.setBackground(new java.awt.Color(153, 255, 153));
         managePatientTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable2.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         managePatientTable2.setModel(new javax.swing.table.DefaultTableModel(
