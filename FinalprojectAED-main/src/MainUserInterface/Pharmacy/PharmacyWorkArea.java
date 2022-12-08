@@ -89,13 +89,13 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        viewReqBtn = new javax.swing.JButton();
+        updateInventoryBtn = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         managePatientTable = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         managePatientTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        viewReqBtn2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 204));
@@ -108,30 +108,30 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 200, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1221, 10));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 204));
-        jButton2.setText("View Request");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        viewReqBtn.setBackground(new java.awt.Color(51, 51, 51));
+        viewReqBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        viewReqBtn.setForeground(new java.awt.Color(255, 255, 204));
+        viewReqBtn.setText("View Request");
+        viewReqBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewReqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                viewReqBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 354, 160, 41));
+        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 354, 160, 41));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/update.png"))); // NOI18N
-        jButton1.setText("Update Inventory");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        updateInventoryBtn.setBackground(new java.awt.Color(51, 51, 51));
+        updateInventoryBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        updateInventoryBtn.setForeground(new java.awt.Color(255, 255, 204));
+        updateInventoryBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/update.png"))); // NOI18N
+        updateInventoryBtn.setText("Update Inventory");
+        updateInventoryBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        updateInventoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updateInventoryBtnActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 354, 220, 41));
+        add(updateInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 354, 220, 41));
 
         managePatientTable.setBackground(new java.awt.Color(255, 255, 153));
         managePatientTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -211,23 +211,23 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
 
         add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 441, 942, 191));
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 204));
-        jButton3.setText("View Request");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        viewReqBtn2.setBackground(new java.awt.Color(51, 51, 51));
+        viewReqBtn2.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        viewReqBtn2.setForeground(new java.awt.Color(255, 255, 204));
+        viewReqBtn2.setText("View Request");
+        viewReqBtn2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewReqBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                viewReqBtn2ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(904, 650, 160, 41));
+        add(viewReqBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(904, 650, 160, 41));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/drugstore.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void viewReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtnActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = managePatientTable.getSelectedRow();
         if (selectedRowIndex < 0) 
@@ -243,17 +243,17 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
             layout.next(userProcessContainer);
         }
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_viewReqBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void updateInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateInventoryBtnActionPerformed
         // TODO add your handling code here:
         PharmaCRUD doctorRequestLabTestJPanel = new PharmaCRUD(userProcessContainer, userAccount,ecosystem);
         userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_updateInventoryBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void viewReqBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtn2ActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = managePatientTable1.getSelectedRow();
         if (selectedRowIndex < 0) 
@@ -268,13 +268,10 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_viewReqBtn2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane4;
@@ -282,5 +279,8 @@ public class PharmacyWorkArea extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable managePatientTable;
     private javax.swing.JTable managePatientTable1;
+    private javax.swing.JButton updateInventoryBtn;
+    private javax.swing.JButton viewReqBtn;
+    private javax.swing.JButton viewReqBtn2;
     // End of variables declaration//GEN-END:variables
 }

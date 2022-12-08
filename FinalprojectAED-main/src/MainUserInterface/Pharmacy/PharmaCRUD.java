@@ -68,7 +68,7 @@ public class PharmaCRUD extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnSubmit = new javax.swing.JButton();
+        addMedBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTests = new javax.swing.JTable();
         lblName2 = new javax.swing.JLabel();
@@ -79,9 +79,9 @@ public class PharmaCRUD extends javax.swing.JPanel {
         lblName1 = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
         lblName3 = new javax.swing.JLabel();
-        dBtn = new javax.swing.JButton();
-        conBtn = new javax.swing.JButton();
-        upBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        saveUpdateBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -97,18 +97,18 @@ public class PharmaCRUD extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 190, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 139, 1328, 10));
 
-        btnSubmit.setBackground(new java.awt.Color(51, 51, 51));
-        btnSubmit.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 204));
-        btnSubmit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/add.png"))); // NOI18N
-        btnSubmit.setText("Add Medicine");
-        btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        addMedBtn.setBackground(new java.awt.Color(51, 51, 51));
+        addMedBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        addMedBtn.setForeground(new java.awt.Color(255, 255, 204));
+        addMedBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/add.png"))); // NOI18N
+        addMedBtn.setText("Add Medicine");
+        addMedBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addMedBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                addMedBtnActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 210, 40));
+        add(addMedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 210, 40));
 
         tableTests.setBackground(new java.awt.Color(255, 255, 153));
         tableTests.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 0))); // NOI18N
@@ -198,44 +198,44 @@ public class PharmaCRUD extends javax.swing.JPanel {
         lblName3.setText("Quantity");
         add(lblName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, 30));
 
-        dBtn.setBackground(new java.awt.Color(51, 51, 51));
-        dBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        dBtn.setForeground(new java.awt.Color(255, 255, 204));
-        dBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/delete.png"))); // NOI18N
-        dBtn.setText("Delete");
-        dBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        dBtn.addActionListener(new java.awt.event.ActionListener() {
+        deleteBtn.setBackground(new java.awt.Color(51, 51, 51));
+        deleteBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(255, 255, 204));
+        deleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/delete.png"))); // NOI18N
+        deleteBtn.setText("Delete");
+        deleteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dBtnActionPerformed(evt);
+                deleteBtnActionPerformed(evt);
             }
         });
-        add(dBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 660, 210, 43));
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 660, 210, 43));
 
-        conBtn.setBackground(new java.awt.Color(51, 51, 51));
-        conBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        conBtn.setForeground(new java.awt.Color(255, 255, 204));
-        conBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/save.png"))); // NOI18N
-        conBtn.setText("Save Update");
-        conBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        conBtn.addActionListener(new java.awt.event.ActionListener() {
+        saveUpdateBtn.setBackground(new java.awt.Color(51, 51, 51));
+        saveUpdateBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        saveUpdateBtn.setForeground(new java.awt.Color(255, 255, 204));
+        saveUpdateBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/save.png"))); // NOI18N
+        saveUpdateBtn.setText("Save Update");
+        saveUpdateBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        saveUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                conBtnActionPerformed(evt);
+                saveUpdateBtnActionPerformed(evt);
             }
         });
-        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 660, 190, 43));
+        add(saveUpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 660, 190, 43));
 
-        upBtn.setBackground(new java.awt.Color(51, 51, 51));
-        upBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        upBtn.setForeground(new java.awt.Color(255, 255, 204));
-        upBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/update.png"))); // NOI18N
-        upBtn.setText("Update");
-        upBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        upBtn.addActionListener(new java.awt.event.ActionListener() {
+        updateBtn.setBackground(new java.awt.Color(51, 51, 51));
+        updateBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        updateBtn.setForeground(new java.awt.Color(255, 255, 204));
+        updateBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/update.png"))); // NOI18N
+        updateBtn.setText("Update");
+        updateBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upBtnActionPerformed(evt);
+                updateBtnActionPerformed(evt);
             }
         });
-        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, 188, 40));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, 188, 40));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 213, 32));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, 213, 32));
 
@@ -255,7 +255,7 @@ public class PharmaCRUD extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void addMedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMedBtnActionPerformed
 
         if (txtName.getText().equals("") || txtUsage.getText().equals("")|| txtPrice.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please fill all the details");
@@ -275,9 +275,9 @@ public class PharmaCRUD extends javax.swing.JPanel {
         txtUsage.setText("");
         txtPrice.setText("");
         txtQuantity.setText("");
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_addMedBtnActionPerformed
 
-    private void dBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dBtnActionPerformed
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableTests.getSelectedRow();
         if(selectedRow>=0){
@@ -292,9 +292,9 @@ public class PharmaCRUD extends javax.swing.JPanel {
         }else{
             JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
         }
-    }//GEN-LAST:event_dBtnActionPerformed
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
-    private void conBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conBtnActionPerformed
+    private void saveUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveUpdateBtnActionPerformed
         // TODO add your handling code here:
 
         String name = txtName.getText();
@@ -314,9 +314,9 @@ public class PharmaCRUD extends javax.swing.JPanel {
         txtUsage.setText("");
         txtPrice.setText("");
         txtQuantity.setText("");
-    }//GEN-LAST:event_conBtnActionPerformed
+    }//GEN-LAST:event_saveUpdateBtnActionPerformed
 
-    private void upBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upBtnActionPerformed
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableTests.getSelectedRow();
         //Tests p = (Tests) tableTests.getValueAt(selectedRow, 0);
@@ -332,7 +332,7 @@ public class PharmaCRUD extends javax.swing.JPanel {
         else {
             JOptionPane.showMessageDialog(null,"Please select a row");
         }
-    }//GEN-LAST:event_upBtnActionPerformed
+    }//GEN-LAST:event_updateBtnActionPerformed
 
     private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased
         // TODO add your handling code here:
@@ -374,9 +374,8 @@ public class PharmaCRUD extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton conBtn;
-    private javax.swing.JButton dBtn;
+    private javax.swing.JButton addMedBtn;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -388,11 +387,12 @@ public class PharmaCRUD extends javax.swing.JPanel {
     private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblName2;
     private javax.swing.JLabel lblName3;
+    private javax.swing.JButton saveUpdateBtn;
     private javax.swing.JTable tableTests;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtQuantity;
     private javax.swing.JTextField txtUsage;
-    private javax.swing.JButton upBtn;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }
