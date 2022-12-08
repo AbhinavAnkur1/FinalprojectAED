@@ -13,25 +13,25 @@ import java.util.Date;
 public class Medicine {
     
     private String medName;
-    private int price;
-    private Date expiry;
-    private int quantity;
-    private String usage;
+    private int medPrice;
+    private Date medExpiry;
+    private int medQuant;
+    private String medUsage;
 
-    public int getQuantity() {
-        return quantity;
+    public int getMedQuant() {
+        return medQuant;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setMedQuant(int medQuant) {
+        this.medQuant = medQuant;
     }
 
-    public String getUsage() {
-        return usage;
+    public String getMedUsage() {
+        return medUsage;
     }
 
-    public void setUsage(String usage) {
-        this.usage = usage;
+    public void setMedUsage(String medUsage) {
+        this.medUsage = medUsage;
     }
 
     public String getMedName() {
@@ -42,20 +42,20 @@ public class Medicine {
         this.medName = medName;
     }
 
-    public int getPrice() {
-        return price;
+    public int getMedPrice() {
+        return medPrice;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setMedPrice(int medPrice) {
+        this.medPrice = medPrice;
     }
 
-    public Date getExpiry() {
-        return expiry;
+    public Date getMedExpiry() {
+        return medExpiry;
     }
 
-    public void setExpiry(Date expiry) {
-        this.expiry = expiry;
+    public void setMedExpiry(Date medExpiry) {
+        this.medExpiry = medExpiry;
     }
         @Override
     public String toString() {

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class Pharma {
     
     private String pharmaName;
-    private String email;
-    private String address;
+    private String pharmaEmail;
+    private String pharmaAddress;
     private ArrayList<Medicine> medList;
     private ArrayList<Patient> pharmaRecordList;
     public void AddpharmaRecordList(Patient patient)
@@ -43,20 +43,20 @@ public class Pharma {
         this.pharmaName = pharmaName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPharmaEmail() {
+        return pharmaEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPharmaEmail(String pharmaEmail) {
+        this.pharmaEmail = pharmaEmail;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPharmaAddress() {
+        return pharmaAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPharmaAddress(String pharmaAddress) {
+        this.pharmaAddress = pharmaAddress;
     }
 
     public ArrayList<Patient> getPharmaRecordList() {
@@ -76,9 +76,9 @@ public class Pharma {
         public void updateMeds(Medicine t,String name,String username, int password,int q){
        
         t.setMedName(name);
-        t.setUsage(username);
-        t.setPrice(password);
-        t.setQuantity(q);
+        t.setMedUsage(username);
+        t.setMedPrice(password);
+        t.setMedQuant(q);
     }
     
     
