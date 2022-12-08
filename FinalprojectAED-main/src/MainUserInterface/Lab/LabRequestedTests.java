@@ -69,9 +69,9 @@ public class LabRequestedTests extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         BillTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        updateResBtn = new javax.swing.JButton();
         txtResult = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
@@ -85,7 +85,7 @@ public class LabRequestedTests extends javax.swing.JPanel {
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1517, 10));
 
         BillTable.setBackground(new java.awt.Color(153, 255, 153));
-        BillTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        BillTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 0)));
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         BillTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -123,16 +123,16 @@ public class LabRequestedTests extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 141, 1000, 171));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Update Result");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        updateResBtn.setBackground(new java.awt.Color(0, 0, 255));
+        updateResBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        updateResBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updateResBtn.setText("Update Result");
+        updateResBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updateResBtnActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, 160, 30));
+        add(updateResBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, 160, 30));
 
         txtResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,22 +141,22 @@ public class LabRequestedTests extends javax.swing.JPanel {
         });
         add(txtResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 234, 44));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(0, 0, 255));
+        backBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 94, 380, 36));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void updateResBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateResBtnActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = BillTable.getSelectedRow();
         if(txtResult.getText().equals("")){
@@ -191,16 +191,16 @@ public class LabRequestedTests extends javax.swing.JPanel {
                 
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_updateResBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         //patient.setInsuranceStatus("Approved");
         LabWorkArea bill = new LabWorkArea(userProcessContainer, account, ecoSystem);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void txtResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultActionPerformed
         // TODO add your handling code here:
@@ -209,12 +209,12 @@ public class LabRequestedTests extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable BillTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtResult;
+    private javax.swing.JButton updateResBtn;
     // End of variables declaration//GEN-END:variables
 }

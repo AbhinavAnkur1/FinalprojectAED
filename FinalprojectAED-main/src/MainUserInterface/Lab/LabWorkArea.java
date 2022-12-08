@@ -83,13 +83,13 @@ public class LabWorkArea extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        availTestInformationBtn = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         managePatientTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        viewReqBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        viewRequBtn = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         managePatientTable2 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -104,16 +104,16 @@ public class LabWorkArea extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 230, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Available Tests Info");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        availTestInformationBtn.setBackground(new java.awt.Color(0, 0, 255));
+        availTestInformationBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        availTestInformationBtn.setForeground(new java.awt.Color(255, 255, 255));
+        availTestInformationBtn.setText("Available Tests Info");
+        availTestInformationBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                availTestInformationBtnActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 210, -1));
+        add(availTestInformationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 210, -1));
 
         managePatientTable1.setBackground(new java.awt.Color(153, 255, 153));
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -153,16 +153,16 @@ public class LabWorkArea extends javax.swing.JPanel {
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("View Request");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        viewReqBtn.setBackground(new java.awt.Color(0, 0, 255));
+        viewReqBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        viewReqBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewReqBtn.setText("View Request");
+        viewReqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                viewReqBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 150, 30));
+        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel2.setText("Past Requests");
@@ -172,16 +172,16 @@ public class LabWorkArea extends javax.swing.JPanel {
         jLabel3.setText("Current Requests");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 185, 25));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 255));
-        jButton3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("View Request");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        viewRequBtn.setBackground(new java.awt.Color(0, 0, 255));
+        viewRequBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        viewRequBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewRequBtn.setText("View Request");
+        viewRequBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                viewRequBtnActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, 158, 30));
+        add(viewRequBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, 158, 30));
 
         managePatientTable2.setBackground(new java.awt.Color(153, 255, 153));
         managePatientTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -226,15 +226,15 @@ public class LabWorkArea extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void availTestInformationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availTestInformationBtnActionPerformed
         // TODO add your handling code here:
         LabCRUDtests doctorRequestLabTestJPanel = new LabCRUDtests(userProcessContainer, userAccount,ecosystem);
         userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_availTestInformationBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void viewReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtnActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = managePatientTable1.getSelectedRow();
         if (selectedRowIndex < 0) 
@@ -251,9 +251,9 @@ public class LabWorkArea extends javax.swing.JPanel {
         }
         
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_viewReqBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void viewRequBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRequBtnActionPerformed
         // TODO add your handling code here:
                 int selectedRowIndex = managePatientTable2.getSelectedRow();
         if (selectedRowIndex < 0) 
@@ -268,13 +268,11 @@ public class LabWorkArea extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_viewRequBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton availTestInformationBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -284,5 +282,7 @@ public class LabWorkArea extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable managePatientTable1;
     private javax.swing.JTable managePatientTable2;
+    private javax.swing.JButton viewReqBtn;
+    private javax.swing.JButton viewRequBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -78,12 +78,12 @@ public class LabCRUDtests extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         txtUsage = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
-        dBtn4 = new javax.swing.JButton();
-        upBtn = new javax.swing.JButton();
-        conBtn = new javax.swing.JButton();
+        addTestBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
+        saveUpdateBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
@@ -158,67 +158,67 @@ public class LabCRUDtests extends javax.swing.JPanel {
         });
         add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 260, 40));
 
-        btnSubmit.setBackground(new java.awt.Color(51, 204, 0));
-        btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("Add Test");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        addTestBtn.setBackground(new java.awt.Color(51, 204, 0));
+        addTestBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        addTestBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addTestBtn.setText("Add Test");
+        addTestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                addTestBtnActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, 150, -1));
+        add(addTestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, 150, -1));
 
-        dBtn4.setBackground(new java.awt.Color(255, 0, 51));
-        dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        dBtn4.setForeground(new java.awt.Color(255, 255, 255));
-        dBtn4.setText("Delete");
-        dBtn4.addActionListener(new java.awt.event.ActionListener() {
+        deleteBtn.setBackground(new java.awt.Color(255, 0, 51));
+        deleteBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dBtn4ActionPerformed(evt);
+                deleteBtnActionPerformed(evt);
             }
         });
-        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 380, 100, 41));
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 380, 100, 41));
 
-        upBtn.setBackground(new java.awt.Color(15, 85, 177));
-        upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        upBtn.setForeground(new java.awt.Color(255, 255, 255));
-        upBtn.setText("Update");
-        upBtn.addActionListener(new java.awt.event.ActionListener() {
+        updateBtn.setBackground(new java.awt.Color(15, 85, 177));
+        updateBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        updateBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upBtnActionPerformed(evt);
+                updateBtnActionPerformed(evt);
             }
         });
-        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 380, 100, 41));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 380, 100, 41));
 
-        conBtn.setBackground(new java.awt.Color(153, 153, 153));
-        conBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        conBtn.setForeground(new java.awt.Color(255, 255, 255));
-        conBtn.setText("Save Update");
-        conBtn.addActionListener(new java.awt.event.ActionListener() {
+        saveUpdateBtn.setBackground(new java.awt.Color(153, 153, 153));
+        saveUpdateBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        saveUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveUpdateBtn.setText("Save Update");
+        saveUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                conBtnActionPerformed(evt);
+                saveUpdateBtnActionPerformed(evt);
             }
         });
-        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, 150, -1));
+        add(saveUpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, 150, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 120, 32));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(51, 51, 255));
+        backBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/lab.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void addTestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTestBtnActionPerformed
 
         if (txtName.getText().equals("") || txtUsage.getText().equals("") || txtPrice.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please fill all the details");
@@ -237,9 +237,9 @@ public class LabCRUDtests extends javax.swing.JPanel {
         txtName.setText("");
         txtUsage.setText("");
         txtPrice.setText("");
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_addTestBtnActionPerformed
 
-    private void dBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dBtn4ActionPerformed
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableTests.getSelectedRow();
         if (selectedRow >= 0) {
@@ -255,9 +255,9 @@ public class LabCRUDtests extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a Row!");
         }
-    }//GEN-LAST:event_dBtn4ActionPerformed
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
-    private void upBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upBtnActionPerformed
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableTests.getSelectedRow();
         //Tests p = (Tests) tableTests.getValueAt(selectedRow, 0);
@@ -271,9 +271,9 @@ public class LabCRUDtests extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select a row");
         }
-    }//GEN-LAST:event_upBtnActionPerformed
+    }//GEN-LAST:event_updateBtnActionPerformed
 
-    private void conBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conBtnActionPerformed
+    private void saveUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveUpdateBtnActionPerformed
         // TODO add your handling code here:
 
         String name = txtName.getText();
@@ -289,7 +289,7 @@ public class LabCRUDtests extends javax.swing.JPanel {
         txtName.setText("");
         txtUsage.setText("");
         txtPrice.setText("");
-    }//GEN-LAST:event_conBtnActionPerformed
+    }//GEN-LAST:event_saveUpdateBtnActionPerformed
 
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
         // TODO add your handling code here:
@@ -304,14 +304,14 @@ public class LabCRUDtests extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtPriceKeyReleased
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         //patient.setInsuranceStatus("Approved");
         LabWorkArea bill = new LabWorkArea(userProcessContainer, userAccount, ecosystem);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
@@ -319,10 +319,9 @@ public class LabCRUDtests extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton conBtn;
-    private javax.swing.JButton dBtn4;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton addTestBtn;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -331,10 +330,11 @@ public class LabCRUDtests extends javax.swing.JPanel {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblName2;
+    private javax.swing.JButton saveUpdateBtn;
     private javax.swing.JTable tableTests;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtUsage;
-    private javax.swing.JButton upBtn;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }
