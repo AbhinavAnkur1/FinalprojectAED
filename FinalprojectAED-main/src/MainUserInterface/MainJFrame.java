@@ -46,13 +46,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         leftContainer = new javax.swing.JPanel();
-        signInBtn = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         userNameInputField = new javax.swing.JTextField();
         passwordInputField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
-        signOutBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
         appLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         mainContainer = new javax.swing.JPanel();
@@ -63,17 +63,17 @@ public class MainJFrame extends javax.swing.JFrame {
         leftContainer.setBackground(new java.awt.Color(255, 255, 255));
         leftContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        signInBtn.setBackground(new java.awt.Color(0, 0, 204));
-        signInBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        signInBtn.setForeground(new java.awt.Color(255, 255, 255));
-        signInBtn.setText("Login");
-        signInBtn.setToolTipText("");
-        signInBtn.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setBackground(new java.awt.Color(0, 0, 204));
+        loginBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setText("Login");
+        loginBtn.setToolTipText("");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signInBtnActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
-        leftContainer.add(signInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
+        leftContainer.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
 
         userNameInputField.setFont(new java.awt.Font("Noto Sans Kannada", 0, 12)); // NOI18N
         userNameInputField.addActionListener(new java.awt.event.ActionListener() {
@@ -100,17 +100,17 @@ public class MainJFrame extends javax.swing.JFrame {
         leftContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 108, -1));
         leftContainer.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 231, -1, -1));
 
-        signOutBtn.setBackground(new java.awt.Color(0, 0, 204));
-        signOutBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        signOutBtn.setForeground(new java.awt.Color(255, 255, 255));
-        signOutBtn.setText("Logout");
-        signOutBtn.setEnabled(false);
-        signOutBtn.addActionListener(new java.awt.event.ActionListener() {
+        logoutBtn.setBackground(new java.awt.Color(0, 0, 204));
+        logoutBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutBtn.setText("Logout");
+        logoutBtn.setEnabled(false);
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signOutBtnActionPerformed(evt);
+                logoutBtnActionPerformed(evt);
             }
         });
-        leftContainer.add(signOutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 120, 30));
+        leftContainer.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 120, 30));
 
         appLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/hospital-logo.jpg"))); // NOI18N
         leftContainer.add(appLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, 130));
@@ -135,14 +135,14 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         try{ 
             User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
             CardLayout layout = (CardLayout) mainContainer.getLayout();
             System.out.println("role of user ---"+ua.getRole());
             mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
             layout.next(mainContainer);
-            signOutBtn.setEnabled(true);
+            logoutBtn.setEnabled(true);
         }
         catch(Exception e){
             System.out.println("exception ---");
@@ -150,13 +150,13 @@ public class MainJFrame extends javax.swing.JFrame {
             System.out.println("exception due to ---"+e.getMessage());
             JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_signInBtnActionPerformed
+    }//GEN-LAST:event_loginBtnActionPerformed
 
-    private void signOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signOutBtnActionPerformed
-        signOutBtn.setEnabled(false);
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        logoutBtn.setEnabled(false);
         userNameInputField.setEnabled(true);
         passwordInputField.setEnabled(true);
-        signInBtn.setEnabled(true);
+        loginBtn.setEnabled(true);
         userNameInputField.setText("");
         passwordInputField.setText("");
         
@@ -168,7 +168,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_signOutBtnActionPerformed
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void userNameInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputFieldActionPerformed
         // TODO add your handling code here:
@@ -218,11 +218,11 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel leftContainer;
+    private javax.swing.JButton loginBtn;
     private javax.swing.JLabel loginJLabel;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel mainContainer;
     private javax.swing.JPasswordField passwordInputField;
-    private javax.swing.JButton signInBtn;
-    private javax.swing.JButton signOutBtn;
     private javax.swing.JTextField userNameInputField;
     // End of variables declaration//GEN-END:variables
 }
