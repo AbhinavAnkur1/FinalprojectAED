@@ -47,8 +47,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         leftContainer = new javax.swing.JPanel();
         loginBtn = new javax.swing.JButton();
-        userNameInputField = new javax.swing.JTextField();
-        passwordInputField = new javax.swing.JPasswordField();
+        userNameInputFieldTxt = new javax.swing.JTextField();
+        passwordInputFieldTxt = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
@@ -75,20 +75,20 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         leftContainer.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
 
-        userNameInputField.setFont(new java.awt.Font("Noto Sans Kannada", 0, 12)); // NOI18N
-        userNameInputField.addActionListener(new java.awt.event.ActionListener() {
+        userNameInputFieldTxt.setFont(new java.awt.Font("Noto Sans Kannada", 0, 12)); // NOI18N
+        userNameInputFieldTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameInputFieldActionPerformed(evt);
+                userNameInputFieldTxtActionPerformed(evt);
             }
         });
-        leftContainer.add(userNameInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 30));
+        leftContainer.add(userNameInputFieldTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 30));
 
-        passwordInputField.addActionListener(new java.awt.event.ActionListener() {
+        passwordInputFieldTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordInputFieldActionPerformed(evt);
+                passwordInputFieldTxtActionPerformed(evt);
             }
         });
-        leftContainer.add(passwordInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 118, 30));
+        leftContainer.add(passwordInputFieldTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 118, 30));
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel1.setText("USERNAME");
@@ -137,7 +137,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         try{ 
-            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
+            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputFieldTxt.getText(), passwordInputFieldTxt.getText());
             CardLayout layout = (CardLayout) mainContainer.getLayout();
             System.out.println("role of user ---"+ua.getRole());
             mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
@@ -154,11 +154,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         logoutBtn.setEnabled(false);
-        userNameInputField.setEnabled(true);
-        passwordInputField.setEnabled(true);
+        userNameInputFieldTxt.setEnabled(true);
+        passwordInputFieldTxt.setEnabled(true);
         loginBtn.setEnabled(true);
-        userNameInputField.setText("");
-        passwordInputField.setText("");
+        userNameInputFieldTxt.setText("");
+        passwordInputFieldTxt.setText("");
         
         Logout ua = new Logout(mainContainer);
         mainContainer.add("logout", ua);
@@ -170,13 +170,13 @@ public class MainJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void userNameInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputFieldActionPerformed
+    private void userNameInputFieldTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputFieldTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameInputFieldActionPerformed
+    }//GEN-LAST:event_userNameInputFieldTxtActionPerformed
 
-    private void passwordInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputFieldActionPerformed
+    private void passwordInputFieldTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputFieldTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordInputFieldActionPerformed
+    }//GEN-LAST:event_passwordInputFieldTxtActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -222,7 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel loginJLabel;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel mainContainer;
-    private javax.swing.JPasswordField passwordInputField;
-    private javax.swing.JTextField userNameInputField;
+    private javax.swing.JPasswordField passwordInputFieldTxt;
+    private javax.swing.JTextField userNameInputFieldTxt;
     // End of variables declaration//GEN-END:variables
 }
