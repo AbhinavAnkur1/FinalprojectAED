@@ -11,8 +11,8 @@ package BusinessModel.Labs;
 public class Tests {
     
     private String testName;
-    private int price;
-    private String usage;
+    private int testPrice;
+    private String testUsage;
 
     public String getTestName() {
         return testName;
@@ -22,20 +22,20 @@ public class Tests {
         this.testName = testName;
     }
 
-    public int getPrice() {
-        return price;
+    public int getTestPrice() {
+        return testPrice;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setTestPrice(int testPrice) {
+        this.testPrice = testPrice;
     }
 
-    public String getUsage() {
-        return usage;
+    public String getTestUsage() {
+        return testUsage;
     }
 
-    public void setUsage(String usage) {
-        this.usage = usage;
+    public void setTestUsage(String testUsage) {
+        this.testUsage = testUsage;
     }
         @Override
     public String toString() {

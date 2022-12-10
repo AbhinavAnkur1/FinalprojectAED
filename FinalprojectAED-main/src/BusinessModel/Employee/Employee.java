@@ -6,43 +6,43 @@ package BusinessModel.Employee;
 
 /**
  *
- * @author indian
+ * @author mayurchaudhari
  */
 public class Employee {
     
-    private String employeeName;
-    private final int employeeId;
-    private static int employeeCount = 1;
+    private String empName;
+    private final int empId;
+    private static int empCount = 1;
 
     public Employee() {
-        this.employeeId = employeeCount;
-        employeeCount++;
+        this.empId = empCount;
+        empCount++;
     }
 
     public Employee(String employeeName, int employeeId) {
-        this.employeeName = employeeName;
-        this.employeeId = employeeId;
+        this.empName = employeeName;
+        this.empId = employeeId;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
-    public static int getEmployeeCount() {
-        return employeeCount;
+    public static int getEmpCount() {
+        return empCount;
     }
 
-    public static void setEmployeeCount(int employeeCount) {
-        Employee.employeeCount = employeeCount;
+    public static void setEmpCount(int empCount) {
+        Employee.empCount = empCount;
     }
     
     @Override
     public String toString(){
-        return this.employeeName;
+        return this.empName;
     }
     
     
