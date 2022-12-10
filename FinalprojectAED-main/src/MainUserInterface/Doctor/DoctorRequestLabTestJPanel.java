@@ -19,33 +19,33 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author mayurchaudhari
+ * @author daddy
  */
 public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorRequestLabTestJPanel
      */
-    private JPanel userProcessContainer;
+    private JPanel userProCont;
     private Ecosystem ecosystem;
-    private User userAccount;
-    private Patient patient;
+    private User userAcc;
+    private Patient pat;
     
-    ArrayList<Tests> items=new ArrayList<Tests>();
+    ArrayList<Tests> samples=new ArrayList<Tests>();
 
     
     public DoctorRequestLabTestJPanel(JPanel userProcessContainer, User account, Ecosystem ecosystem, Patient patient) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+        this.userProCont = userProcessContainer;
         this.ecosystem = ecosystem;
-        this.userAccount = account;
-        this.patient = patient;
-        populatetableTests();
+        this.userAcc = account;
+        this.pat = patient;
+        populateAvailableTestsTable();
         //populatePatientTable();
     }
         
-    private void populatetableTests() {
-        DefaultTableModel model = (DefaultTableModel) tableTests1.getModel();
+    private void populateAvailableTestsTable() {
+        DefaultTableModel model = (DefaultTableModel) availbleTestsTable.getModel();
 
         model.setRowCount(0); 
 
@@ -54,8 +54,8 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
             
                 Object[] row = new Object[3];                
                 row[0] = t;
-                row[1] = t.getUsage();
-                row[2] = t.getPrice();
+                row[1] = t.getTestUsage();
+                row[2] = t.getTestPrice();
                 model.addRow(row);
             
 
@@ -82,15 +82,15 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         }
     }
      public void populateCart(Tests item){
-        DefaultTableModel model = (DefaultTableModel) carttable.getModel();
+        DefaultTableModel model = (DefaultTableModel) selectedTestsTable.getModel();
         model.setRowCount(0);
         
-         items.add(item);
+         samples.add(item);
          Object[] row = new Object[3];
-                for(Tests t:items){
+                for(Tests t:samples){
                      row[0] = t;
-                     row[1] = t.getUsage();
-                     row[2] = t.getPrice();
+                     row[1] = t.getTestUsage();
+                     row[2] = t.getTestPrice();
                      //sum=sum+IntegetPriceger.parseInt(t.getPrice());
                      model.addRow(row);
                 }  
@@ -106,13 +106,13 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        carttable = new javax.swing.JTable();
+        selectedTestsTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableTests1 = new javax.swing.JTable();
-        btnAddTest = new javax.swing.JButton();
-        btnRemoveTest = new javax.swing.JButton();
-        Request = new javax.swing.JButton();
-        Request1 = new javax.swing.JButton();
+        availbleTestsTable = new javax.swing.JTable();
+        addBtn = new javax.swing.JButton();
+        removeTestBtn = new javax.swing.JButton();
+        requestBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -126,10 +126,10 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         jLabel1.setText("Request Lab Tests");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 500, 60));
 
-        carttable.setBackground(new java.awt.Color(204, 255, 204));
-        carttable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        carttable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
-        carttable.setModel(new javax.swing.table.DefaultTableModel(
+        selectedTestsTable.setBackground(new java.awt.Color(204, 255, 204));
+        selectedTestsTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        selectedTestsTable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
+        selectedTestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -155,14 +155,14 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(carttable);
+        jScrollPane1.setViewportView(selectedTestsTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 430, 210));
 
-        tableTests1.setBackground(new java.awt.Color(204, 204, 204));
-        tableTests1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        tableTests1.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
-        tableTests1.setModel(new javax.swing.table.DefaultTableModel(
+        availbleTestsTable.setBackground(new java.awt.Color(204, 204, 204));
+        availbleTestsTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        availbleTestsTable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
+        availbleTestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -188,56 +188,56 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableTests1);
+        jScrollPane2.setViewportView(availbleTestsTable);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 410, 210));
 
-        btnAddTest.setBackground(new java.awt.Color(204, 255, 204));
-        btnAddTest.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        btnAddTest.setForeground(new java.awt.Color(0, 102, 102));
-        btnAddTest.setText("ADD >>");
-        btnAddTest.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        btnAddTest.addActionListener(new java.awt.event.ActionListener() {
+        addBtn.setBackground(new java.awt.Color(204, 255, 204));
+        addBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        addBtn.setForeground(new java.awt.Color(0, 102, 102));
+        addBtn.setText("ADD >>");
+        addBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddTestActionPerformed(evt);
+                addBtnActionPerformed(evt);
             }
         });
-        add(btnAddTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 110, 50));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 110, 50));
 
-        btnRemoveTest.setBackground(new java.awt.Color(255, 0, 0));
-        btnRemoveTest.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        btnRemoveTest.setForeground(new java.awt.Color(255, 255, 255));
-        btnRemoveTest.setText("<< REMOVE ");
-        btnRemoveTest.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        btnRemoveTest.addActionListener(new java.awt.event.ActionListener() {
+        removeTestBtn.setBackground(new java.awt.Color(255, 0, 0));
+        removeTestBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        removeTestBtn.setForeground(new java.awt.Color(255, 255, 255));
+        removeTestBtn.setText("<< REMOVE ");
+        removeTestBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        removeTestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveTestActionPerformed(evt);
+                removeTestBtnActionPerformed(evt);
             }
         });
-        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 120, 50));
+        add(removeTestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 120, 50));
 
-        Request.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        Request.setForeground(new java.awt.Color(255, 0, 0));
-        Request.setText("REQUEST TESTS");
-        Request.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        Request.addActionListener(new java.awt.event.ActionListener() {
+        requestBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        requestBtn.setForeground(new java.awt.Color(255, 0, 0));
+        requestBtn.setText("REQUEST TESTS");
+        requestBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        requestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RequestActionPerformed(evt);
+                requestBtnActionPerformed(evt);
             }
         });
-        add(Request, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 170, 50));
+        add(requestBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 170, 50));
 
-        Request1.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        Request1.setForeground(new java.awt.Color(255, 0, 0));
-        Request1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
-        Request1.setText("BACK");
-        Request1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        Request1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 0, 0));
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
+        backBtn.setText("BACK");
+        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Request1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 130, 40));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 130, 40));
 
         jLabel2.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -250,16 +250,16 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTestActionPerformed
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableTests1.getSelectedRow();
+        int selectedRow = availbleTestsTable.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Tests item=(Tests)tableTests1.getValueAt(selectedRow, 0);           
+            Tests item=(Tests)availbleTestsTable.getValueAt(selectedRow, 0);           
             int i =0;
-            for(Tests ite:items){
+            for(Tests ite:samples){
             //System.out.print(ite.getTestName());
             if(ite==item){
             i=1;
@@ -270,74 +270,74 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
             if(i==0){
             populateCart(item);}
         }
-    }//GEN-LAST:event_btnAddTestActionPerformed
+    }//GEN-LAST:event_addBtnActionPerformed
 
-    private void btnRemoveTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveTestActionPerformed
+    private void removeTestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTestBtnActionPerformed
         // TODO add your handling code here:
-         int selectedRow = carttable.getSelectedRow();
+         int selectedRow = selectedTestsTable.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Tests item=(Tests)carttable.getValueAt(selectedRow, 0);
-            items.remove(item);
-            DefaultTableModel model = (DefaultTableModel) carttable.getModel();
+            Tests item=(Tests)selectedTestsTable.getValueAt(selectedRow, 0);
+            samples.remove(item);
+            DefaultTableModel model = (DefaultTableModel) selectedTestsTable.getModel();
         model.setRowCount(0);
             Object[] row = new Object[3];
-                for(Tests t:items){
+                for(Tests t:samples){
                      row[0] = t;
-                     row[1] = t.getUsage();
-                     row[2] = t.getPrice();
+                     row[1] = t.getTestUsage();
+                     row[2] = t.getTestPrice();
                      model.addRow(row);
                 }  
           
         }
-    }//GEN-LAST:event_btnRemoveTestActionPerformed
+    }//GEN-LAST:event_removeTestBtnActionPerformed
 
-    private void RequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestActionPerformed
+    private void requestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestBtnActionPerformed
         // TODO add your handling code here:
-        if(items.size()==0){
+        if(samples.size()==0){
           JOptionPane.showMessageDialog(null,"Please add test to the cart.","Warning",JOptionPane.WARNING_MESSAGE);
 
         }
         else{
-        for(Tests t:items){
+        for(Tests t:samples){
             //String itemName,String organization1,float itemAmount, String result, String itemStatus
             JOptionPane.showMessageDialog(null,"Request Placed.","Success",JOptionPane.INFORMATION_MESSAGE);        
-             PatientBills bill = new PatientBills(t.getTestName(), "Lab", t.getPrice(),"Awaiting","Requested");
-             patient.addbill(bill);
-             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-            userProcessContainer.add("Visit Doctor", doctorVisit);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-             //ecosystem.AddTreatedPatientList(patient);
+             PatientBills bill = new PatientBills(t.getTestName(), "Lab", t.getTestPrice(),"Awaiting","Requested");
+             pat.addbill(bill);
+             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProCont, userAcc, ecosystem, pat);
+            userProCont.add("Visit Doctor", doctorVisit);
+            CardLayout layout = (CardLayout) userProCont.getLayout();
+            layout.next(userProCont);
+             //ecosystem.AddTreatedPatientList(pat);
         }
-        ecosystem.getLabs().AddTreatedPatientList(patient);
-        patient.setpLabStatus("Requested");
+        ecosystem.getLabs().AddTreatedPatientList(pat);
+        pat.setpLabStatus("Requested");
         }
      
-    }//GEN-LAST:event_RequestActionPerformed
+    }//GEN-LAST:event_requestBtnActionPerformed
 
-    private void Request1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Request1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-        userProcessContainer.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_Request1ActionPerformed
+        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProCont, userAcc, ecosystem, pat);
+        userProCont.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Request;
-    private javax.swing.JButton Request1;
-    private javax.swing.JButton btnAddTest;
-    private javax.swing.JButton btnRemoveTest;
-    private javax.swing.JTable carttable;
+    private javax.swing.JButton addBtn;
+    private javax.swing.JTable availbleTestsTable;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tableTests1;
+    private javax.swing.JButton removeTestBtn;
+    private javax.swing.JButton requestBtn;
+    private javax.swing.JTable selectedTestsTable;
     // End of variables declaration//GEN-END:variables
 }

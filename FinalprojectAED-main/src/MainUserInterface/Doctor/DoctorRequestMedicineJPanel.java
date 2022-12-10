@@ -20,32 +20,32 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author mayurchaudhari
+ * @author daddy
  */
 public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
 
     /** Creates new form DoctorRequestMedicineJPanel */
     
-    private JPanel userProcessContainer;
+    private JPanel userProCont;
     private Ecosystem ecosystem;
-    private User userAccount;
-    private Patient patient;
-    Medicine m;
-    ArrayList<Medicine> items=new ArrayList<Medicine>();
+    private User userAcc;
+    private Patient pat;
+    Medicine medicine;
+    ArrayList<Medicine> samples=new ArrayList<Medicine>();
 
     
     public DoctorRequestMedicineJPanel(JPanel userProcessContainer, User account, Ecosystem ecosystem, Patient patient) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+        this.userProCont = userProcessContainer;
         this.ecosystem = ecosystem;
-        this.userAccount = account;
-        this.patient = patient;
-        populatetableMedicine();
+        this.userAcc = account;
+        this.pat = patient;
+        populateAvailableMedicineTable();
     }
 
     
-        private void populatetableMedicine() {
-        DefaultTableModel model = (DefaultTableModel) tableRequestMedicine1.getModel();
+        private void populateAvailableMedicineTable() {
+        DefaultTableModel model = (DefaultTableModel) availableMedicineTable.getModel();
 
         model.setRowCount(0); 
 
@@ -54,24 +54,24 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
             
                Object[] row = new Object[4];                
                 row[0] = t;
-                row[1] = t.getUsage();
-                row[2] =t.getQuantity();
-                row[3] = t.getPrice();
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuant();
+                row[3] = t.getMedPrice();
                 model.addRow(row);
         }
     }
         
-        public void populateCart(Medicine item){
-        DefaultTableModel model = (DefaultTableModel) cartTableMedicines.getModel();
+        public void populateMedicineCart(Medicine item){
+        DefaultTableModel model = (DefaultTableModel) selectedMedicineTable.getModel();
         model.setRowCount(0);
         
-         items.add(item);
+         samples.add(item);
          Object[] row = new Object[4];
-                for(Medicine t:items){
+                for(Medicine t:samples){
                      row[0] = t;
-                row[1] = t.getUsage();
-                row[2] =t.getQuantity();
-                row[3] = t.getPrice();
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuant();
+                row[3] = t.getMedPrice();
                 model.addRow(row);
                 }  
      }
@@ -106,13 +106,13 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cartTableMedicines = new javax.swing.JTable();
+        selectedMedicineTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableRequestMedicine1 = new javax.swing.JTable();
-        btnRemoveMedicine = new javax.swing.JButton();
-        btnAddMedicine1 = new javax.swing.JButton();
-        Request = new javax.swing.JButton();
-        Request1 = new javax.swing.JButton();
+        availableMedicineTable = new javax.swing.JTable();
+        removeMedicineBtn = new javax.swing.JButton();
+        addMedicineBtn = new javax.swing.JButton();
+        requestMedicineBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -126,10 +126,10 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         jLabel1.setText("Request Medicines");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 350, -1));
 
-        cartTableMedicines.setBackground(new java.awt.Color(204, 255, 204));
-        cartTableMedicines.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        cartTableMedicines.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
-        cartTableMedicines.setModel(new javax.swing.table.DefaultTableModel(
+        selectedMedicineTable.setBackground(new java.awt.Color(204, 255, 204));
+        selectedMedicineTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        selectedMedicineTable.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
+        selectedMedicineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -155,14 +155,14 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(cartTableMedicines);
+        jScrollPane1.setViewportView(selectedMedicineTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 500, 170));
 
-        tableRequestMedicine1.setBackground(new java.awt.Color(204, 204, 204));
-        tableRequestMedicine1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        tableRequestMedicine1.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
-        tableRequestMedicine1.setModel(new javax.swing.table.DefaultTableModel(
+        availableMedicineTable.setBackground(new java.awt.Color(204, 204, 204));
+        availableMedicineTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        availableMedicineTable.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
+        availableMedicineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -188,56 +188,56 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableRequestMedicine1);
+        jScrollPane2.setViewportView(availableMedicineTable);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 510, 170));
 
-        btnRemoveMedicine.setBackground(new java.awt.Color(255, 0, 0));
-        btnRemoveMedicine.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        btnRemoveMedicine.setForeground(new java.awt.Color(255, 255, 255));
-        btnRemoveMedicine.setText("<< REMOVE");
-        btnRemoveMedicine.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        btnRemoveMedicine.addActionListener(new java.awt.event.ActionListener() {
+        removeMedicineBtn.setBackground(new java.awt.Color(255, 0, 0));
+        removeMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        removeMedicineBtn.setForeground(new java.awt.Color(255, 255, 255));
+        removeMedicineBtn.setText("<< REMOVE");
+        removeMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        removeMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveMedicineActionPerformed(evt);
+                removeMedicineBtnActionPerformed(evt);
             }
         });
-        add(btnRemoveMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 120, 46));
+        add(removeMedicineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 120, 46));
 
-        btnAddMedicine1.setBackground(new java.awt.Color(204, 255, 204));
-        btnAddMedicine1.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        btnAddMedicine1.setForeground(new java.awt.Color(0, 102, 102));
-        btnAddMedicine1.setText("ADD >>");
-        btnAddMedicine1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        btnAddMedicine1.addActionListener(new java.awt.event.ActionListener() {
+        addMedicineBtn.setBackground(new java.awt.Color(204, 255, 204));
+        addMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        addMedicineBtn.setForeground(new java.awt.Color(0, 102, 102));
+        addMedicineBtn.setText("ADD >>");
+        addMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddMedicine1ActionPerformed(evt);
+                addMedicineBtnActionPerformed(evt);
             }
         });
-        add(btnAddMedicine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 120, 47));
+        add(addMedicineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 120, 47));
 
-        Request.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        Request.setForeground(new java.awt.Color(255, 0, 51));
-        Request.setText("REQUEST MEDICINE");
-        Request.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        Request.addActionListener(new java.awt.event.ActionListener() {
+        requestMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        requestMedicineBtn.setForeground(new java.awt.Color(255, 0, 51));
+        requestMedicineBtn.setText("REQUEST MEDICINE");
+        requestMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        requestMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RequestActionPerformed(evt);
+                requestMedicineBtnActionPerformed(evt);
             }
         });
-        add(Request, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 180, 42));
+        add(requestMedicineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 180, 42));
 
-        Request1.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
-        Request1.setForeground(new java.awt.Color(255, 0, 51));
-        Request1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
-        Request1.setText(" BACK");
-        Request1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
-        Request1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 0, 51));
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
+        backBtn.setText(" BACK");
+        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Request1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 140, 42));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 140, 42));
 
         jLabel2.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -254,92 +254,92 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 30, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRemoveMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveMedicineActionPerformed
+    private void removeMedicineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMedicineBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = cartTableMedicines.getSelectedRow();
+        int selectedRow = selectedMedicineTable.getSelectedRow();
         if(selectedRow<0)
         {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)cartTableMedicines.getValueAt(selectedRow, 0);
-            items.remove(item);
-            DefaultTableModel model = (DefaultTableModel) cartTableMedicines.getModel();
+            Medicine item=(Medicine)selectedMedicineTable.getValueAt(selectedRow, 0);
+            samples.remove(item);
+            DefaultTableModel model = (DefaultTableModel) selectedMedicineTable.getModel();
         model.setRowCount(0);
             Object[] row = new Object[4];
-                for(Medicine t:items){
+                for(Medicine t:samples){
                         row[0] = t;
-                row[1] = t.getUsage();
-                row[2] =t.getQuantity();
-                row[3] = t.getPrice();
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuant();
+                row[3] = t.getMedPrice();
                 model.addRow(row);
                 }
         }
      
-    }//GEN-LAST:event_btnRemoveMedicineActionPerformed
+    }//GEN-LAST:event_removeMedicineBtnActionPerformed
 
-    private void btnAddMedicine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMedicine1ActionPerformed
+    private void addMedicineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMedicineBtnActionPerformed
         // TODO add your handling code here:
-                int selectedRow = tableRequestMedicine1.getSelectedRow();
+                int selectedRow = availableMedicineTable.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)tableRequestMedicine1.getValueAt(selectedRow, 0);
+            Medicine item=(Medicine)availableMedicineTable.getValueAt(selectedRow, 0);
             
-            populateCart(item);
+            populateMedicineCart(item);
           
         }
-    }//GEN-LAST:event_btnAddMedicine1ActionPerformed
+    }//GEN-LAST:event_addMedicineBtnActionPerformed
 
-    private void RequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestActionPerformed
+    private void requestMedicineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestMedicineBtnActionPerformed
         // TODO add your handling code here:
-        if(items.size()==0){
+        if(samples.size()==0){
             JOptionPane.showMessageDialog(null,"Please add test to the cart.","Warning",JOptionPane.WARNING_MESSAGE);
 
         }
         else{
-            for(Medicine t:items){
+            for(Medicine t:samples){
                 //String itemName,String organization1,float itemAmount, String result, String itemStatus
 
-                PatientBills bill = new PatientBills(t.getMedName(), "Pharmacy", t.getPrice(),"","Requested");
-                patient.addbill(bill);
+                PatientBills bill = new PatientBills(t.getMedName(), "Pharmacy", t.getMedPrice(),"","Requested");
+                pat.addbill(bill);
                 
-                //ecosystem.AddTreatedPatientList(patient);
+                //ecosystem.AddTreatedPatientList(pat);
             }
-            ecosystem.getPharma().AddpharmaRecordList(patient);
-            patient.setpPharmaStatus("Requested");
+            ecosystem.getPharma().AddpharmaRecordList(pat);
+            pat.setpPharmaStatus("Requested");
             
-            DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-            userProcessContainer.add("Visit Doctor", doctorVisit);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProCont, userAcc, ecosystem, pat);
+            userProCont.add("Visit Doctor", doctorVisit);
+            CardLayout layout = (CardLayout) userProCont.getLayout();
+            layout.next(userProCont);
         }
 
-    }//GEN-LAST:event_RequestActionPerformed
+    }//GEN-LAST:event_requestMedicineBtnActionPerformed
 
-    private void Request1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Request1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-        userProcessContainer.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_Request1ActionPerformed
+        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProCont, userAcc, ecosystem, pat);
+        userProCont.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Request;
-    private javax.swing.JButton Request1;
-    private javax.swing.JButton btnAddMedicine1;
-    private javax.swing.JButton btnRemoveMedicine;
-    private javax.swing.JTable cartTableMedicines;
+    private javax.swing.JButton addMedicineBtn;
+    private javax.swing.JTable availableMedicineTable;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tableRequestMedicine1;
+    private javax.swing.JButton removeMedicineBtn;
+    private javax.swing.JButton requestMedicineBtn;
+    private javax.swing.JTable selectedMedicineTable;
     // End of variables declaration//GEN-END:variables
 
 }

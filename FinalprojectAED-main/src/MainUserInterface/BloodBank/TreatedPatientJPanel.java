@@ -21,19 +21,19 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TreatedPatientJPanel
      */
-    private final JPanel userProcessContainer;
+    private final JPanel userProCont;
     private final Ecosystem ecoSystem;
-    User userAccount;
+    User userAcc;
 
     public TreatedPatientJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.ecoSystem = system;
-        this.userAccount = account;
-        this.userProcessContainer = userProcessContainer;
-        populatePatientTable();
+        this.userAcc = account;
+        this.userProCont = userProcessContainer;
+        populateManagePatientTable();
     }
 
-    private void populatePatientTable() {
+    private void populateManagePatientTable() {
         DefaultTableModel model = (DefaultTableModel) ManagePatientTable.getModel();
 
         model.setRowCount(0);
@@ -68,7 +68,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         ManagePatientTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnBack = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(237, 247, 247));
@@ -117,33 +117,33 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 1030, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1270, 10));
 
-        btnBack.setBackground(new java.awt.Color(0, 0, 204));
-        btnBack.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(0, 0, 204));
+        backBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/patient history.gif"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 510, 470));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        BloodBankWorkAreaJPanel bloodBankWorkAreaJPanel = new BloodBankWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Display Treated Patient", bloodBankWorkAreaJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
+        BloodBankWorkAreaJPanel bloodBankWorkAreaJPanel = new BloodBankWorkAreaJPanel(userProCont, userAcc, ecoSystem);
+        userProCont.add("Display Treated Patient", bloodBankWorkAreaJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManagePatientTable;
-    private javax.swing.JButton btnBack;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane3;
