@@ -6,7 +6,7 @@ package BusinessModel.BBank;
 
 /**
  *
- * @author mayurchaudhari
+ * @author daddy
  */
 public class BloodTypeRecord {
      private String bloodType;

@@ -23,30 +23,30 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LabWorkAreaJPanel
      */
-    private final JPanel userProcessContainer;
+    private final JPanel userProCont;
     private final Ecosystem ecoSystem;
-    User userAccount;
-    BBank bloodBank;
-    Patient billPatient;
+    User userAcc;
+    BBank bbank;
+    Patient patientBill;
 
     public BloodBankWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+        this.userProCont = userProcessContainer;
         this.ecoSystem = system;
-        this.userAccount = account;
-        this.billPatient = null;
-        BloodRequestStatusBox.addItem("Select Status");
-        BloodRequestStatusBox.addItem("Blood Delivered");
-        BloodRequestStatusBox.addItem("Unavailable");
-        populatePatientTable();
+        this.userAcc = account;
+        this.patientBill = null;
+        bloodRequestStatusDropDown.addItem("Select Status");
+        bloodRequestStatusDropDown.addItem("Blood Delivered");
+        bloodRequestStatusDropDown.addItem("Unavailable");
+        populateManagePatientTable();
     }
 
-    private void populateBillTable() {
-        DefaultTableModel model = (DefaultTableModel) BillTable.getModel();
+    private void populateManagePatientBillsTable() {
+        DefaultTableModel model = (DefaultTableModel) managePatientBillsTable.getModel();
 
         model.setRowCount(0);
 
-        for (PatientBills b : billPatient.getpBills()) {
+        for (PatientBills b : patientBill.getpBills()) {
             
                 Object[] row = new Object[4];
                 row[0] = b.getName();
@@ -60,7 +60,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
 
-    private void populatePatientTable() {
+    private void populateManagePatientTable() {
         DefaultTableModel model = (DefaultTableModel) ManagePatientTable.getModel();
 
         model.setRowCount(0);
@@ -95,13 +95,13 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         lblPatientBill = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         ManagePatientTable = new javax.swing.JTable();
-        btnBloodBankInfo = new javax.swing.JButton();
+        bloodBankInfoBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        BillTable = new javax.swing.JTable();
+        managePatientBillsTable = new javax.swing.JTable();
         lblCommunity = new javax.swing.JLabel();
-        BloodRequestStatusBox = new javax.swing.JComboBox<>();
-        btnProcessRequest = new javax.swing.JButton();
-        btnTreatedPatientList = new javax.swing.JButton();
+        bloodRequestStatusDropDown = new javax.swing.JComboBox<>();
+        processReqBtn = new javax.swing.JButton();
+        showTreatedPatListBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -152,19 +152,19 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 860, 191));
 
-        btnBloodBankInfo.setBackground(new java.awt.Color(0, 0, 204));
-        btnBloodBankInfo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnBloodBankInfo.setForeground(new java.awt.Color(255, 255, 255));
-        btnBloodBankInfo.setText("Blood Bank Information");
-        btnBloodBankInfo.addActionListener(new java.awt.event.ActionListener() {
+        bloodBankInfoBtn.setBackground(new java.awt.Color(0, 0, 204));
+        bloodBankInfoBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        bloodBankInfoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        bloodBankInfoBtn.setText("Blood Bank Information");
+        bloodBankInfoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBloodBankInfoActionPerformed(evt);
+                bloodBankInfoBtnActionPerformed(evt);
             }
         });
-        add(btnBloodBankInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 600, -1, 30));
+        add(bloodBankInfoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 600, -1, 30));
 
-        BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        BillTable.setModel(new javax.swing.table.DefaultTableModel(
+        managePatientBillsTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        managePatientBillsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -190,11 +190,11 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(BillTable);
-        if (BillTable.getColumnModel().getColumnCount() > 0) {
-            BillTable.getColumnModel().getColumn(3).setMinWidth(0);
-            BillTable.getColumnModel().getColumn(3).setPreferredWidth(0);
-            BillTable.getColumnModel().getColumn(3).setMaxWidth(0);
+        jScrollPane2.setViewportView(managePatientBillsTable);
+        if (managePatientBillsTable.getColumnModel().getColumnCount() > 0) {
+            managePatientBillsTable.getColumnModel().getColumn(3).setMinWidth(0);
+            managePatientBillsTable.getColumnModel().getColumn(3).setPreferredWidth(0);
+            managePatientBillsTable.getColumnModel().getColumn(3).setMaxWidth(0);
         }
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 860, 191));
@@ -205,34 +205,34 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         lblCommunity.setText("Blood Request Status");
         add(lblCommunity, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 30));
 
-        BloodRequestStatusBox.addActionListener(new java.awt.event.ActionListener() {
+        bloodRequestStatusDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BloodRequestStatusBoxActionPerformed(evt);
+                bloodRequestStatusDropDownActionPerformed(evt);
             }
         });
-        add(BloodRequestStatusBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 162, 30));
+        add(bloodRequestStatusDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 162, 30));
 
-        btnProcessRequest.setBackground(new java.awt.Color(0, 0, 204));
-        btnProcessRequest.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnProcessRequest.setForeground(new java.awt.Color(255, 255, 255));
-        btnProcessRequest.setText("Process Request");
-        btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
+        processReqBtn.setBackground(new java.awt.Color(0, 0, 204));
+        processReqBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        processReqBtn.setForeground(new java.awt.Color(255, 255, 255));
+        processReqBtn.setText("Process Request");
+        processReqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcessRequestActionPerformed(evt);
+                processReqBtnActionPerformed(evt);
             }
         });
-        add(btnProcessRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
+        add(processReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
 
-        btnTreatedPatientList.setBackground(new java.awt.Color(0, 0, 204));
-        btnTreatedPatientList.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnTreatedPatientList.setForeground(new java.awt.Color(255, 255, 255));
-        btnTreatedPatientList.setText("Show Treated Patient List");
-        btnTreatedPatientList.addActionListener(new java.awt.event.ActionListener() {
+        showTreatedPatListBtn.setBackground(new java.awt.Color(0, 0, 204));
+        showTreatedPatListBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        showTreatedPatListBtn.setForeground(new java.awt.Color(255, 255, 255));
+        showTreatedPatListBtn.setText("Show Treated Patient List");
+        showTreatedPatListBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTreatedPatientListActionPerformed(evt);
+                showTreatedPatListBtnActionPerformed(evt);
             }
         });
-        add(btnTreatedPatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 200, 30));
+        add(showTreatedPatListBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 200, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
@@ -248,20 +248,20 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-210, 310, 700, 400));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBloodBankInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBloodBankInfoActionPerformed
+    private void bloodBankInfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodBankInfoBtnActionPerformed
         // TODO add your handling code here:
-        BloodBankInfoJPanel bloodBankInfoJPanel = new BloodBankInfoJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Blood Bank Information", bloodBankInfoJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        BloodBankInfoJPanel bloodBankInfoJPanel = new BloodBankInfoJPanel(userProCont, userAcc, ecoSystem);
+        userProCont.add("Blood Bank Information", bloodBankInfoJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
 
-    }//GEN-LAST:event_btnBloodBankInfoActionPerformed
+    }//GEN-LAST:event_bloodBankInfoBtnActionPerformed
 
-    private void BloodRequestStatusBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodRequestStatusBoxActionPerformed
+    private void bloodRequestStatusDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodRequestStatusDropDownActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BloodRequestStatusBoxActionPerformed
+    }//GEN-LAST:event_bloodRequestStatusDropDownActionPerformed
 
-    private void btnProcessRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRequestActionPerformed
+    private void processReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processReqBtnActionPerformed
         // TODO add your handling code here:
 
         int selectedRowIndex = ManagePatientTable.getSelectedRow();
@@ -274,13 +274,13 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
             for (Patient p : ecoSystem.getPatientDirect().getPatientList()) {
                 if (patient.getpUserName().equals(p.getpUserName())) {
-                    if (!((String) BloodRequestStatusBox.getSelectedItem()).equals("Select Status")) {
-                        p.setpBloodBankStatus((String) BloodRequestStatusBox.getSelectedItem());
-                        billPatient = p;
+                    if (!((String) bloodRequestStatusDropDown.getSelectedItem()).equals("Select Status")) {
+                        p.setpBloodBankStatus((String) bloodRequestStatusDropDown.getSelectedItem());
+                        patientBill = p;
                         if (p.getpBloodBankStatus().equals("Blood Delivered")) {
-                            for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getpBloodBagQuantity()); bloodBag++) {
-                                ecoSystem.getPatientDirect().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
-                                ecoSystem.getBBank().AddTreatedPatientList(billPatient);
+                            for (int bloodBag = 0; bloodBag < Integer.parseInt(patientBill.getpBloodBagQuantity()); bloodBag++) {
+                                ecoSystem.getPatientDirect().AddBill(patientBill, "Blood Charges", "Blood Bank", "");
+                                ecoSystem.getBBank().AddTreatedPatientList(patientBill);
                             }
                         }
                         break;
@@ -288,31 +288,28 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
                 }
             }
 
-            populatePatientTable();
-            populateBillTable();
+            populateManagePatientTable();
+            populateManagePatientBillsTable();
 
         }
 
 
-    }//GEN-LAST:event_btnProcessRequestActionPerformed
+    }//GEN-LAST:event_processReqBtnActionPerformed
 
-    private void btnTreatedPatientListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedPatientListActionPerformed
+    private void showTreatedPatListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTreatedPatListBtnActionPerformed
         // TODO add your handling code here:
-        TreatedPatientJPanel treatedPatientJPanel = new TreatedPatientJPanel(userProcessContainer,userAccount,ecoSystem);
-        userProcessContainer.add("Display Treated Patient", treatedPatientJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        TreatedPatientJPanel treatedPatientJPanel = new TreatedPatientJPanel(userProCont,userAcc,ecoSystem);
+        userProCont.add("Display Treated Patient", treatedPatientJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
 
-    }//GEN-LAST:event_btnTreatedPatientListActionPerformed
+    }//GEN-LAST:event_showTreatedPatListBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable BillTable;
-    private javax.swing.JComboBox<String> BloodRequestStatusBox;
     private javax.swing.JTable ManagePatientTable;
-    private javax.swing.JButton btnBloodBankInfo;
-    private javax.swing.JButton btnProcessRequest;
-    private javax.swing.JButton btnTreatedPatientList;
+    private javax.swing.JButton bloodBankInfoBtn;
+    private javax.swing.JComboBox<String> bloodRequestStatusDropDown;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -320,6 +317,9 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCommunity;
     private javax.swing.JLabel lblPatientBill;
+    private javax.swing.JTable managePatientBillsTable;
+    private javax.swing.JButton processReqBtn;
+    private javax.swing.JButton showTreatedPatListBtn;
     // End of variables declaration//GEN-END:variables
 
 }

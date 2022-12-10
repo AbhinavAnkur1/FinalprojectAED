@@ -16,24 +16,24 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author mayurchaudhari
+ * @author daddy
  */
 public class DoctorVisitJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorVisitJPanel
      */
-    private JPanel userProcessContainer;
+    private JPanel userProCont;
     private Ecosystem ecoSystem;
-    private User userAccount;
-    private Patient patient;
+    private User userAcc;
+    private Patient pat;
 
     public DoctorVisitJPanel(JPanel userProcessContainer, User account, Ecosystem ecoSystem, Patient patient) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+        this.userProCont = userProcessContainer;
         this.ecoSystem = ecoSystem;
-        this.userAccount = account;
-        this.patient = patient;
+        this.userAcc = account;
+        this.pat = patient;
         populateBillTable();
     }
 
@@ -42,7 +42,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (PatientBills b : patient.getpBills()) {
+        for (PatientBills b : pat.getpBills()) {
 
             Object[] row = new Object[7];
             row[0] = b.getName();
@@ -69,11 +69,11 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         BillTable = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        btnRequestLabTests = new javax.swing.JButton();
-        btnRequestMedicine = new javax.swing.JButton();
-        btnRequestBlood = new javax.swing.JButton();
-        btnRequestMedicine1 = new javax.swing.JButton();
-        btnRequestMedicine2 = new javax.swing.JButton();
+        requestLabTestsBtn = new javax.swing.JButton();
+        requestMedBtn = new javax.swing.JButton();
+        requestBloodBtn = new javax.swing.JButton();
+        readyToDischargeBtn = new javax.swing.JButton();
+        endVisitBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 102, 102));
@@ -120,126 +120,126 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         jLabel1.setText("Patient History");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 280, 50));
 
-        btnRequestLabTests.setBackground(new java.awt.Color(204, 255, 204));
-        btnRequestLabTests.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        btnRequestLabTests.setForeground(new java.awt.Color(0, 102, 102));
-        btnRequestLabTests.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/lab.png"))); // NOI18N
-        btnRequestLabTests.setText("Request Lab Tests");
-        btnRequestLabTests.addActionListener(new java.awt.event.ActionListener() {
+        requestLabTestsBtn.setBackground(new java.awt.Color(204, 255, 204));
+        requestLabTestsBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        requestLabTestsBtn.setForeground(new java.awt.Color(0, 102, 102));
+        requestLabTestsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/lab.png"))); // NOI18N
+        requestLabTestsBtn.setText("Request Lab Tests");
+        requestLabTestsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestLabTestsActionPerformed(evt);
+                requestLabTestsBtnActionPerformed(evt);
             }
         });
-        add(btnRequestLabTests, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 250, 60));
+        add(requestLabTestsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 250, 60));
 
-        btnRequestMedicine.setBackground(new java.awt.Color(204, 255, 204));
-        btnRequestMedicine.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        btnRequestMedicine.setForeground(new java.awt.Color(0, 102, 102));
-        btnRequestMedicine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/medicine.png"))); // NOI18N
-        btnRequestMedicine.setText("Request Medicines");
-        btnRequestMedicine.addActionListener(new java.awt.event.ActionListener() {
+        requestMedBtn.setBackground(new java.awt.Color(204, 255, 204));
+        requestMedBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        requestMedBtn.setForeground(new java.awt.Color(0, 102, 102));
+        requestMedBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/medicine.png"))); // NOI18N
+        requestMedBtn.setText("Request Medicines");
+        requestMedBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestMedicineActionPerformed(evt);
+                requestMedBtnActionPerformed(evt);
             }
         });
-        add(btnRequestMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 250, 60));
+        add(requestMedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 250, 60));
 
-        btnRequestBlood.setBackground(new java.awt.Color(204, 255, 204));
-        btnRequestBlood.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
-        btnRequestBlood.setForeground(new java.awt.Color(0, 102, 102));
-        btnRequestBlood.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/blood-test.png"))); // NOI18N
-        btnRequestBlood.setText("Request Blood");
-        btnRequestBlood.addActionListener(new java.awt.event.ActionListener() {
+        requestBloodBtn.setBackground(new java.awt.Color(204, 255, 204));
+        requestBloodBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
+        requestBloodBtn.setForeground(new java.awt.Color(0, 102, 102));
+        requestBloodBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/blood-test.png"))); // NOI18N
+        requestBloodBtn.setText("Request Blood");
+        requestBloodBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestBloodActionPerformed(evt);
+                requestBloodBtnActionPerformed(evt);
             }
         });
-        add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 230, 60));
+        add(requestBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 230, 60));
 
-        btnRequestMedicine1.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        btnRequestMedicine1.setForeground(new java.awt.Color(255, 0, 0));
-        btnRequestMedicine1.setText("Ready to Discharge");
-        btnRequestMedicine1.addActionListener(new java.awt.event.ActionListener() {
+        readyToDischargeBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        readyToDischargeBtn.setForeground(new java.awt.Color(255, 0, 0));
+        readyToDischargeBtn.setText("Ready to Discharge");
+        readyToDischargeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestMedicine1ActionPerformed(evt);
+                readyToDischargeBtnActionPerformed(evt);
             }
         });
-        add(btnRequestMedicine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 220, 50));
+        add(readyToDischargeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 220, 50));
 
-        btnRequestMedicine2.setBackground(new java.awt.Color(255, 0, 0));
-        btnRequestMedicine2.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
-        btnRequestMedicine2.setForeground(new java.awt.Color(255, 255, 255));
-        btnRequestMedicine2.setText("End Visit");
-        btnRequestMedicine2.addActionListener(new java.awt.event.ActionListener() {
+        endVisitBtn.setBackground(new java.awt.Color(255, 0, 0));
+        endVisitBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
+        endVisitBtn.setForeground(new java.awt.Color(255, 255, 255));
+        endVisitBtn.setText("End Visit");
+        endVisitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestMedicine2ActionPerformed(evt);
+                endVisitBtnActionPerformed(evt);
             }
         });
-        add(btnRequestMedicine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 380, 120, 50));
+        add(endVisitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 380, 120, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/phistory.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRequestLabTestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestLabTestsActionPerformed
+    private void requestLabTestsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestLabTestsBtnActionPerformed
         // TODO add your handling code here:
 
-        DoctorRequestLabTestJPanel doctorRequestLabTestJPanel = new DoctorRequestLabTestJPanel(userProcessContainer, userAccount, ecoSystem, patient);
-        userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DoctorRequestLabTestJPanel doctorRequestLabTestJPanel = new DoctorRequestLabTestJPanel(userProCont, userAcc, ecoSystem, pat);
+        userProCont.add("Request Lab Tests", doctorRequestLabTestJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
 
-    }//GEN-LAST:event_btnRequestLabTestsActionPerformed
+    }//GEN-LAST:event_requestLabTestsBtnActionPerformed
 
-    private void btnRequestMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestMedicineActionPerformed
+    private void requestMedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestMedBtnActionPerformed
         // TODO add your handling code here:
 
-        DoctorRequestMedicineJPanel doctorRequestMedicineJPanel = new DoctorRequestMedicineJPanel(userProcessContainer, userAccount, ecoSystem, patient);
-        userProcessContainer.add("Request  Medicine", doctorRequestMedicineJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DoctorRequestMedicineJPanel doctorRequestMedicineJPanel = new DoctorRequestMedicineJPanel(userProCont, userAcc, ecoSystem, pat);
+        userProCont.add("Request  Medicine", doctorRequestMedicineJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
 
-    }//GEN-LAST:event_btnRequestMedicineActionPerformed
+    }//GEN-LAST:event_requestMedBtnActionPerformed
 
-    private void btnRequestBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBloodActionPerformed
+    private void requestBloodBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestBloodBtnActionPerformed
         // TODO add your handling code here:
 
-        DoctorRequestBloodJPanel doctorRequestBloodJPanel = new DoctorRequestBloodJPanel(userProcessContainer, userAccount, ecoSystem, patient);
-        userProcessContainer.add("Request Blood", doctorRequestBloodJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnRequestBloodActionPerformed
+        DoctorRequestBloodJPanel doctorRequestBloodJPanel = new DoctorRequestBloodJPanel(userProCont, userAcc, ecoSystem, pat);
+        userProCont.add("Request Blood", doctorRequestBloodJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_requestBloodBtnActionPerformed
 
-    private void btnRequestMedicine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestMedicine1ActionPerformed
+    private void readyToDischargeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readyToDischargeBtnActionPerformed
         // TODO add your handling code here:
-        patient.setpStatus("Ready to Discharge");
-        DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
-        userProcessContainer.add("Request Blood", doctor);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnRequestMedicine1ActionPerformed
+        pat.setpStatus("Ready to Discharge");
+        DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProCont,userAcc,ecoSystem);
+        userProCont.add("Request Blood", doctor);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_readyToDischargeBtnActionPerformed
 
-    private void btnRequestMedicine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestMedicine2ActionPerformed
+    private void endVisitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endVisitBtnActionPerformed
         // TODO add your handling code here:
-        patient.setpStatus("Under Observation");
-        DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
-        userProcessContainer.add("Request Blood", doctor);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnRequestMedicine2ActionPerformed
+        pat.setpStatus("Under Observation");
+        DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProCont,userAcc,ecoSystem);
+        userProCont.add("Request Blood", doctor);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_endVisitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable BillTable;
-    private javax.swing.JButton btnRequestBlood;
-    private javax.swing.JButton btnRequestLabTests;
-    private javax.swing.JButton btnRequestMedicine;
-    private javax.swing.JButton btnRequestMedicine1;
-    private javax.swing.JButton btnRequestMedicine2;
+    private javax.swing.JButton endVisitBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton readyToDischargeBtn;
+    private javax.swing.JButton requestBloodBtn;
+    private javax.swing.JButton requestLabTestsBtn;
+    private javax.swing.JButton requestMedBtn;
     // End of variables declaration//GEN-END:variables
 }
