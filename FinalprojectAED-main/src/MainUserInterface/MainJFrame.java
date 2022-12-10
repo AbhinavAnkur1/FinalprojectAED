@@ -3,12 +3,12 @@ package MainUserInterface;
 import BusinessModel.Ecosystem;
 import BusinessModel.DB4OUtil.DB4OUtil;
 import BusinessModel.Pharma.Pharma;
-import BusinessModel.Roles.AmbulanceDriver;
+import BusinessModel.Roles.AmbuDriver;
 import BusinessModel.Roles.BloodBank;
-import BusinessModel.Roles.DoctorsAdministrator;
+import BusinessModel.Roles.DocAdmin;
 import BusinessModel.Roles.InsuranceManager;
 import BusinessModel.Roles.Lab;
-import BusinessModel.Roles.Patient_role;
+import BusinessModel.Roles.RolePatient;
 import BusinessModel.Roles.Pharmacist;
 import BusinessModel.Roles.Police;
 import BusinessModel.Roles.Reception;
@@ -33,11 +33,11 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserAccountDirectory().createUser("bloodbank", "bloodbank", null, new BloodBank());
         system.getUserAccountDirectory().createUser("pharmacy", "pharmacy", null, new Pharmacist());
         system.getUserAccountDirectory().createUser("insurance", "insurance", null, new InsuranceManager());
-        system.getUserAccountDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
+        system.getUserAccountDirectory().createUser("ambulance", "ambulance", null, new AmbuDriver());
         system.getUserAccountDirectory().createUser("lab", "lab", null, new Lab());
         system.getUserAccountDirectory().createUser("hos", "hos", null, new Reception());
         system.getUserAccountDirectory().createUser("cop", "cop", null, new Police());
-        system.getUserAccountDirectory().createUser("doctor", "doctor", null, new DoctorsAdministrator());
+        system.getUserAccountDirectory().createUser("doctor", "doctor", null, new DocAdmin());
     }
 
     @SuppressWarnings("unchecked")
@@ -47,8 +47,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         leftContainer = new javax.swing.JPanel();
         loginBtn = new javax.swing.JButton();
-        userNameInputFieldTxt = new javax.swing.JTextField();
-        passwordInputFieldTxt = new javax.swing.JPasswordField();
+        signInField = new javax.swing.JTextField();
+        passwordInputField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
@@ -75,20 +75,20 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         leftContainer.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
 
-        userNameInputFieldTxt.setFont(new java.awt.Font("Noto Sans Kannada", 0, 12)); // NOI18N
-        userNameInputFieldTxt.addActionListener(new java.awt.event.ActionListener() {
+        signInField.setFont(new java.awt.Font("Noto Sans Kannada", 0, 12)); // NOI18N
+        signInField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameInputFieldTxtActionPerformed(evt);
+                signInFieldActionPerformed(evt);
             }
         });
-        leftContainer.add(userNameInputFieldTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 30));
+        leftContainer.add(signInField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 30));
 
-        passwordInputFieldTxt.addActionListener(new java.awt.event.ActionListener() {
+        passwordInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordInputFieldTxtActionPerformed(evt);
+                passwordInputFieldActionPerformed(evt);
             }
         });
-        leftContainer.add(passwordInputFieldTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 118, 30));
+        leftContainer.add(passwordInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 118, 30));
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel1.setText("USERNAME");
@@ -137,7 +137,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         try{ 
-            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputFieldTxt.getText(), passwordInputFieldTxt.getText());
+            User ua = system.getUserAccountDirectory().authenticateUser(signInField.getText(), passwordInputField.getText());
             CardLayout layout = (CardLayout) mainContainer.getLayout();
             System.out.println("role of user ---"+ua.getRole());
             mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
@@ -154,11 +154,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         logoutBtn.setEnabled(false);
-        userNameInputFieldTxt.setEnabled(true);
-        passwordInputFieldTxt.setEnabled(true);
+        signInField.setEnabled(true);
+        passwordInputField.setEnabled(true);
         loginBtn.setEnabled(true);
-        userNameInputFieldTxt.setText("");
-        passwordInputFieldTxt.setText("");
+        signInField.setText("");
+        passwordInputField.setText("");
         
         Logout ua = new Logout(mainContainer);
         mainContainer.add("logout", ua);
@@ -170,13 +170,13 @@ public class MainJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void userNameInputFieldTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputFieldTxtActionPerformed
+    private void signInFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameInputFieldTxtActionPerformed
+    }//GEN-LAST:event_signInFieldActionPerformed
 
-    private void passwordInputFieldTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputFieldTxtActionPerformed
+    private void passwordInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordInputFieldTxtActionPerformed
+    }//GEN-LAST:event_passwordInputFieldActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -222,7 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel loginJLabel;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel mainContainer;
-    private javax.swing.JPasswordField passwordInputFieldTxt;
-    private javax.swing.JTextField userNameInputFieldTxt;
+    private javax.swing.JPasswordField passwordInputField;
+    private javax.swing.JTextField signInField;
     // End of variables declaration//GEN-END:variables
 }

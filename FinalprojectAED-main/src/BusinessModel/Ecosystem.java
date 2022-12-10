@@ -4,16 +4,16 @@
  */
 package BusinessModel;
 
-import BusinessModel.Ambulance.AmbulanceDirectory;
-import BusinessModel.BloodBank.BloodBank;
-import BusinessModel.Doctor.DoctorDirectory;
-import BusinessModel.Insurance.InsuranceDirectory;
-import BusinessModel.Lab.Lab;
-import BusinessModel.Patient.PatientDirectory;
-import BusinessModel.Pharmacy.Pharmacy;
-import BusinessModel.PoliceDepartment.PoliceDepartment;
+import BusinessModel.Ambulance.AmbulanceDirect;
+import BusinessModel.BBank.BBank;
+import BusinessModel.Doctor.DoctorDirect;
+import BusinessModel.Insurance.InsuranceDirect;
+import BusinessModel.Labs.Labs;
+import BusinessModel.Patient.PatientDirect;
+import BusinessModel.Pharma.Pharma;
+import BusinessModel.PoliceDept.PoliceDept;
 import BusinessModel.Roles.Role;
-import BusinessModel.Roles.Administrator;
+import BusinessModel.Roles.Admin;
 //import com.twilio.Twilio;
 //import com.twilio.rest.api.v2010.account.Message;
 import java.util.ArrayList;
@@ -33,14 +33,14 @@ import javax.mail.internet.MimeMessage;
 public class Ecosystem extends Organisation{
     
     private static Ecosystem business;
-    private PatientDirectory patientDirectory;
-    private DoctorDirectory doctorDirectory;
-    private AmbulanceDirectory ambulanceDirectory;
-    private BloodBank bloodBank;
-    private Lab lab;
-    private Pharmacy pharmacy;
-    private InsuranceDirectory insuranceDirectory;
-    private PoliceDepartment policeRecords;
+    private PatientDirect patientDirect;
+    private DoctorDirect doctorDirect;
+    private AmbulanceDirect ambulanceDirect;
+    private BBank bBank;
+    private Labs labs;
+    private Pharma pharma;
+    private InsuranceDirect insuranceDirect;
+    private PoliceDept policeRecords;
     
     public static Ecosystem getInstance()
     {
@@ -60,67 +60,67 @@ public class Ecosystem extends Organisation{
         Ecosystem.business = business;
     }
 
-    public PatientDirectory getPatientDirectory() {
-        return patientDirectory = (patientDirectory == null) ? new PatientDirectory() : patientDirectory;
+    public PatientDirect getPatientDirect() {
+        return patientDirect = (patientDirect == null) ? new PatientDirect() : patientDirect;
     }
 
-    public void setPatientDirectory(PatientDirectory patientDirectory) {
-        this.patientDirectory = patientDirectory;
+    public void setPatientDirect(PatientDirect patientDirect) {
+        this.patientDirect = patientDirect;
     }
 
-    public DoctorDirectory getDoctorDirectory() {
-        return doctorDirectory = (doctorDirectory == null) ? new DoctorDirectory() : doctorDirectory;
+    public DoctorDirect getDoctorDirect() {
+        return doctorDirect = (doctorDirect == null) ? new DoctorDirect() : doctorDirect;
     }
 
-    public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
-        this.doctorDirectory = doctorDirectory;
+    public void setDoctorDirect(DoctorDirect doctorDirect) {
+        this.doctorDirect = doctorDirect;
     }
 
-    public AmbulanceDirectory getAmbulanceDirectory() {
-        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
+    public AmbulanceDirect getAmbulanceDirect() {
+        return ambulanceDirect = (ambulanceDirect == null) ? new AmbulanceDirect() : ambulanceDirect;
     }
 
-    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
-        this.ambulanceDirectory = ambulanceDirectory;
+    public void setAmbulanceDirect(AmbulanceDirect ambulanceDirect) {
+        this.ambulanceDirect = ambulanceDirect;
     }
 
-    public BloodBank getBloodBank() {
-        return bloodBank = (bloodBank == null) ? new BloodBank() : bloodBank;
+    public BBank getBBank() {
+        return bBank = (bBank == null) ? new BBank() : bBank;
     }
 
-    public void setBloodBank(BloodBank bloodBank) {
-        this.bloodBank = bloodBank;
+    public void setBBank(BBank bBank) {
+        this.bBank = bBank;
     }
 
-    public Lab getLab() {
-        return lab = (lab == null)? new Lab() : lab;
+    public Labs getLabs() {
+        return labs = (labs == null)? new Labs() : labs;
     }
 
-    public void setLab(Lab lab) {
-        this.lab = lab;
+    public void setLabs(Labs labs) {
+        this.labs = labs;
     }
 
-    public Pharmacy getPharmacy() {
-        return pharmacy = (pharmacy == null)? new Pharmacy() : pharmacy;
+    public Pharma getPharma() {
+        return pharma = (pharma == null)? new Pharma() : pharma;
     }
 
-    public void setPharmacy(Pharmacy pharmacy) {
-        this.pharmacy = pharmacy;
+    public void setPharma(Pharma pharma) {
+        this.pharma = pharma;
     }
 
-    public InsuranceDirectory getInsuranceDirectory() {
-        return insuranceDirectory = (insuranceDirectory == null)? new InsuranceDirectory() : insuranceDirectory;
+    public InsuranceDirect getInsuranceDirect() {
+        return insuranceDirect = (insuranceDirect == null)? new InsuranceDirect() : insuranceDirect;
     }
 
-    public void setInsuranceDirectory(InsuranceDirectory insuranceDirectory) {
-        this.insuranceDirectory = insuranceDirectory;
+    public void setInsuranceDirect(InsuranceDirect insuranceDirect) {
+        this.insuranceDirect = insuranceDirect;
     }
 
-    public PoliceDepartment getPoliceRecords() {
-        return policeRecords = (policeRecords == null)? new PoliceDepartment() : policeRecords;
+    public PoliceDept getPoliceRecords() {
+        return policeRecords = (policeRecords == null)? new PoliceDept() : policeRecords;
     }
 
-    public void setPoliceRecords(PoliceDepartment policeRecords) {
+    public void setPoliceRecords(PoliceDept policeRecords) {
         this.policeRecords = policeRecords;
     }
 
@@ -129,7 +129,7 @@ public class Ecosystem extends Organisation{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<>();
-        roleList.add(new Administrator());
+        roleList.add(new Admin());
         return roleList;
     }
     private Ecosystem()

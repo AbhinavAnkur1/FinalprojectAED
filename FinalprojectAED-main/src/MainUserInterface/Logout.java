@@ -5,7 +5,7 @@
 package MainUserInterface;
 
 
-import MainUserInterface.Police.PersonInformation;
+import MainUserInterface.Police.PersonInfo;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.PatientBills;
@@ -26,12 +26,12 @@ public class Logout extends javax.swing.JPanel {
     /**
      * Creates new form LabWorkAreaJPanel
      */
-        JPanel userProcessContainer;
+        JPanel userProCont;
  
     public Logout(JPanel userProcessContainer) {
         initComponents();
         
-        this.userProcessContainer = userProcessContainer;
+        this.userProCont = userProcessContainer;
         
         
         
