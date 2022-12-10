@@ -8,7 +8,7 @@ package MainUserInterface.Ambulance;
 import BusinessModel.Ambulance.Ambulance;
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
-import BusinessModel.Roles.Patient_role;
+import BusinessModel.Roles.RolePatient;
 import BusinessModel.UserAccount.User;
 import BusinessUtil.GoogleMaps.GoogleMapsAmbulanceJPanel;
 import java.awt.CardLayout;
@@ -18,7 +18,7 @@ import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *
- * @author Daddy
+ * @author indian
  */
 public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -46,10 +46,10 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     }
     
     public void setUpTextFields(Patient p){
-        txtPatientUserName.setText(p.getpUserName());
-        txtPatientFirstName.setText(p.getpFirstName());
-        txtPatientLastName.setText(p.getpLastName());
-        txtPatientLocation.setText(p.getpAccidentLocation());
+        patientUserNameTxt.setText(p.getpUserName());
+        patientFirstNameTxt.setText(p.getpFirstName());
+        patientLastNameTxt.setText(p.getpLastName());
+        patientLocTx.setText(p.getpAccidentLocation());
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,25 +62,25 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         lblPatientFirstName = new javax.swing.JLabel();
-        txtPatientFirstName = new javax.swing.JTextField();
+        patientFirstNameTxt = new javax.swing.JTextField();
         lblPatientLocation = new javax.swing.JLabel();
-        txtPatientLocation = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
+        patientLocTx = new javax.swing.JTextField();
+        submitBtn = new javax.swing.JButton();
         lblPatientLastName = new javax.swing.JLabel();
-        txtPatientLastName = new javax.swing.JTextField();
+        patientLastNameTxt = new javax.swing.JTextField();
         lblPatientUserName = new javax.swing.JLabel();
         lblPatientPassword = new javax.swing.JLabel();
-        txtPatientPassword = new javax.swing.JTextField();
-        txtPatientUserName = new javax.swing.JTextField();
+        patientPasswordTxt = new javax.swing.JTextField();
+        patientUserNameTxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        Route_JButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        viewRouteBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTER AN EMERGENCY");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 480, 80));
@@ -88,92 +88,104 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientFirstName.setText("Patient First Name");
-        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
-        add(txtPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 230, 250, 30));
+        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, -1, -1));
+
+        patientFirstNameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientFirstNameTxtActionPerformed(evt);
+            }
+        });
+        add(patientFirstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 180, 250, 30));
 
         lblPatientLocation.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLocation.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLocation.setText("Patient Location");
-        add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, 174, -1));
+        add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 280, 174, -1));
 
-        txtPatientLocation.addActionListener(new java.awt.event.ActionListener() {
+        patientLocTx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPatientLocationActionPerformed(evt);
+                patientLocTxActionPerformed(evt);
             }
         });
-        add(txtPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 330, 250, 30));
+        add(patientLocTx, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 280, 250, 30));
 
-        btnSubmit.setBackground(new java.awt.Color(0, 0, 204));
-        btnSubmit.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("SUBMIT");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        submitBtn.setBackground(new java.awt.Color(0, 0, 204));
+        submitBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(255, 255, 255));
+        submitBtn.setText("SUBMIT");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                submitBtnActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 480, 154, 40));
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 440, 100, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLastName.setText("Patient Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, 40));
-        add(txtPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 280, 250, 30));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 230, -1, -1));
+
+        patientLastNameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientLastNameTxtActionPerformed(evt);
+            }
+        });
+        add(patientLastNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 230, 250, 30));
 
         lblPatientUserName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientUserName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientUserName.setText("Patient User Name");
-        add(lblPatientUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, -1, 20));
+        add(lblPatientUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 340, -1, 20));
 
         lblPatientPassword.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPassword.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientPassword.setText("Patient Password");
-        add(lblPatientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 440, -1, -1));
-        add(txtPatientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 440, 250, 30));
-        add(txtPatientUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 390, 250, 30));
+        add(lblPatientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, -1, -1));
+        add(patientPasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 390, 250, 30));
+        add(patientUserNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 330, 250, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
-        Route_JButton.setBackground(new java.awt.Color(0, 0, 204));
-        Route_JButton.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        Route_JButton.setForeground(new java.awt.Color(255, 255, 255));
-        Route_JButton.setText("VIEW ROUTE");
-        Route_JButton.addActionListener(new java.awt.event.ActionListener() {
+        viewRouteBtn.setBackground(new java.awt.Color(0, 0, 204));
+        viewRouteBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        viewRouteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewRouteBtn.setText("VIEW ROUTE");
+        viewRouteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Route_JButtonActionPerformed(evt);
+                viewRouteBtnActionPerformed(evt);
             }
         });
-        add(Route_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 540, 180, 40));
+        add(viewRouteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 440, 130, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/ambulance reception1.gif"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 820, 650));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/register emergency.gif"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 520, 390));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPatientLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientLocationActionPerformed
+    private void patientLocTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientLocTxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatientLocationActionPerformed
+    }//GEN-LAST:event_patientLocTxActionPerformed
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(txtPatientUserName.getText())) {
+        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(patientUserNameTxt.getText())) {
             
-            Patient patient = new Patient(txtPatientUserName.getText());
-            patient.setpFirstName(txtPatientFirstName.getText());
-            patient.setpLastName(txtPatientLastName.getText());
-            patient.setpAccidentLocation(txtPatientLocation.getText());
+            Patient patient = new Patient(patientUserNameTxt.getText());
+            patient.setpFirstName(patientFirstNameTxt.getText());
+            patient.setpLastName(patientLastNameTxt.getText());
+            patient.setpAccidentLocation(patientLocTx.getText());
             patient.setpStatus("NewPatient");
             patient.setpBloodBankStatus("NewPatient");
             patient.setpPharmaStatus("NewPatient");
             patient.setpLabStatus("NewPatient");
             patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
             ambulance.setStatus("Busy");
-            ambulance.setAccidentLocation(txtPatientLocation.getText());
-            ambulance.getAmbulancePatientsList().add(patient);
+            ambulance.setAcciLocation(patientLocTx.getText());
+            ambulance.getAmbuPatientsList().add(patient);
 
-            ecoSystem.getUserAccountDirectory().createUser(txtPatientUserName.getText(), txtPatientPassword.getText(), null, new Patient_role());
-            ecoSystem.getPatientDirectory().createPatient(patient);
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
-                if (p.getpUserName().equals(txtPatientUserName.getText())) {
-                    ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
+            ecoSystem.getUserAccountDirectory().createUser(patientUserNameTxt.getText(), patientPasswordTxt.getText(), null, new RolePatient());
+            ecoSystem.getPatientDirect().createPatient(patient);
+            for (Patient p : ecoSystem.getPatientDirect().getPatientList()) {
+                if (p.getpUserName().equals(patientUserNameTxt.getText())) {
+                    ecoSystem.getPatientDirect().AddBill(p, "Bed Charge", "Hospital", "Ammount");
                 }
             }
         } else {
@@ -187,48 +199,56 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_submitBtnActionPerformed
 
-    private void Route_JButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Route_JButtonActionPerformed
+    private void viewRouteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRouteBtnActionPerformed
         // TODO add your handling code here:
        /*ReceptionWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Reception Work Area", receptionWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         */
-            Patient patient = new Patient(txtPatientUserName.getText());
-            patient.setpFirstName(txtPatientFirstName.getText());
-            patient.setpLastName(txtPatientLastName.getText());
-            patient.setpAccidentLocation(txtPatientLocation.getText());
+            Patient patient = new Patient(patientUserNameTxt.getText());
+            patient.setpFirstName(patientFirstNameTxt.getText());
+            patient.setpLastName(patientLastNameTxt.getText());
+            patient.setpAccidentLocation(patientLocTx.getText());
             patient.setpStatus("NewPatient");
             patient.setpBloodBankStatus("NewPatient");
             patient.setpPharmaStatus("NewPatient");
             patient.setpLabStatus("NewPatient");
             patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
             
-       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText(), patient);
+       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, patientLocTx.getText(), patient);
         userProcessContainer.add("Google Maps Work Area", GoogleMapsWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_Route_JButtonActionPerformed
+    }//GEN-LAST:event_viewRouteBtnActionPerformed
+
+    private void patientFirstNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientFirstNameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientFirstNameTxtActionPerformed
+
+    private void patientLastNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientLastNameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientLastNameTxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Route_JButton;
-    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblPatientFirstName;
     private javax.swing.JLabel lblPatientLastName;
     private javax.swing.JLabel lblPatientLocation;
     private javax.swing.JLabel lblPatientPassword;
     private javax.swing.JLabel lblPatientUserName;
-    private javax.swing.JTextField txtPatientFirstName;
-    private javax.swing.JTextField txtPatientLastName;
-    private javax.swing.JTextField txtPatientLocation;
-    private javax.swing.JTextField txtPatientPassword;
-    private javax.swing.JTextField txtPatientUserName;
+    private javax.swing.JTextField patientFirstNameTxt;
+    private javax.swing.JTextField patientLastNameTxt;
+    private javax.swing.JTextField patientLocTx;
+    private javax.swing.JTextField patientPasswordTxt;
+    private javax.swing.JTextField patientUserNameTxt;
+    private javax.swing.JButton submitBtn;
+    private javax.swing.JButton viewRouteBtn;
     // End of variables declaration//GEN-END:variables
 }

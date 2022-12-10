@@ -23,15 +23,15 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LabWorkAreaJPanel
      */
-    private final JPanel userProcessContainer;
+    private final JPanel userProCont;
     private final Ecosystem ecoSystem;
-    User userAccount;
+    User userAcc;
 
     public AmbulanceWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         System.out.println("inside amubulance work area");
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.userAccount = account;
+        this.userProCont = userProcessContainer;
+        this.userAcc = account;
         this.ecoSystem = system;
         
         populateNetworkTable();
@@ -39,7 +39,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populateNetworkTable() {
         System.out.println("inside amubulance network table");
-        DefaultTableModel model = (DefaultTableModel) ManageAmbulanceTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) SelectAmbulanceTable.getModel();
         model.setRowCount(0);
         for (Ambulance ambulance : ecoSystem.getAmbulanceDirect().getAmbu()) {
 
@@ -65,11 +65,11 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnCreateAmbulance = new javax.swing.JButton();
+        createBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ManageAmbulanceTable = new javax.swing.JTable();
-        btnAssignPatient = new javax.swing.JButton();
-        btnSubmit1 = new javax.swing.JButton();
+        SelectAmbulanceTable = new javax.swing.JTable();
+        callAmbuBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -85,19 +85,19 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 770, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 1280, 10));
 
-        btnCreateAmbulance.setBackground(new java.awt.Color(0, 0, 204));
-        btnCreateAmbulance.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnCreateAmbulance.setForeground(new java.awt.Color(255, 255, 255));
-        btnCreateAmbulance.setText("Create Ambulance");
-        btnCreateAmbulance.addActionListener(new java.awt.event.ActionListener() {
+        createBtn.setBackground(new java.awt.Color(0, 0, 204));
+        createBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        createBtn.setForeground(new java.awt.Color(255, 255, 255));
+        createBtn.setText("Create Ambulance");
+        createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateAmbulanceActionPerformed(evt);
+                createBtnActionPerformed(evt);
             }
         });
-        add(btnCreateAmbulance, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 150, 30));
+        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 150, 30));
 
-        ManageAmbulanceTable.setBackground(new java.awt.Color(255, 255, 204));
-        ManageAmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
+        SelectAmbulanceTable.setBackground(new java.awt.Color(255, 255, 204));
+        SelectAmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -123,31 +123,31 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(ManageAmbulanceTable);
+        jScrollPane1.setViewportView(SelectAmbulanceTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 1190, 231));
 
-        btnAssignPatient.setBackground(new java.awt.Color(0, 0, 204));
-        btnAssignPatient.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnAssignPatient.setForeground(new java.awt.Color(255, 255, 255));
-        btnAssignPatient.setText("Call Ambulance");
-        btnAssignPatient.addActionListener(new java.awt.event.ActionListener() {
+        callAmbuBtn.setBackground(new java.awt.Color(0, 0, 204));
+        callAmbuBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        callAmbuBtn.setForeground(new java.awt.Color(255, 255, 255));
+        callAmbuBtn.setText("Call Ambulance");
+        callAmbuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignPatientActionPerformed(evt);
+                callAmbuBtnActionPerformed(evt);
             }
         });
-        add(btnAssignPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 160, 30));
+        add(callAmbuBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 160, 30));
 
-        btnSubmit1.setBackground(new java.awt.Color(0, 0, 204));
-        btnSubmit1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnSubmit1.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit1.setText("Back");
-        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(0, 0, 204));
+        backBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmit1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
         jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/AmbulanceDriver.gif"))); // NOI18N
@@ -157,26 +157,26 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 50, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreateAmbulanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAmbulanceActionPerformed
+    private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         // TODO add your handling code here:
-        AmbulanceInformationJPanel ambulanceManipulationJPanel = new AmbulanceInformationJPanel(userProcessContainer, ecoSystem, userAccount);
-        userProcessContainer.add("Add Patient", ambulanceManipulationJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnCreateAmbulanceActionPerformed
+        AmbulanceInformationJPanel ambulanceManipulationJPanel = new AmbulanceInformationJPanel(userProCont, ecoSystem, userAcc);
+        userProCont.add("Add Patient", ambulanceManipulationJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_createBtnActionPerformed
 
-    private void btnAssignPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignPatientActionPerformed
+    private void callAmbuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_callAmbuBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = ManageAmbulanceTable.getSelectedRow();
+        int selectedRowIndex = SelectAmbulanceTable.getSelectedRow();
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            Ambulance ambulance = (Ambulance) ManageAmbulanceTable.getValueAt(selectedRowIndex, 0);
+            Ambulance ambulance = (Ambulance) SelectAmbulanceTable.getValueAt(selectedRowIndex, 0);
             if (!ambulance.getStatus().toLowerCase().equals("busy")) {
-                ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, ecoSystem, userAccount, ambulance);
-                userProcessContainer.add("Add Patient", receptionAmbulanceWorkAreaJPanel);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+                ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProCont, ecoSystem, userAcc, ambulance);
+                userProCont.add("Add Patient", receptionAmbulanceWorkAreaJPanel);
+                CardLayout layout = (CardLayout) userProCont.getLayout();
+                layout.next(userProCont);
             }
             else
             {
@@ -185,22 +185,22 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         }
 
-    }//GEN-LAST:event_btnAssignPatientActionPerformed
+    }//GEN-LAST:event_callAmbuBtnActionPerformed
 
-    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
-        userProcessContainer.add("Patient Bill", patientBillJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnSubmit1ActionPerformed
+        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProCont,userAcc,ecoSystem);
+        userProCont.add("Patient Bill", patientBillJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable ManageAmbulanceTable;
-    private javax.swing.JButton btnAssignPatient;
-    private javax.swing.JButton btnCreateAmbulance;
-    private javax.swing.JButton btnSubmit1;
+    private javax.swing.JTable SelectAmbulanceTable;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton callAmbuBtn;
+    private javax.swing.JButton createBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

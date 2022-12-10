@@ -29,21 +29,21 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CurrentPatientDetailsJPanel
      */
-    private final JPanel userProcessContainer;
+    private final JPanel userProCont;
     private final Ecosystem ecoSystem;
-    private User userAccount;
-    private Ambulance ambulance;
+    private User userAcc;
+    private Ambulance ambu;
 
     public CurrentPatientDetailsJPanel(JPanel userProcessContainer, User account, Ecosystem system, Ambulance ambulance) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.userAccount = account;
+        this.userProCont = userProcessContainer;
+        this.userAcc = account;
         this.ecoSystem = system;
-        this.ambulance = ambulance;
+        this.ambu = ambulance;
 
-        lblFirstName.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpFirstName());
-        lblLastName.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpLastName());
-        lblLocation.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpAccidentLocation());
+        patientFirstNameTxt.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpFirstName());
+        patientLastNameTxt.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpLastName());
+        patLocTxt.setText(ambulance.getAmbuPatientsList().get(ambulance.getAmbuPatientsList().size() - 1).getpAccidentLocation());
 
     }
 
@@ -60,13 +60,13 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
         lblPatientLastName = new javax.swing.JLabel();
         lblPatientFirstName = new javax.swing.JLabel();
         lblPatientLocation = new javax.swing.JLabel();
-        btnSetFree = new javax.swing.JButton();
+        releaseBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btnSetFree1 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        lblFirstName = new javax.swing.JTextField();
-        lblLastName = new javax.swing.JTextField();
-        lblLocation = new javax.swing.JTextField();
+        patientFirstNameTxt = new javax.swing.JTextField();
+        patientLastNameTxt = new javax.swing.JTextField();
+        patLocTxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 0, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -96,68 +96,68 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
         lblPatientLocation.setText("Patient Location");
         add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, -1, -1));
 
-        btnSetFree.setBackground(new java.awt.Color(0, 0, 204));
-        btnSetFree.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnSetFree.setForeground(new java.awt.Color(255, 255, 255));
-        btnSetFree.setText("Set Free");
-        btnSetFree.addActionListener(new java.awt.event.ActionListener() {
+        releaseBtn.setBackground(new java.awt.Color(0, 0, 204));
+        releaseBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        releaseBtn.setForeground(new java.awt.Color(255, 255, 255));
+        releaseBtn.setText("Set Free");
+        releaseBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSetFreeActionPerformed(evt);
+                releaseBtnActionPerformed(evt);
             }
         });
-        add(btnSetFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 100, 30));
+        add(releaseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 100, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 1432, 10));
 
-        btnSetFree1.setBackground(new java.awt.Color(0, 0, 204));
-        btnSetFree1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnSetFree1.setForeground(new java.awt.Color(255, 255, 255));
-        btnSetFree1.setText("Back");
-        btnSetFree1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(0, 0, 204));
+        backBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSetFree1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 90, 30));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 90, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/emergency.gif"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 430, 340));
-        add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 210, 30));
-        add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 210, 30));
-        add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 210, 30));
+        add(patientFirstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 210, 30));
+        add(patientLastNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 210, 30));
+        add(patLocTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 210, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSetFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFreeActionPerformed
+    private void releaseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_releaseBtnActionPerformed
         // TODO add your handling code here:
 
-        ambulance.setStatus("Free");
+        ambu.setStatus("Free");
         JOptionPane.showMessageDialog(null, "Status Changed To Free");
-        DisplayAmbulancePatientJPanel displayAmbulancePatientJPanel = new DisplayAmbulancePatientJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DisplayAmbulancePatientJPanel displayAmbulancePatientJPanel = new DisplayAmbulancePatientJPanel(userProCont, userAcc, ecoSystem);
+        userProCont.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
 
-    }//GEN-LAST:event_btnSetFreeActionPerformed
+    }//GEN-LAST:event_releaseBtnActionPerformed
 /**/
-    private void btnSetFree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFree1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        DisplayAmbulancePatientJPanel displayAmbulancePatientJPanel = new DisplayAmbulancePatientJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnSetFree1ActionPerformed
+        DisplayAmbulancePatientJPanel displayAmbulancePatientJPanel = new DisplayAmbulancePatientJPanel(userProCont, userAcc, ecoSystem);
+        userProCont.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProCont.getLayout();
+        layout.next(userProCont);
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSetFree;
-    private javax.swing.JButton btnSetFree1;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField lblFirstName;
-    private javax.swing.JTextField lblLastName;
-    private javax.swing.JTextField lblLocation;
     private javax.swing.JLabel lblPatientFirstName;
     private javax.swing.JLabel lblPatientLastName;
     private javax.swing.JLabel lblPatientLocation;
+    private javax.swing.JTextField patLocTxt;
+    private javax.swing.JTextField patientFirstNameTxt;
+    private javax.swing.JTextField patientLastNameTxt;
+    private javax.swing.JButton releaseBtn;
     // End of variables declaration//GEN-END:variables
 }

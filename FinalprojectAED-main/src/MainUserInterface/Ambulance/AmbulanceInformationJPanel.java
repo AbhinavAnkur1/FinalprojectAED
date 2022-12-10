@@ -23,14 +23,14 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AmbulanceManipulationJPanel
      */
-    private final JPanel userProcessContainer;
+    private final JPanel userProCont;
     private final Ecosystem ecoSystem;
-    User userAccount;
+    User userAcc;
 
     public AmbulanceInformationJPanel(JPanel userProcessContainer, Ecosystem system, User account) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.userAccount = account;
+        this.userProCont = userProcessContainer;
+        this.userAcc = account;
         this.ecoSystem = system;
     }
 
@@ -45,14 +45,14 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         lblDriverFirstName = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
+        fNameTxt = new javax.swing.JTextField();
         lblDriverLastName = new javax.swing.JLabel();
-        txtLastName = new javax.swing.JTextField();
+        lNameTxt = new javax.swing.JTextField();
         lblVehicleNumber = new javax.swing.JLabel();
-        txtVehicleNumber = new javax.swing.JTextField();
+        ambulanceNumberTxt = new javax.swing.JTextField();
         lblDriverAge = new javax.swing.JLabel();
-        txtAge = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
+        ageTxt = new javax.swing.JTextField();
+        submitBtn = new javax.swing.JButton();
         lblErrorLname = new javax.swing.JLabel();
         lblErrorFname = new javax.swing.JLabel();
         lblErrorAge = new javax.swing.JLabel();
@@ -76,12 +76,12 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         lblDriverFirstName.setText("Driver First Name");
         add(lblDriverFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, -1, -1));
 
-        txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
+        fNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtFirstNameKeyReleased(evt);
+                fNameTxtKeyReleased(evt);
             }
         });
-        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 130, 280, 30));
+        add(fNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 130, 280, 30));
 
         lblDriverLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblDriverLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -89,17 +89,17 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         lblDriverLastName.setText("Driver Last Name");
         add(lblDriverLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, -1, -1));
 
-        txtLastName.addActionListener(new java.awt.event.ActionListener() {
+        lNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLastNameActionPerformed(evt);
+                lNameTxtActionPerformed(evt);
             }
         });
-        txtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
+        lNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtLastNameKeyReleased(evt);
+                lNameTxtKeyReleased(evt);
             }
         });
-        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 180, 280, 30));
+        add(lNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 180, 280, 30));
 
         lblVehicleNumber.setBackground(new java.awt.Color(255, 255, 255));
         lblVehicleNumber.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -107,17 +107,17 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         lblVehicleNumber.setText("Vehicle Number");
         add(lblVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, -1, -1));
 
-        txtVehicleNumber.addActionListener(new java.awt.event.ActionListener() {
+        ambulanceNumberTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVehicleNumberActionPerformed(evt);
+                ambulanceNumberTxtActionPerformed(evt);
             }
         });
-        txtVehicleNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+        ambulanceNumberTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtVehicleNumberKeyReleased(evt);
+                ambulanceNumberTxtKeyReleased(evt);
             }
         });
-        add(txtVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 280, 30));
+        add(ambulanceNumberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 280, 30));
 
         lblDriverAge.setBackground(new java.awt.Color(255, 255, 255));
         lblDriverAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -125,28 +125,28 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         lblDriverAge.setText("Driver Age");
         add(lblDriverAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, -1, -1));
 
-        txtAge.addActionListener(new java.awt.event.ActionListener() {
+        ageTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAgeActionPerformed(evt);
+                ageTxtActionPerformed(evt);
             }
         });
-        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+        ageTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAgeKeyReleased(evt);
+                ageTxtKeyReleased(evt);
             }
         });
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 230, 280, 30));
+        add(ageTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 230, 280, 30));
 
-        btnSubmit.setBackground(new java.awt.Color(0, 0, 204));
-        btnSubmit.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        submitBtn.setBackground(new java.awt.Color(0, 0, 204));
+        submitBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(255, 255, 255));
+        submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                submitBtnActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 340, 90, -1));
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 340, 90, -1));
 
         lblErrorLname.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
@@ -175,96 +175,99 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, 710, 470));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
+    private void lNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLastNameActionPerformed
+    }//GEN-LAST:event_lNameTxtActionPerformed
 
-    private void txtVehicleNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleNumberActionPerformed
+    private void ambulanceNumberTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ambulanceNumberTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtVehicleNumberActionPerformed
+    }//GEN-LAST:event_ambulanceNumberTxtActionPerformed
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handlinglblErrorFnamere:
         if ((lblErrorFname.getText() == null || lblErrorFname.getText().equals(""))
                 && (lblErrorLname.getText() == null || lblErrorLname.getText().equals(""))
                 && (lblErrorAge.getText() == null || lblErrorAge.getText().equals(""))
                 && (lblErrorVNumber.getText() == null || lblErrorVNumber.getText().equals(""))) {
             Ambulance ambulance = new Ambulance();
-            ambulance.setDriverFName(txtFirstName.getText());
-            ambulance.setDriverLName(txtLastName.getText());
-            ambulance.setAge_Driver(Integer.parseInt(txtAge.getText()));
-            ambulance.setVehicleNo(txtVehicleNumber.getText());
+            ambulance.setDriverFName(fNameTxt.getText());
+            ambulance.setDriverLName(lNameTxt.getText());
+            ambulance.setAge_Driver(Integer.parseInt(ageTxt.getText()));
+            ambulance.setVehicleNo(ambulanceNumberTxt.getText());
             ambulance.setStatus("Ambulance Available");
             ecoSystem.getAmbulanceDirect().createAmbulance(ambulance);
             JOptionPane.showMessageDialog(null, "Profile Created");
 
-            AmbulanceWorkAreaJPanel ambulanceWorkAreaJPanel = new AmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
-            userProcessContainer.add("Add Patient", ambulanceWorkAreaJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            AmbulanceWorkAreaJPanel ambulanceWorkAreaJPanel = new AmbulanceWorkAreaJPanel(userProCont, userAcc, ecoSystem);
+            userProCont.add("Add Patient", ambulanceWorkAreaJPanel);
+            CardLayout layout = (CardLayout) userProCont.getLayout();
+            layout.next(userProCont);
         } else {
             JOptionPane.showMessageDialog(null, "Please Fill All Details Correctly");
         }
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_submitBtnActionPerformed
 
-    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+    private void ageTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgeActionPerformed
+    }//GEN-LAST:event_ageTxtActionPerformed
 
-    private void txtFirstNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFirstNameKeyReleased
+    private void fNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fNameTxtKeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtFirstName.getText());
+        Matcher match = pattern.matcher(fNameTxt.getText());
         if (!match.matches()) {
             lblErrorFname.setText("Wrong Input. Please Try Again.");
         } else {
             lblErrorFname.setText(null);
         }
-    }//GEN-LAST:event_txtFirstNameKeyReleased
+    }//GEN-LAST:event_fNameTxtKeyReleased
 
-    private void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLastNameKeyReleased
+    private void lNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lNameTxtKeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtLastName.getText());
+        Matcher match = pattern.matcher(lNameTxt.getText());
         if (!match.matches()) {
             lblErrorLname.setText("Wrong Input. Please Try Again.");
         } else {
             lblErrorLname.setText(null);
         }
-    }//GEN-LAST:event_txtLastNameKeyReleased
+    }//GEN-LAST:event_lNameTxtKeyReleased
 
-    private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
+    private void ageTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTxtKeyReleased
         // TODO add your handling code here:
          String PATTERN = "^[0-9]{2,3}$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtAge.getText());
+        Matcher match = pattern.matcher(ageTxt.getText());
         if (!match.matches()) {
             lblErrorAge.setText("Wrong Input. Please Try Again.");
         } else {
             lblErrorAge.setText(null);
         }
-    }//GEN-LAST:event_txtAgeKeyReleased
+    }//GEN-LAST:event_ageTxtKeyReleased
 
-    private void txtVehicleNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleNumberKeyReleased
+    private void ambulanceNumberTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ambulanceNumberTxtKeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z0-9 '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtVehicleNumber.getText());
+        Matcher match = pattern.matcher(ambulanceNumberTxt.getText());
         if (!match.matches()) {
             lblErrorVNumber.setText("Wrong Input. Please Try Again.");
         } else {
             lblErrorVNumber.setText(null);
         }
-    }//GEN-LAST:event_txtVehicleNumberKeyReleased
+    }//GEN-LAST:event_ambulanceNumberTxtKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSubmit;
+    private javax.swing.JTextField ageTxt;
+    private javax.swing.JTextField ambulanceNumberTxt;
+    private javax.swing.JTextField fNameTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField lNameTxt;
     private javax.swing.JLabel lblDriverAge;
     private javax.swing.JLabel lblDriverFirstName;
     private javax.swing.JLabel lblDriverLastName;
@@ -273,9 +276,6 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblErrorLname;
     private javax.swing.JLabel lblErrorVNumber;
     private javax.swing.JLabel lblVehicleNumber;
-    private javax.swing.JTextField txtAge;
-    private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtLastName;
-    private javax.swing.JTextField txtVehicleNumber;
+    private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
 }
