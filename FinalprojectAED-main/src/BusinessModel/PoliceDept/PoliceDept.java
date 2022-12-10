@@ -12,45 +12,45 @@ import java.util.ArrayList;
  * @author mayurchaudhari
  */
 public class PoliceDept {
-    private String policeDeptName;
-    private String policeDeptUserName;
-    private String policeDeptAddress;
-    private ArrayList<Patient> policeRecords;
+    private String deptName;
+    private String userName;
+    private String deptAddress;
+    private ArrayList<Patient> policeRecordsList;
 
     public PoliceDept() {
-        policeRecords = new ArrayList<>();
+        policeRecordsList = new ArrayList<>();
     }
 
-    public String getPoliceDeptName() {
-        return policeDeptName;
+    public String getDeptName() {
+        return deptName;
     }
 
-    public void setPoliceDeptName(String policeDeptName) {
-        this.policeDeptName = policeDeptName;
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
     }
 
-    public String getPoliceDeptUserName() {
-        return policeDeptUserName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPoliceDeptUserName(String policeDeptUserName) {
-        this.policeDeptUserName = policeDeptUserName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPoliceDeptAddress() {
-        return policeDeptAddress;
+    public String getDeptAddress() {
+        return deptAddress;
     }
 
-    public void setPoliceDeptAddress(String policeDeptAddress) {
-        this.policeDeptAddress = policeDeptAddress;
+    public void setDeptAddress(String deptAddress) {
+        this.deptAddress = deptAddress;
     }
 
-    public ArrayList<Patient> getPoliceRecords() {
-        return policeRecords;
+    public ArrayList<Patient> getPoliceRecordsList() {
+        return policeRecordsList;
     }
 
-    public void setPoliceRecords(ArrayList<Patient> policeRecords) {
-        this.policeRecords = policeRecords;
+    public void setPoliceRecordsList(ArrayList<Patient> policeRecordsList) {
+        this.policeRecordsList = policeRecordsList;
     }
     public void addtoRecord(Patient patient)
     {
@@ -62,7 +62,7 @@ public class PoliceDept {
         labRecordsList.add(p);
         }
         }*/
-        policeRecords.add(patient);
+        policeRecordsList.add(patient);
     }
     
 }

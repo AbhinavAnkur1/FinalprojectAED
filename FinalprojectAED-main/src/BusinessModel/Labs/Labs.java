@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Labs {
     
      private String lab;
-    private String email;
+    private String labEmail;
     private ArrayList<Tests> testList;
     private ArrayList<Patient> labRecordsList;
 
@@ -42,12 +42,12 @@ public class Labs {
         this.lab = lab;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLabEmail() {
+        return labEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLabEmail(String labEmail) {
+        this.labEmail = labEmail;
     }
 
     public ArrayList<Tests> getTestList() {
@@ -76,8 +76,8 @@ public class Labs {
     public void updateTests(Tests t,String name,String username, int password){
        
         t.setTestName(name);
-        t.setUsage(username);
-        t.setPrice(password);
+        t.setTestUsage(username);
+        t.setTestPrice(password);
     }
     
 }
