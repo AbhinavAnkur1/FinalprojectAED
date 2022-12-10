@@ -5,12 +5,12 @@
 package BusinessModel;
 
 import BusinessModel.Employee.Employee;
-import BusinessModel.Roles.Administrator;
+import BusinessModel.Roles.Admin;
 import BusinessModel.UserAccount.User;
 
 /**
  *
- * @author indian
+ * @author daddy
  */
 public class SystemConfiguration {
     
@@ -26,7 +26,7 @@ public class SystemConfiguration {
             System.out.println("existing employees --"+system.getEmployeeDirectory());
             Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
 
-            User ua = system.getUserAccountDirectory().createUser("sysadmin", "sysadmin", employee, new Administrator());
+            User ua = system.getUserAccountDirectory().createUser("sysadmin", "sysadmin", employee, new Admin());
 
             return system;
         }

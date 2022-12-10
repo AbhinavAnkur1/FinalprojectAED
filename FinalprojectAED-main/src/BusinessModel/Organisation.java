@@ -4,19 +4,19 @@
  */
 package BusinessModel;
 
-import BusinessModel.Employee.EmployeeDirectory;
+import BusinessModel.Employee.EmployeeDirect;
 import BusinessModel.Roles.Role;
 import BusinessModel.UserAccount.UserDirectory;
 import java.util.ArrayList;
 
 /**
  *
- * @author indian
+ * @author daddy
  */
 public abstract class Organisation {
     
     private String OrganisationName;
-    private EmployeeDirectory empDirectory;
+    private EmployeeDirect empDirectory;
     private UserDirectory userDirectory;
     private int organisationID;
     private static int counter = 0;
@@ -41,7 +41,7 @@ public abstract class Organisation {
     public Organisation(String name) {
         
         this.OrganisationName = name;
-        this.empDirectory = new EmployeeDirectory();
+        this.empDirectory = new EmployeeDirect();
         this.userDirectory = new UserDirectory();
         this.organisationID = counter;
         ++counter;
@@ -61,7 +61,7 @@ public abstract class Organisation {
         return this.organisationID;
     }
 
-    public EmployeeDirectory getEmployeeDirectory() {
+    public EmployeeDirect getEmployeeDirectory() {
         return this.empDirectory;
     }
 
