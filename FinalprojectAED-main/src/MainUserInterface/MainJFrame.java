@@ -13,6 +13,7 @@ import BusinessModel.Roles.Pharmacist;
 import BusinessModel.Roles.Police;
 import BusinessModel.Roles.Reception;
 import BusinessModel.UserAccount.User;
+import BusinessUtil.Mail.SendMail;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -202,7 +203,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -29,22 +29,24 @@ public class SendMail {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
+        //properties.put("mail.smtp.ssl.enable", "true");
+        properties.put("mail.smtp.host", "smtp.mail.yahoo.com");
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.ssl.trust", "*");
         
-        String senderEmail = "hospitalecosystemmgmt@gmail.com";
-        String senderPassword = "aed123456";
+        String senderEmail = "abhinnankit@yahoo.com";
+        String senderPassword = "plborvxxpaaprupw";
+        String userName = "abhinnankit";
         
-        Session session = Session.getInstance(properties, new Authenticator(){
-            @Override
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator(){
+            //@Override
             protected PasswordAuthentication getPasswordAuthentication(){
-                return new PasswordAuthentication(senderEmail, senderPassword);
+                return new PasswordAuthentication(userName, senderPassword);
             }
         });  
         
         Message message = prepareMessage(session,senderEmail, recepient, msg);
-        
+         
         try {
             Transport.send(message);
             System.out.println("Email sent Successfully!");
@@ -55,12 +57,14 @@ public class SendMail {
     }
 
     private static Message prepareMessage(Session session,String senderEmail, String recepientEmail, String msg){
+        
+        //recepientEmail = emailTxt.getText();
       
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepientEmail));
-            message.setSubject("Hello from AED Project");
+            message.setSubject("Your account has been created");
             message.setText(msg);
             return message;
         } catch (Exception ex) {

@@ -81,7 +81,6 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 125, 1434, 10));
 
         patientreqTable.setBackground(new java.awt.Color(255, 255, 153));
-        patientreqTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
         patientreqTable.setFont(new java.awt.Font("Futura", 1, 12)); // NOI18N
         patientreqTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         patientreqTable.setForeground(new java.awt.Color(102, 102, 0));
@@ -119,6 +118,7 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
         deliveredBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         deliveredBtn.setForeground(new java.awt.Color(255, 255, 204));
         deliveredBtn.setText("Delivered");
+        deliveredBtn.setBorder(null);
         deliveredBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deliveredBtnActionPerformed(evt);

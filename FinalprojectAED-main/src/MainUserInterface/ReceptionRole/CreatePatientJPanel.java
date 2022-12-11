@@ -132,14 +132,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(204, 0, 204));
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setText("First Name");
-        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -148,21 +148,21 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblRestaurantInfo.setText("Create Patient");
         add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 260, 80));
 
-        fNameTxt.setBackground(new java.awt.Color(255, 204, 255));
+        fNameTxt.setBackground(new java.awt.Color(200, 255, 255));
         fNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 fNameTxtKeyReleased(evt);
             }
         });
-        add(fNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 110, 40));
+        add(fNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 110, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setText("Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        lNameTxt.setBackground(new java.awt.Color(255, 204, 255));
+        lNameTxt.setBackground(new java.awt.Color(200, 255, 255));
         lNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lNameTxtActionPerformed(evt);
@@ -173,7 +173,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 lNameTxtKeyReleased(evt);
             }
         });
-        add(lNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 40));
+        add(lNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 110, 30));
 
         lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -187,7 +187,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblPatientHealthInsuranceID.setText("Insurance Id");
         add(lblPatientHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
 
-        insuranceTxt.setBackground(new java.awt.Color(255, 204, 255));
+        insuranceTxt.setBackground(new java.awt.Color(200, 255, 255));
         insuranceTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insuranceTxtActionPerformed(evt);
@@ -198,15 +198,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 insuranceTxtKeyReleased(evt);
             }
         });
-        add(insuranceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 110, 40));
+        add(insuranceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 110, 30));
 
         lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setText("Patient address");
-        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 140, 20));
+        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 140, 20));
 
-        patAddressTxt.setBackground(new java.awt.Color(255, 204, 255));
+        patAddressTxt.setBackground(new java.awt.Color(200, 255, 255));
         patAddressTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patAddressTxtActionPerformed(evt);
@@ -217,15 +217,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 patAddressTxtKeyReleased(evt);
             }
         });
-        add(patAddressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 130, 40));
+        add(patAddressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 130, 40));
 
         lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setText("Mobile Number");
-        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
 
-        mobileTxt.setBackground(new java.awt.Color(255, 204, 255));
+        mobileTxt.setBackground(new java.awt.Color(200, 255, 255));
         mobileTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mobileTxtActionPerformed(evt);
@@ -236,7 +236,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 mobileTxtKeyReleased(evt);
             }
         });
-        add(mobileTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 130, 40));
+        add(mobileTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 130, 40));
 
         lblDOB.setBackground(new java.awt.Color(255, 255, 255));
         lblDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -249,9 +249,9 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email address");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
 
-        emailTxt.setBackground(new java.awt.Color(255, 204, 255));
+        emailTxt.setBackground(new java.awt.Color(200, 255, 255));
         emailTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTxtActionPerformed(evt);
@@ -262,7 +262,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 emailTxtKeyReleased(evt);
             }
         });
-        add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 130, 40));
+        add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 130, 40));
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
         lblAddress4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -271,7 +271,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblAddress4.setText("Blood Type");
         add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 116, -1));
 
-        injuryTxt.setBackground(new java.awt.Color(255, 204, 255));
+        injuryTxt.setBackground(new java.awt.Color(200, 255, 255));
         injuryTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 injuryTxtActionPerformed(evt);
@@ -282,21 +282,21 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 injuryTxtKeyReleased(evt);
             }
         });
-        add(injuryTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 150, 40));
+        add(injuryTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 550, 150, 40));
 
         lblPhoneNumber4.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoneNumber4.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setText("Injury Type");
-        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 510, -1, -1));
+        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, -1, -1));
 
         lblRestaurantName4.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblRestaurantName4.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName4.setText("UserName");
-        add(lblRestaurantName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, -1, -1));
+        add(lblRestaurantName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, -1, -1));
 
-        userNameTxt.setBackground(new java.awt.Color(255, 204, 255));
+        userNameTxt.setBackground(new java.awt.Color(200, 255, 255));
         userNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameTxtActionPerformed(evt);
@@ -307,7 +307,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 userNameTxtKeyReleased(evt);
             }
         });
-        add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 210, 150, 40));
+        add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 190, 150, 40));
 
         submitBtn.setBackground(new java.awt.Color(0, 51, 255));
         submitBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -318,25 +318,24 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 submitBtnActionPerformed(evt);
             }
         });
-        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 490, 159, 46));
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 380, 159, 30));
 
         lblRestaurantName5.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblRestaurantName5.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setText("Password");
-        add(lblRestaurantName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 300, -1, -1));
+        add(lblRestaurantName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 280, -1, -1));
 
-        passwordTxt.setBackground(new java.awt.Color(255, 204, 255));
+        passwordTxt.setBackground(new java.awt.Color(200, 255, 255));
         passwordTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 passwordTxtKeyReleased(evt);
             }
         });
-        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 340, 150, 40));
+        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 280, 150, 40));
 
-        cashRBtn.setBackground(new java.awt.Color(255, 204, 255));
+        cashRBtn.setBackground(new java.awt.Color(200, 255, 255));
         cashRBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        cashRBtn.setForeground(new java.awt.Color(255, 255, 255));
         cashRBtn.setText("Cash Payment");
         cashRBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,9 +344,8 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         });
         add(cashRBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, -1, -1));
 
-        insuranceRBtn.setBackground(new java.awt.Color(255, 204, 255));
+        insuranceRBtn.setBackground(new java.awt.Color(200, 255, 255));
         insuranceRBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        insuranceRBtn.setForeground(new java.awt.Color(255, 255, 255));
         insuranceRBtn.setText("Insurance ");
         insuranceRBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,7 +372,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblPaymentMethod.setText("Login Credentials");
         add(lblPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, -1, -1));
 
-        genderDropDown.setBackground(new java.awt.Color(255, 204, 255));
+        genderDropDown.setBackground(new java.awt.Color(200, 255, 255));
         genderDropDown.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         genderDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         genderDropDown.addActionListener(new java.awt.event.ActionListener() {
@@ -384,7 +382,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         });
         add(genderDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 92, 30));
 
-        bloodGrpDropDown.setBackground(new java.awt.Color(255, 204, 255));
+        bloodGrpDropDown.setBackground(new java.awt.Color(200, 255, 255));
         bloodGrpDropDown.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         bloodGrpDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         bloodGrpDropDown.addActionListener(new java.awt.event.ActionListener() {
@@ -398,15 +396,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblAccidentLocation.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblAccidentLocation.setForeground(new java.awt.Color(255, 255, 255));
         lblAccidentLocation.setText("Accident Location");
-        add(lblAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, -1, 25));
+        add(lblAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, -1, 25));
 
-        accidentLocTxt.setBackground(new java.awt.Color(255, 204, 255));
+        accidentLocTxt.setBackground(new java.awt.Color(200, 255, 255));
         accidentLocTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 accidentLocTxtKeyReleased(evt);
             }
         });
-        add(accidentLocTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 150, 40));
+        add(accidentLocTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 150, 40));
 
         lblPhoto.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoto.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -414,57 +412,62 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblPhoto.setText("Photo");
         add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
 
-        lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 110, 30));
+        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
 
-        lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorLname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, 100, 30));
+        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 240, 30));
 
-        lblErrorHId.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorHId.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorHId.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 124, 21));
+        add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 470, 280, 30));
 
-        lblErrorPhone.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorPhone.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorPhone.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 600, 135, 20));
+        add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 300, 270, 30));
 
-        lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorAddress.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 130, 21));
+        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 371, 270, 30));
 
-        lblErrorEmail.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorEmail.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorEmail.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 129, 22));
+        add(lblErrorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 222, 270, 30));
 
-        lblErrorInjury.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorInjury.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorInjury.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 140, 22));
+        lblErrorInjury.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lblErrorInjuryKeyReleased(evt);
+            }
+        });
+        add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 560, 300, 22));
 
-        lblErrorUserName.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorUserName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorUserName.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 270, 200, 26));
+        add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 230, 300, 26));
 
-        lblErrorPassword.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorPassword.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorPassword.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 200, 26));
+        add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 290, 30));
 
-        lblErrorAccidentLocation.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorAccidentLocation.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         lblErrorAccidentLocation.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 116, 22));
+        add(lblErrorAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 250, 22));
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Accident Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 210, 34));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 210, 34));
 
-        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Personal Details");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 230, 31));
 
-        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Contact Details");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 190, 31));
@@ -490,10 +493,10 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
         lblPaymentMethod1.setBackground(new java.awt.Color(255, 255, 255));
-        lblPaymentMethod1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPaymentMethod1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblPaymentMethod1.setForeground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod1.setText("Payment Method");
-        add(lblPaymentMethod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, -1, -1));
+        add(lblPaymentMethod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(702, 100, 220, -1));
 
         birthdayBox.setBackground(new java.awt.Color(255, 204, 255));
         birthdayBox.setDateFormatString("MM-dd-yyyy");
@@ -504,7 +507,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 470, 10));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 400, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void lNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameTxtActionPerformed
@@ -529,7 +532,24 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(userNameTxt.getText())
+         String fname = fNameTxt.getText();
+        String lname = lNameTxt.getText();
+        String username = userNameTxt.getText();
+        String location = accidentLocTxt.getText();
+        String injury = injuryTxt.getText();
+        String email = emailTxt.getText();
+        String address = patAddressTxt.getText();
+        String mobile = mobileTxt.getText();
+        
+         if (fname.isEmpty() || lname.isEmpty() || username.isEmpty()  || location.isEmpty() || injury.isEmpty() || email.isEmpty()||address.isEmpty()||mobile.isEmpty()||birthdayBox.getDate()==null || genderDropDown.getSelectedItem()==null || bloodGrpDropDown.getSelectedItem()==null)
+              
+        {
+            JOptionPane.showMessageDialog(null, "Fields cannot be empty");
+        }
+        
+         else 
+         {
+             if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(userNameTxt.getText())
                 && (lblErrorFname.getText() == null || lblErrorFname.getText().equals(""))
                 && (lblErrorLname.getText() == null || lblErrorLname.getText().equals(""))
                 && (lblErrorAddress.getText() == null || lblErrorAddress.getText().equals(""))
@@ -588,11 +608,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProCont.getLayout();
             layout.next(userProCont);
 
-        } else {
+        }
+        
+        else
+        {
+            
             JOptionPane.showMessageDialog(null, "Invalid details");
         }
 
-
+         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
     public int CalculateAge(Date birthDate, Date currentDate) {
@@ -654,7 +678,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(fNameTxt.getText());
         if (!match.matches()) {
-            lblErrorFname.setText("Invalid!");
+            lblErrorFname.setText("Invalid!..Cannot have numbers or blank");
         } else {
             lblErrorFname.setText(null);
         }
@@ -669,7 +693,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(lNameTxt.getText());
         if (!match.matches()) {
-            lblErrorLname.setText("Invalid!");
+            lblErrorLname.setText("Invalid!..Cannot have numbers or blank");
         } else {
             lblErrorLname.setText(null);
         }
@@ -679,14 +703,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private void insuranceTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_insuranceTxtKeyReleased
         // TODO add your handling code here:
 
-        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
-        Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(insuranceTxt.getText());
-        if (!match.matches()) {
-            lblErrorHId.setText("Invalid!");
-        } else {
-            lblErrorHId.setText(null);
-        }
+       // String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        //Pattern pattern = Pattern.compile(PATTERN);
+        //Matcher match = pattern.matcher(insuranceTxt.getText());
+        //if (!match.matches()) {
+         //   lblErrorHId.setText("Invalid!");
+        //} else {
+          //  lblErrorHId.setText(null);
+        //}
 
     }//GEN-LAST:event_insuranceTxtKeyReleased
 
@@ -697,7 +721,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(patAddressTxt.getText());
         if (!match.matches()) {
-            lblErrorAddress.setText("Invalid!");
+            lblErrorAddress.setText("Invalid!..Cannot be blank");
         } else {
             lblErrorAddress.setText(null);
         }
@@ -708,11 +732,11 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private void mobileTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mobileTxtKeyReleased
         // TODO add your handling code here:
 
-        String PATTERN = "^[0-9 +()-]{10,18}$";
+        String PATTERN = "\\d{10}";
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(mobileTxt.getText());
         if (!match.matches()) {
-            lblErrorPhone.setText("Invalid!");
+            lblErrorPhone.setText("Invalid!..Should be 10 digits");
         } else {
             lblErrorPhone.setText(null);
         }
@@ -726,7 +750,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(emailTxt.getText());
         if (!match.matches()) {
-            lblErrorEmail.setText("Invalid!");
+            lblErrorEmail.setText("Invalid!..Should be in email format");
         } else {
             lblErrorEmail.setText(null);
         }
@@ -735,6 +759,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
     private void accidentLocTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accidentLocTxtKeyReleased
         // TODO add your handling code here:
+         String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(accidentLocTxt.getText());
+        if (!match.matches()) {
+            lblErrorAccidentLocation.setText("Invalid!..Cannot be blank");
+        } else {
+            lblErrorAccidentLocation.setText(null);
+        }
     }//GEN-LAST:event_accidentLocTxtKeyReleased
 
     private void injuryTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_injuryTxtKeyReleased
@@ -744,7 +776,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(injuryTxt.getText());
         if (!match.matches()) {
-            lblErrorInjury.setText("Invalid!");
+            lblErrorInjury.setText("Invalid!.Cannot be blank");
         } else {
             lblErrorInjury.setText(null);
         }
@@ -754,11 +786,11 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private void userNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userNameTxtKeyReleased
         // TODO add your handling code here:
 
-        String PATTERN = "^[a-zA-Z '/:]+$";
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(userNameTxt.getText());
         if (!match.matches()) {
-            lblErrorUserName.setText("Invalid!");
+            lblErrorUserName.setText("Invalid!..Cannot have numbers or blank");
         } else {
             lblErrorUserName.setText(null);
         }
@@ -794,6 +826,20 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private void userNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameTxtActionPerformed
+
+    private void lblErrorInjuryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblErrorInjuryKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(userNameTxt.getText());
+        if (!match.matches()) {
+            lblErrorInjury.setText("Invalid!..Cannot have numbers or blank");
+        } else {
+            lblErrorInjury.setText(null);
+        }
+
+        
+    }//GEN-LAST:event_lblErrorInjuryKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

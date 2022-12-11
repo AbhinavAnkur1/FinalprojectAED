@@ -89,34 +89,36 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
         Map_JPanel.setLayout(new java.awt.BorderLayout());
         add(Map_JPanel, java.awt.BorderLayout.CENTER);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton3.setBackground(new java.awt.Color(0, 153, 204));
         jButton3.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 153, 204));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 30, 100, 30));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 100, 30));
 
         headingLbl.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
         headingLbl.setForeground(new java.awt.Color(255, 255, 255));
         headingLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         headingLbl.setText("Route from driver's location to accident location");
-        jPanel1.add(headingLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 770, 50));
+        jPanel1.add(headingLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 770, 50));
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
         jButton2.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Get Route");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 140, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 140, 30));
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
@@ -179,7 +181,7 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
                 evt.getBrowser().setZoomLevel(-2);
             }
         });
-        browser.loadURL("C:\\Users\\siddh\\AED\\Final-Project---AED\\HospitalEcosystemManagement\\simple_map.html");
+        browser.loadURL("C:\\Users\\Indian\\Desktop\\P\\FinalprojectAED-main\\simple_map.html");
     }
 
 }
