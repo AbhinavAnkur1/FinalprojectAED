@@ -181,7 +181,7 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
                 evt.getBrowser().setZoomLevel(-2);
             }
         });
-        browser.loadURL("C:\\Users\\Indian\\Desktop\\P\\FinalprojectAED-main\\simple_map.html");
+        browser.loadURL("C:\\Users\\Indian\\Desktop\\FinalprojectAED-main\\FinalprojectAED-main\\simple_map.html");
     }
 
 }
