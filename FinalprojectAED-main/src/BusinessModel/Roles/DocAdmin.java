@@ -7,7 +7,7 @@ package BusinessModel.Roles;
 import BusinessModel.Ecosystem;
 import javax.swing.JPanel;
 import BusinessModel.UserAccount.User;
-import MainUserInterface.DoctorAdministration.DoctorAdminWorkArea;
+import MainUserInterface.DoctorAdministration.DocAdminWorkArea;
 
 /**
  *
@@ -18,7 +18,7 @@ public class DocAdmin extends Role {
     @Override
      public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
         System.out.println("inside doctors admin role---");
-        return new DoctorAdminWorkArea(userProcessContainer, user, business);
+        return new DocAdminWorkArea(userProcessContainer, user, business);
     }
 
 }
