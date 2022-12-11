@@ -94,7 +94,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(102, 102, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pharmacy");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 190, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 230, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 139, 1328, 10));
 
         addMedBtn.setBackground(new java.awt.Color(51, 51, 51));
@@ -102,7 +102,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         addMedBtn.setForeground(new java.awt.Color(255, 255, 204));
         addMedBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/add.png"))); // NOI18N
         addMedBtn.setText("Add Medicine");
-        addMedBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addMedBtn.setBorder(null);
         addMedBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addMedBtnActionPerformed(evt);
@@ -111,7 +111,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         add(addMedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 210, 40));
 
         testsTable.setBackground(new java.awt.Color(255, 255, 153));
-        testsTable.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 0))); // NOI18N
+        testsTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 204)));
         testsTable.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         testsTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         testsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -152,7 +152,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
 
         medPriceTxt.setBackground(new java.awt.Color(255, 255, 153));
         medPriceTxt.setForeground(new java.awt.Color(153, 153, 0));
-        medPriceTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 0))); // NOI18N
+        medPriceTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(153, 153, 0))); // NOI18N
         medPriceTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 medPriceTxtKeyReleased(evt);
@@ -162,12 +162,12 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
 
         medUsageTxt.setBackground(new java.awt.Color(255, 255, 153));
         medUsageTxt.setForeground(new java.awt.Color(153, 153, 0));
-        medUsageTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 0))); // NOI18N
+        medUsageTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(153, 153, 0))); // NOI18N
         add(medUsageTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 144, 30));
 
         medNameTxt.setBackground(new java.awt.Color(255, 255, 153));
         medNameTxt.setForeground(new java.awt.Color(153, 153, 0));
-        medNameTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 0))); // NOI18N
+        medNameTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(153, 153, 0))); // NOI18N
         add(medNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 144, 30));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
@@ -184,7 +184,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
 
         quantityTxt.setBackground(new java.awt.Color(255, 255, 153));
         quantityTxt.setForeground(new java.awt.Color(153, 153, 0));
-        quantityTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 0))); // NOI18N
+        quantityTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(153, 153, 0))); // NOI18N
         quantityTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 quantityTxtKeyReleased(evt);
@@ -203,7 +203,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         deleteBtn.setForeground(new java.awt.Color(255, 255, 204));
         deleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/delete.png"))); // NOI18N
         deleteBtn.setText("Delete");
-        deleteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        deleteBtn.setBorder(null);
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
@@ -216,7 +216,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         saveBtn.setForeground(new java.awt.Color(255, 255, 204));
         saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/save.png"))); // NOI18N
         saveBtn.setText("Save Update");
-        saveBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        saveBtn.setBorder(null);
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
@@ -229,7 +229,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         updateBtn.setForeground(new java.awt.Color(255, 255, 204));
         updateBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/update.png"))); // NOI18N
         updateBtn.setText("Update");
-        updateBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        updateBtn.setBorder(null);
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
@@ -243,7 +243,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         backBtn.setForeground(new java.awt.Color(255, 0, 0));
         backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
         backBtn.setText("Back");
-        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.setBorder(null);
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);

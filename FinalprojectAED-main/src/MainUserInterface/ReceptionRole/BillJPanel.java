@@ -74,7 +74,7 @@ public class BillJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 0, 204));
+        setBackground(new java.awt.Color(0, 153, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -83,10 +83,10 @@ public class BillJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 280, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 280, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 145, 1915, 10));
 
-        billTable.setBackground(new java.awt.Color(255, 204, 255));
+        billTable.setBackground(new java.awt.Color(204, 255, 255));
         billTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,13 +116,13 @@ public class BillJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(billTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 580, 251));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 580, 251));
 
         lblPatientName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPatientName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 347, 44));
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 347, 44));
 
         backBtn.setBackground(new java.awt.Color(0, 0, 255));
         backBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -140,10 +140,10 @@ public class BillJPanel extends javax.swing.JPanel {
         textBill.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         textBill.setForeground(new java.awt.Color(255, 255, 255));
         textBill.setText("Total bill amount of patient :");
-        add(textBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, -1, 30));
+        add(textBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, -1, 30));
 
-        totalAmtTxt.setBackground(new java.awt.Color(255, 204, 255));
-        add(totalAmtTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 470, 120, 30));
+        totalAmtTxt.setBackground(new java.awt.Color(200, 255, 255));
+        add(totalAmtTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, 120, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -153,7 +153,7 @@ public class BillJPanel extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 180, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-user-40.png"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-paid-bill-50.png"))); // NOI18N
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 53, 60, 50));

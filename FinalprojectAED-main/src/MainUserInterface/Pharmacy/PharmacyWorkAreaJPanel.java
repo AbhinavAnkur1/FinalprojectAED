@@ -97,6 +97,8 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable1 = new javax.swing.JTable();
         viewReqBtn2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,7 +107,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(102, 102, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pharmacy");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 200, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 200, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1221, 10));
 
         viewReqBtn.setBackground(new java.awt.Color(51, 51, 51));
@@ -118,7 +120,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
                 viewReqBtnActionPerformed(evt);
             }
         });
-        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 354, 160, 41));
+        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 340, 160, 41));
 
         updateInventoryBtn.setBackground(new java.awt.Color(51, 51, 51));
         updateInventoryBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
@@ -131,7 +133,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
                 updateInventoryBtnActionPerformed(evt);
             }
         });
-        add(updateInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 354, 220, 41));
+        add(updateInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 220, 41));
 
         managePatientTable.setBackground(new java.awt.Color(255, 255, 153));
         managePatientTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -214,7 +216,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         viewReqBtn2.setBackground(new java.awt.Color(51, 51, 51));
         viewReqBtn2.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
         viewReqBtn2.setForeground(new java.awt.Color(255, 255, 204));
-        viewReqBtn2.setText("View Request");
+        viewReqBtn2.setText("View Details");
         viewReqBtn2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         viewReqBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +227,14 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/drugstore.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel3.setText("Delivery");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 640, 50));
+
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel4.setText("Request");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 400, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtnActionPerformed
@@ -274,6 +284,8 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;

@@ -78,7 +78,7 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         insuranceCheckBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 0, 204));
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -88,7 +88,7 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 640, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 1260, 10));
 
-        ManageCustomersTable.setBackground(new java.awt.Color(255, 204, 255));
+        ManageCustomersTable.setBackground(new java.awt.Color(204, 255, 255));
         ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(

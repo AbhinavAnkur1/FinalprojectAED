@@ -76,7 +76,7 @@ public class PastRecords extends javax.swing.JPanel {
         billBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 0, 204));
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
 
@@ -87,7 +87,7 @@ public class PastRecords extends javax.swing.JPanel {
         lblManageCustomers.setText("                      Manage Patients");
         add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 590, 70));
 
-        ManageCustomersTable.setBackground(new java.awt.Color(255, 204, 255));
+        ManageCustomersTable.setBackground(new java.awt.Color(204, 255, 255));
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
