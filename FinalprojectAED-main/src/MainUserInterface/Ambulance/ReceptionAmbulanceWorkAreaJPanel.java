@@ -15,6 +15,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -75,6 +77,11 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         viewRouteBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        lblErrorLname = new javax.swing.JLabel();
+        lblErrorLocation = new javax.swing.JLabel();
+        lblErrorUsername = new javax.swing.JLabel();
+        lblErrorPassword = new javax.swing.JLabel();
+        lblErrorFname = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,26 +95,36 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientFirstName.setText("Patient First Name");
-        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, -1, -1));
+        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, -1, -1));
 
         patientFirstNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientFirstNameTxtActionPerformed(evt);
             }
         });
-        add(patientFirstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 180, 250, 30));
+        patientFirstNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                patientFirstNameTxtKeyReleased(evt);
+            }
+        });
+        add(patientFirstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 250, 30));
 
         lblPatientLocation.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLocation.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLocation.setText("Patient Location");
-        add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 280, 174, -1));
+        add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 174, -1));
 
         patientLocTx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientLocTxActionPerformed(evt);
             }
         });
-        add(patientLocTx, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 280, 250, 30));
+        patientLocTx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                patientLocTxKeyReleased(evt);
+            }
+        });
+        add(patientLocTx, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 250, 30));
 
         submitBtn.setBackground(new java.awt.Color(0, 0, 204));
         submitBtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -118,31 +135,48 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 submitBtnActionPerformed(evt);
             }
         });
-        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 440, 100, 30));
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 100, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLastName.setText("Patient Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 230, -1, -1));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
 
         patientLastNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientLastNameTxtActionPerformed(evt);
             }
         });
-        add(patientLastNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 230, 250, 30));
+        patientLastNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                patientLastNameTxtKeyReleased(evt);
+            }
+        });
+        add(patientLastNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 250, 30));
 
         lblPatientUserName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientUserName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientUserName.setText("Patient User Name");
-        add(lblPatientUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 340, -1, 20));
+        add(lblPatientUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 400, -1, 20));
 
         lblPatientPassword.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPassword.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientPassword.setText("Patient Password");
-        add(lblPatientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, -1, -1));
-        add(patientPasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 390, 250, 30));
-        add(patientUserNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 330, 250, 30));
+        add(lblPatientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, -1, -1));
+
+        patientPasswordTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                patientPasswordTxtKeyReleased(evt);
+            }
+        });
+        add(patientPasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 250, 30));
+
+        patientUserNameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                patientUserNameTxtKeyReleased(evt);
+            }
+        });
+        add(patientUserNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 250, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
         viewRouteBtn.setBackground(new java.awt.Color(0, 0, 204));
@@ -154,10 +188,25 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 viewRouteBtnActionPerformed(evt);
             }
         });
-        add(viewRouteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 440, 130, 30));
+        add(viewRouteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, 130, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/register emergency.gif"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 520, 390));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 520, 390));
+
+        lblErrorLname.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 350, 30));
+
+        lblErrorLocation.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 380, 30));
+
+        lblErrorUsername.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 360, 30));
+
+        lblErrorPassword.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 370, 30));
+
+        lblErrorFname.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 380, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void patientLocTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientLocTxActionPerformed
@@ -166,6 +215,22 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
+        
+         String fname = patientFirstNameTxt.getText();
+        String lname = patientLastNameTxt.getText();
+        String location = patientLocTx.getText();
+        String username = patientUserNameTxt.getText();
+        String password = patientPasswordTxt.getText();
+        
+        if(fname.isEmpty() || lname.isEmpty()|| username.isEmpty() || password.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                "Enter all Fields",
+                "Try Again",
+                JOptionPane.ERROR_MESSAGE);
+      }
+        else
+        {
+        
         if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(patientUserNameTxt.getText())) {
             
             Patient patient = new Patient(patientUserNameTxt.getText());
@@ -198,7 +263,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("Reception Work Area", receptionWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+        } 
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void viewRouteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRouteBtnActionPerformed
@@ -233,11 +298,76 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_patientLastNameTxtActionPerformed
 
+    private void patientFirstNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientFirstNameTxtKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(patientFirstNameTxt.getText());
+        if (!match.matches()) {
+            lblErrorFname.setText("Wrong Input. Please Try Again.");
+        } else {
+            lblErrorFname.setText(null);
+        }
+    }//GEN-LAST:event_patientFirstNameTxtKeyReleased
+
+    private void patientLastNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientLastNameTxtKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(patientLastNameTxt.getText());
+        if (!match.matches()) {
+            lblErrorLname.setText("Wrong Input. Please Try Again.");
+        } else {
+            lblErrorLname.setText(null);
+        }
+    }//GEN-LAST:event_patientLastNameTxtKeyReleased
+
+    private void patientLocTxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientLocTxKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(patientLocTx.getText());
+        if (!match.matches()) {
+            lblErrorLocation.setText("Wrong Input. Please Try Again.");
+        } else {
+            lblErrorLocation.setText(null);
+        }
+    }//GEN-LAST:event_patientLocTxKeyReleased
+
+    private void patientUserNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientUserNameTxtKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(patientUserNameTxt.getText());
+        if (!match.matches()) {
+            lblErrorUsername.setText("Wrong Input. Please Try Again.");
+        } else {
+            lblErrorUsername.setText(null);
+        }
+    }//GEN-LAST:event_patientUserNameTxtKeyReleased
+
+    private void patientPasswordTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientPasswordTxtKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(patientPasswordTxt.getText());
+        if (!match.matches()) {
+            lblErrorPassword.setText("Wrong Input. Please Try Again.");
+        } else {
+            lblErrorPassword.setText(null);
+        }
+    }//GEN-LAST:event_patientPasswordTxtKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblErrorFname;
+    private javax.swing.JLabel lblErrorLname;
+    private javax.swing.JLabel lblErrorLocation;
+    private javax.swing.JLabel lblErrorPassword;
+    private javax.swing.JLabel lblErrorUsername;
     private javax.swing.JLabel lblPatientFirstName;
     private javax.swing.JLabel lblPatientLastName;
     private javax.swing.JLabel lblPatientLocation;
