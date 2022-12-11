@@ -9,10 +9,15 @@ import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
 import BusinessModel.Doctor.Dr;
 import BusinessModel.Ecosystem;
-import BusinessModel.Roles.Doctor_role;
-import BusinessModel.Roles.Patient_role;
+import BusinessModel.Roles.RoleDoc;
+import BusinessModel.Roles.RolePatient;
 import BusinessModel.UserAccount.User;
 import java.awt.Image;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -39,16 +44,22 @@ public class DocUpdate extends javax.swing.JPanel {
         this.doc=d;
         txtAddress.setText(d.getdocAddress());
         txtAge.setText(Integer.toHexString(d.getdocAge()));
-        //txtDateOfBirth.setText(doc.getDateofBirth());
+       birthDateCalender.setDate(d.getdocDOB());
         txtDoctorID.setText(d.getdocWorkID());
         txtEmail.setText(d.getdocEmail());
         txtExperience.setText(d.getdocExp());
         txtFirstName.setText(d.getdocFirstName());
         txtLastName.setText(d.getdocLastName());
-        txtGender.setText(d.getdocGender());
+        //txtGender.setText(d.getdocGender());
         txtPhoneNumber.setText(d.getdocMNo());
         txtSpecialist.setText(d.getdocSpecialization());
         txtUsername.setText(d.getdocUserName());
+        GenderDropDownList.setSelectedItem(doc.getdocGender());
+        
+        GenderDropDownList.removeAllItems();
+        GenderDropDownList.addItem("Male");
+        GenderDropDownList.addItem("Female");
+        GenderDropDownList.addItem("OthGenderDropDownLister");
     }
 
     
@@ -73,13 +84,11 @@ public class DocUpdate extends javax.swing.JPanel {
         lblAddress = new javax.swing.JLabel();
         txtAge = new javax.swing.JTextField();
         lblRestaurantName1 = new javax.swing.JLabel();
-        txtGender = new javax.swing.JTextField();
         lblPhoneNumber1 = new javax.swing.JLabel();
         txtDoctorID = new javax.swing.JTextField();
         lblAddress1 = new javax.swing.JLabel();
         txtPhoneNumber = new javax.swing.JTextField();
         lblRestaurantName2 = new javax.swing.JLabel();
-        txtDateOfBirth = new javax.swing.JTextField();
         lblPhoneNumber2 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblAddress2 = new javax.swing.JLabel();
@@ -92,10 +101,22 @@ public class DocUpdate extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         updateBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        birthDateCalender = new com.toedter.calendar.JDateChooser();
+        GenderDropDownList = new javax.swing.JComboBox<>();
+        lblErrorSpecialist = new javax.swing.JLabel();
+        ErrorUserNameLbl1 = new javax.swing.JLabel();
+        lblErrorFname2 = new javax.swing.JLabel();
+        ErrorEmailLbl2 = new javax.swing.JLabel();
+        ErrorPhoneLbl4 = new javax.swing.JLabel();
+        lblErrorWorkExperience1 = new javax.swing.JLabel();
+        lblErrorDoctorWorkID2 = new javax.swing.JLabel();
+        lblErrorLname1 = new javax.swing.JLabel();
+        lblErrorAddress1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRestaurantName.setBackground(new java.awt.Color(0, 0, 0));
@@ -112,6 +133,16 @@ public class DocUpdate extends javax.swing.JPanel {
         jPanel1.add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 280, -1));
 
         txtFirstName.setBackground(new java.awt.Color(153, 153, 153));
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameActionPerformed(evt);
+            }
+        });
+        txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFirstNameKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 170, 33));
 
         lblPhoneNumber.setBackground(new java.awt.Color(0, 0, 0));
@@ -126,6 +157,11 @@ public class DocUpdate extends javax.swing.JPanel {
                 txtLastNameActionPerformed(evt);
             }
         });
+        txtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtLastNameKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 190, 185, 30));
 
         lblAddress.setBackground(new java.awt.Color(0, 0, 0));
@@ -134,6 +170,7 @@ public class DocUpdate extends javax.swing.JPanel {
         lblAddress.setText("Age");
         jPanel1.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 40, -1));
 
+        txtAge.setEditable(false);
         txtAge.setBackground(new java.awt.Color(153, 153, 153));
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,14 +185,6 @@ public class DocUpdate extends javax.swing.JPanel {
         lblRestaurantName1.setText("Gender");
         jPanel1.add(lblRestaurantName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 80, 30));
 
-        txtGender.setBackground(new java.awt.Color(153, 153, 153));
-        txtGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGenderActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 250, 180, 30));
-
         lblPhoneNumber1.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoneNumber1.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,6 +195,11 @@ public class DocUpdate extends javax.swing.JPanel {
         txtDoctorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDoctorIDActionPerformed(evt);
+            }
+        });
+        txtDoctorID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDoctorIDKeyReleased(evt);
             }
         });
         jPanel1.add(txtDoctorID, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, 185, 33));
@@ -182,6 +216,11 @@ public class DocUpdate extends javax.swing.JPanel {
                 txtPhoneNumberActionPerformed(evt);
             }
         });
+        txtPhoneNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPhoneNumberKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 170, 30));
 
         lblRestaurantName2.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,14 +228,6 @@ public class DocUpdate extends javax.swing.JPanel {
         lblRestaurantName2.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName2.setText("Date of Birth");
         jPanel1.add(lblRestaurantName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 370, 120, 30));
-
-        txtDateOfBirth.setBackground(new java.awt.Color(153, 153, 153));
-        txtDateOfBirth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDateOfBirthActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 370, 180, 30));
 
         lblPhoneNumber2.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -208,6 +239,11 @@ public class DocUpdate extends javax.swing.JPanel {
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
+            }
+        });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmailKeyReleased(evt);
             }
         });
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 170, 30));
@@ -224,6 +260,11 @@ public class DocUpdate extends javax.swing.JPanel {
                 txtSpecialistActionPerformed(evt);
             }
         });
+        txtSpecialist.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSpecialistKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 430, 180, 30));
 
         lblAddress3.setBackground(new java.awt.Color(255, 255, 255));
@@ -236,6 +277,11 @@ public class DocUpdate extends javax.swing.JPanel {
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
+            }
+        });
+        txtAddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAddressKeyReleased(evt);
             }
         });
         jPanel1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 310, 180, 30));
@@ -252,6 +298,11 @@ public class DocUpdate extends javax.swing.JPanel {
                 txtExperienceActionPerformed(evt);
             }
         });
+        txtExperience.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtExperienceKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 170, 30));
 
         txtUsername.setEditable(false);
@@ -259,6 +310,11 @@ public class DocUpdate extends javax.swing.JPanel {
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
+            }
+        });
+        txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtUsernameKeyReleased(evt);
             }
         });
         jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 174, 33));
@@ -281,21 +337,51 @@ public class DocUpdate extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/doctor gif2 resized.gif"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 220, 220));
+        jPanel1.add(birthDateCalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 380, 180, -1));
+
+        GenderDropDownList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(GenderDropDownList, new org.netbeans.lib.awtextra.AbsoluteConstraints(1122, 250, 180, -1));
+
+        lblErrorSpecialist.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 470, 290, 30));
+
+        ErrorUserNameLbl1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(ErrorUserNameLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 320, 30));
+
+        lblErrorFname2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorFname2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 320, 30));
+
+        ErrorEmailLbl2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(ErrorEmailLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 310, 30));
+
+        ErrorPhoneLbl4.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(ErrorPhoneLbl4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 330, 30));
+
+        lblErrorWorkExperience1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorWorkExperience1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, 340, 30));
+
+        lblErrorDoctorWorkID2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorDoctorWorkID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 160, 270, 30));
+
+        lblErrorLname1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorLname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 220, 250, 30));
+
+        lblErrorAddress1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblErrorAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 340, 350, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(179, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1542, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(2846, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -303,10 +389,6 @@ public class DocUpdate extends javax.swing.JPanel {
     private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLastNameActionPerformed
-
-    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgeActionPerformed
 
     private void txtDoctorIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoctorIDActionPerformed
         // TODO add your handling code here:
@@ -324,14 +406,6 @@ public class DocUpdate extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSpecialistActionPerformed
 
-    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGenderActionPerformed
-
-    private void txtDateOfBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateOfBirthActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDateOfBirthActionPerformed
-
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed
@@ -342,19 +416,40 @@ public class DocUpdate extends javax.swing.JPanel {
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        String name = txtFirstName.getText();
+        String lastname = txtLastName.getText();
+        String doctorId = txtDoctorID.getText();
+        String address = txtAddress.getText();
+        String phoneNumber = txtPhoneNumber.getText();
+        String mail = txtEmail.getText();
+        String specialist = txtSpecialist.getText();
+        String exp = txtExperience.getText();
+        String username = txtUsername.getText();
+        if(name.isEmpty() || lastname.isEmpty() || doctorId.isEmpty() || address.isEmpty()
+            || phoneNumber.isEmpty() || mail.isEmpty() || specialist.isEmpty() || exp.isEmpty()
+            || username.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                "Enter all Fields",
+                "Try Again",
+                JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+        
        doc.setdocFirstName(txtFirstName.getText());
         doc.setdocLastName(txtLastName.getText());
-       doc.setdocAge(Integer.parseInt( txtAge.getText()));
-        doc.setdocGender(txtGender.getText());
+       doc.setdocAge(CalculateAge(birthDateCalender.getDate(), java.util.Calendar.getInstance().getTime()));
+        doc.setdocGender((String) GenderDropDownList.getSelectedItem());
         doc.setdocWorkID(txtDoctorID.getText());
         doc.setdocAddress(txtAddress.getText());
         doc.setdocMNo(txtPhoneNumber.getText());
-        //doctor.setDateofBirth(txtDateOfBirth.getText());
+        doc.setdocDOB(birthDateCalender.getDate());
         doc.setdocEmail(txtEmail.getText());
         doc.setdocSpecialization(txtSpecialist.getText());
         doc.setdocExp(txtExperience.getText());
-        //d.setUserName(txtUsername.getText());
+        doc.setdocUserName(txtUsername.getText());
         JOptionPane.showMessageDialog(null, "Update Complete.");
+        }
         
     }//GEN-LAST:event_updateBtnActionPerformed
 
@@ -362,8 +457,137 @@ public class DocUpdate extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
 
+    private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtUsername.getText());
+        if (!match.matches()) {
+            ErrorUserNameLbl1.setText("Invalid!..Cannot be blank");
+        } else {
+           ErrorUserNameLbl1.setText(null);
+        }
+    }//GEN-LAST:event_txtUsernameKeyReleased
+
+    private void txtFirstNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFirstNameKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtFirstName.getText());
+        if (!match.matches()) {
+            lblErrorFname2.setText("Invalid!..Cannot be blank and no numbers");
+        } else {
+           lblErrorFname2.setText(null);
+        }
+                
+    }//GEN-LAST:event_txtFirstNameKeyReleased
+
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9]{0,30}[@][a-zA-Z0-9]{0,10}[.][a-zA-Z]{0,5}$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtEmail.getText());
+        if (!match.matches()) {
+           ErrorEmailLbl2.setText("Invalid!..Should be in email format");
+        } else {
+            ErrorEmailLbl2.setText(null);
+        }
+    }//GEN-LAST:event_txtEmailKeyReleased
+
+    private void txtPhoneNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneNumberKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "\\d{10}";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtPhoneNumber.getText());
+        if (!match.matches()) {
+            ErrorPhoneLbl4.setText("Invalid!..Should have only 10 digits");
+        } else {
+            ErrorPhoneLbl4.setText(null);
+        }
+    }//GEN-LAST:event_txtPhoneNumberKeyReleased
+
+    private void txtExperienceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtExperienceKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[0-9]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtExperience.getText());
+        if (!match.matches()) {
+            lblErrorWorkExperience1.setText("Invalid!..Cannot be blank");
+        } else {
+            lblErrorWorkExperience1.setText(null);
+        }
+    }//GEN-LAST:event_txtExperienceKeyReleased
+
+    private void txtDoctorIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoctorIDKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtDoctorID.getText());
+        if (!match.matches()) {
+            lblErrorDoctorWorkID2.setText("Invalid!..Cannot be blank");
+        } else {
+            lblErrorDoctorWorkID2.setText(null);
+        }
+    }//GEN-LAST:event_txtDoctorIDKeyReleased
+
+    private void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLastNameKeyReleased
+        // TODO add your handling code here:
+         String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtLastName.getText());
+        if (!match.matches()) {
+            lblErrorLname1.setText("Invalid!..Cannot be blank");
+        } else {
+           lblErrorLname1.setText(null);
+        }
+    }//GEN-LAST:event_txtLastNameKeyReleased
+
+    private void txtAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddressKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtAddress.getText());
+        if (!match.matches()) {
+            lblErrorAddress1.setText("Invalid!..Cannot be blank");
+        } else {
+            lblErrorAddress1.setText(null);
+        }
+    }//GEN-LAST:event_txtAddressKeyReleased
+
+    private void txtSpecialistKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSpecialistKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[a-zA-Z '/:]+$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtSpecialist.getText());
+        if (!match.matches()) {
+            lblErrorSpecialist.setText("Invalid!..Cannot be blank");
+        } else {
+            lblErrorSpecialist.setText(null);
+        }
+    }//GEN-LAST:event_txtSpecialistKeyReleased
+
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeActionPerformed
+public int CalculateAge(Date birthDate, Date currentDate) {
+        // validate inputs ...                                                                               
+        DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        int d1 = Integer.parseInt(formatter.format(birthDate));
+        int d2 = Integer.parseInt(formatter.format(currentDate));
+        int age = (d2 - d1) / 10000;
+        return age;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ErrorEmailLbl2;
+    private javax.swing.JLabel ErrorPhoneLbl4;
+    private javax.swing.JLabel ErrorUserNameLbl1;
+    private javax.swing.JComboBox<String> GenderDropDownList;
+    private com.toedter.calendar.JDateChooser birthDateCalender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -372,6 +596,12 @@ public class DocUpdate extends javax.swing.JPanel {
     private javax.swing.JLabel lblAddress2;
     private javax.swing.JLabel lblAddress3;
     private javax.swing.JLabel lblAddress4;
+    private javax.swing.JLabel lblErrorAddress1;
+    private javax.swing.JLabel lblErrorDoctorWorkID2;
+    private javax.swing.JLabel lblErrorFname2;
+    private javax.swing.JLabel lblErrorLname1;
+    private javax.swing.JLabel lblErrorSpecialist;
+    private javax.swing.JLabel lblErrorWorkExperience1;
     private javax.swing.JLabel lblPhoneNumber;
     private javax.swing.JLabel lblPhoneNumber1;
     private javax.swing.JLabel lblPhoneNumber2;
@@ -381,12 +611,10 @@ public class DocUpdate extends javax.swing.JPanel {
     private javax.swing.JLabel lblRestaurantName2;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAge;
-    private javax.swing.JTextField txtDateOfBirth;
     private javax.swing.JTextField txtDoctorID;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtExperience;
     private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtPhoneNumber;
     private javax.swing.JTextField txtSpecialist;

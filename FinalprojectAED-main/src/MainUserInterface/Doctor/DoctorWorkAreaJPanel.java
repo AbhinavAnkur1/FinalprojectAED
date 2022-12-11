@@ -13,8 +13,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import MainUserInterface.DoctorAdministration.DisplayPatientInfoJPanel;
-import MainUserInterface.Lab.LabWorkAreaJPanel;
+import MainUserInterface.DoctorAdministration.DisplayPatientInformation;
+import MainUserInterface.Lab.LabWorkArea;
 import MainUserInterface.Pharmacy.PharmacyWorkAreaJPanel;
 
 /**
@@ -246,16 +246,16 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 7);
-            if(patient.getpStatus().equals("Doctor Visiting")){
-            JOptionPane.showMessageDialog(null, "Patient is in visit.", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-            else{
+//            if(patient.getpStatus().equals("Doctor Visiting")){
+//            JOptionPane.showMessageDialog(null, "Patient is in visit.", "Warning", JOptionPane.WARNING_MESSAGE);
+//            }
+//            else{
             patient.setpStatus("Doctor Visiting");
             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProCont, userAcc, ecoSystem, patient);
             userProCont.add("Visit Doctor", doctorVisit);
             CardLayout layout = (CardLayout) userProCont.getLayout();
             layout.next(userProCont);
-            }
+//            }
         }
         
         

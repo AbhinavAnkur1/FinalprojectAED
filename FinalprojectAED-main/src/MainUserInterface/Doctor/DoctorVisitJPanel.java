@@ -80,7 +80,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BillTable.setBackground(new java.awt.Color(204, 255, 204));
-        BillTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        BillTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 102)));
         BillTable.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,7 +118,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient History");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 280, 50));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 420, 50));
 
         requestLabTestsBtn.setBackground(new java.awt.Color(204, 255, 204));
         requestLabTestsBtn.setFont(new java.awt.Font("Futura", 1, 18)); // NOI18N
@@ -164,7 +164,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
                 readyToDischargeBtnActionPerformed(evt);
             }
         });
-        add(readyToDischargeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 220, 50));
+        add(readyToDischargeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, 220, 50));
 
         endVisitBtn.setBackground(new java.awt.Color(255, 0, 0));
         endVisitBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
@@ -175,11 +175,11 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
                 endVisitBtnActionPerformed(evt);
             }
         });
-        add(endVisitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 380, 120, 50));
+        add(endVisitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, 120, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/phistory.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 50, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestLabTestsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestLabTestsBtnActionPerformed

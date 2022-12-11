@@ -98,7 +98,6 @@ public class DocAdminWorkArea extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         assignDocBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setPreferredSize(new java.awt.Dimension(1227, 722));
@@ -241,9 +240,6 @@ public class DocAdminWorkArea extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Doctors");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/doctor and patient22.gif"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 210, 170));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createDocBtnActionPerformed
@@ -313,7 +309,6 @@ public class DocAdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton deleteDocBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageCustomers;

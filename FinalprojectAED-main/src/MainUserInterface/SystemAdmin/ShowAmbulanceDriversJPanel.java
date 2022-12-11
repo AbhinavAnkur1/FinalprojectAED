@@ -66,7 +66,7 @@ public class ShowAmbulanceDriversJPanel extends javax.swing.JPanel {
                 evt.getBrowser().setZoomLevel(-2);
             }
         });
-        search.loadURL("C:\\Users\\Indian\\Desktop\\HospitalEcosystem_Editing\\simple_map2.html");
+        search.loadURL("C:\\Users\\Indian\\Desktop\\AEDpro\\FinalprojectAED-main.2 \\FinalprojectAED-main\\simple_map2.html");
     }
 
     /**

@@ -113,7 +113,7 @@ public class LabWorkArea extends javax.swing.JPanel {
                 availTestInformationBtnActionPerformed(evt);
             }
         });
-        add(availTestInformationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 210, -1));
+        add(availTestInformationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 210, -1));
 
         managePatientTable1.setBackground(new java.awt.Color(153, 255, 153));
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -162,7 +162,7 @@ public class LabWorkArea extends javax.swing.JPanel {
                 viewReqBtnActionPerformed(evt);
             }
         });
-        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 150, 30));
+        add(viewReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel2.setText("Past Requests");
@@ -175,7 +175,7 @@ public class LabWorkArea extends javax.swing.JPanel {
         viewRequBtn.setBackground(new java.awt.Color(0, 0, 255));
         viewRequBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         viewRequBtn.setForeground(new java.awt.Color(255, 255, 255));
-        viewRequBtn.setText("View Request");
+        viewRequBtn.setText("View Details");
         viewRequBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewRequBtnActionPerformed(evt);

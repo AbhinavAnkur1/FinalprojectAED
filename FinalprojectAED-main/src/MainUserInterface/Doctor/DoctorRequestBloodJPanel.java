@@ -66,7 +66,7 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
 
         selectBloodBagQuantityDropDown.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         selectBloodBagQuantityDropDown.setForeground(new java.awt.Color(0, 102, 102));
-        selectBloodBagQuantityDropDown.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        selectBloodBagQuantityDropDown.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         selectBloodBagQuantityDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectBloodBagQuantityDropDownActionPerformed(evt);
@@ -83,7 +83,7 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         processReqBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
         processReqBtn.setForeground(new java.awt.Color(255, 0, 0));
         processReqBtn.setText("Process Request");
-        processReqBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        processReqBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         processReqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processReqBtnActionPerformed(evt);
@@ -94,7 +94,7 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         backBtn.setFont(new java.awt.Font("Futura", 0, 18)); // NOI18N
         backBtn.setForeground(new java.awt.Color(0, 102, 102));
         backBtn.setText("<< BACK");
-        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
