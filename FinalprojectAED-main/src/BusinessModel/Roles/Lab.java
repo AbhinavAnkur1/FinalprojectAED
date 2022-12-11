@@ -7,7 +7,7 @@ package BusinessModel.Roles;
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
-import MainUserInterface.Lab.LabWorkAreaJPanel;
+import MainUserInterface.Lab.LabWorkArea;
 
 
 /**
@@ -19,7 +19,7 @@ public class Lab extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
         System.out.println("inside createWork Area for Lab");
-        return new LabWorkAreaJPanel(userProcessContainer, user, business);
+        return new LabWorkArea(userProcessContainer, user, business);
     }
     
 }
