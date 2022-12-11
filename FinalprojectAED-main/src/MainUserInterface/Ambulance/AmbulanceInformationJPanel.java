@@ -151,22 +151,22 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
         lblErrorLname.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorLname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 490, 255, 26));
+        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 180, 255, 26));
 
         lblErrorFname.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 430, 255, 26));
+        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 130, 255, 26));
 
         lblErrorAge.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorAge.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAge.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 550, 255, 26));
+        add(lblErrorAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 230, 255, 26));
 
         lblErrorVNumber.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorVNumber.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorVNumber.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorVNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 610, 255, 26));
+        add(lblErrorVNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 280, 255, 26));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
@@ -185,6 +185,20 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handlinglblErrorFnamere:
+        String fname = fNameTxt.getText();
+        String lname = lNameTxt.getText();
+        int age = Integer.parseInt(ageTxt.getText());
+        String vehicle = ambulanceNumberTxt.getText();
+        
+        if(fname.isEmpty() || lname.isEmpty()|| age == 0 || vehicle.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                "Enter all Fields",
+                "Try Again",
+                JOptionPane.ERROR_MESSAGE);
+      }
+        else
+        {
+        
         if ((lblErrorFname.getText() == null || lblErrorFname.getText().equals(""))
                 && (lblErrorLname.getText() == null || lblErrorLname.getText().equals(""))
                 && (lblErrorAge.getText() == null || lblErrorAge.getText().equals(""))
@@ -206,7 +220,7 @@ public class AmbulanceInformationJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Fill All Details Correctly");
         }
     }//GEN-LAST:event_submitBtnActionPerformed
-
+    }
     private void ageTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ageTxtActionPerformed
