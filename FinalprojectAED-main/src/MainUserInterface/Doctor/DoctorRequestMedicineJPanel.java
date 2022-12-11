@@ -124,10 +124,10 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Request Medicines");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 350, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 400, -1));
 
         selectedMedicineTable.setBackground(new java.awt.Color(204, 255, 204));
-        selectedMedicineTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        selectedMedicineTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         selectedMedicineTable.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
         selectedMedicineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -160,7 +160,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 500, 170));
 
         availableMedicineTable.setBackground(new java.awt.Color(204, 204, 204));
-        availableMedicineTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        availableMedicineTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         availableMedicineTable.setFont(new java.awt.Font("Futura", 1, 14)); // NOI18N
         availableMedicineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,7 +196,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         removeMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         removeMedicineBtn.setForeground(new java.awt.Color(255, 255, 255));
         removeMedicineBtn.setText("<< REMOVE");
-        removeMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        removeMedicineBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 51)));
         removeMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeMedicineBtnActionPerformed(evt);
@@ -208,7 +208,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         addMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         addMedicineBtn.setForeground(new java.awt.Color(0, 102, 102));
         addMedicineBtn.setText("ADD >>");
-        addMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addMedicineBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         addMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addMedicineBtnActionPerformed(evt);
@@ -219,7 +219,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         requestMedicineBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         requestMedicineBtn.setForeground(new java.awt.Color(255, 0, 51));
         requestMedicineBtn.setText("REQUEST MEDICINE");
-        requestMedicineBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        requestMedicineBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         requestMedicineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestMedicineBtnActionPerformed(evt);
@@ -231,7 +231,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         backBtn.setForeground(new java.awt.Color(255, 0, 51));
         backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
         backBtn.setText(" BACK");
-        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);

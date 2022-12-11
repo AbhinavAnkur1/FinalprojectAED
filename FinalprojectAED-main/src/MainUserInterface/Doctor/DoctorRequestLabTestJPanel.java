@@ -127,7 +127,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 500, 60));
 
         selectedTestsTable.setBackground(new java.awt.Color(204, 255, 204));
-        selectedTestsTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        selectedTestsTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         selectedTestsTable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
         selectedTestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -160,7 +160,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 430, 210));
 
         availbleTestsTable.setBackground(new java.awt.Color(204, 204, 204));
-        availbleTestsTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        availbleTestsTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         availbleTestsTable.setFont(new java.awt.Font("Futura", 0, 14)); // NOI18N
         availbleTestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,7 +196,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         addBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         addBtn.setForeground(new java.awt.Color(0, 102, 102));
         addBtn.setText("ADD >>");
-        addBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        addBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
@@ -208,7 +208,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         removeTestBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         removeTestBtn.setForeground(new java.awt.Color(255, 255, 255));
         removeTestBtn.setText("<< REMOVE ");
-        removeTestBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        removeTestBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
         removeTestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeTestBtnActionPerformed(evt);
@@ -219,7 +219,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         requestBtn.setFont(new java.awt.Font("Futura", 0, 12)); // NOI18N
         requestBtn.setForeground(new java.awt.Color(255, 0, 0));
         requestBtn.setText("REQUEST TESTS");
-        requestBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        requestBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         requestBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestBtnActionPerformed(evt);
@@ -231,7 +231,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         backBtn.setForeground(new java.awt.Color(255, 0, 0));
         backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/back.png"))); // NOI18N
         backBtn.setText("BACK");
-        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.gray));
+        backBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);

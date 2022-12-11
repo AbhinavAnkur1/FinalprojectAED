@@ -3,7 +3,7 @@ package MainUserInterface.SystemAdmin;
 import BusinessModel.Ecosystem;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
-import MainUserInterface.DoctorAdministration.CreateDoctorJPanel;
+import MainUserInterface.DoctorAdministration.CreateDoc;
 
 public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -79,7 +79,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageDocBtnActionPerformed
-        CreateDoctorJPanel doctorAdministratorWorkAreaJPanel = new CreateDoctorJPanel(userProCont, null, ecoSystem);
+        CreateDoc doctorAdministratorWorkAreaJPanel = new CreateDoc(userProCont, null, ecoSystem);
         userProCont.add("Manage Doctors", doctorAdministratorWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProCont.getLayout();
         layout.next(userProCont);

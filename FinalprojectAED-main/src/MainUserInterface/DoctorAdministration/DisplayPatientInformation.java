@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import MainUserInterface.Ambulance.DisplayAmbulancePatient;
+import MainUserInterface.Ambulance.DisplayAmbulancePatientJPanel;
 
 /**
  *

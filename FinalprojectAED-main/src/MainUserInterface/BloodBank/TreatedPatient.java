@@ -71,7 +71,8 @@ public class TreatedPatient extends javax.swing.JPanel {
         backBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(237, 247, 247));
+        setBackground(new java.awt.Color(0, 195, 232));
+        setForeground(new java.awt.Color(0, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ManagePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -108,7 +109,7 @@ public class TreatedPatient extends javax.swing.JPanel {
             ManagePatientTable.getColumnModel().getColumn(8).setMaxWidth(0);
         }
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 1190, 191));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 1120, 191));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
@@ -128,8 +129,8 @@ public class TreatedPatient extends javax.swing.JPanel {
         });
         add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/patient history.gif"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 510, 470));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/patient details787878.gif"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 940, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed

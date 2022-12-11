@@ -7,7 +7,7 @@ package MainUserInterface.DoctorAdministration;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.Doctor.Dr;
-import BusinessModel.Roles.Doctor_role;
+import BusinessModel.Roles.RoleDoc;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
@@ -22,7 +22,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import MainUserInterface.ReceptionRole.ReceptionWorkArea;
+import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *
@@ -49,6 +49,9 @@ public class CreateDoc extends javax.swing.JPanel {
         genderDropDown.addItem("Male");
         genderDropDown.addItem("Female");
         genderDropDown.addItem("Other");
+        
+        Date date = new Date();
+        birthDateCalender.setDate(date);
 
         populateTable();
     }
@@ -61,8 +64,8 @@ public class CreateDoc extends javax.swing.JPanel {
 
             if ("Business.Role.DoctorRole".equals(user.getRole().getClass().getName())) {
                 Object[] row = new Object[3];
-                row[1] = user.getUsername();
-                row[2] = user.getPassword();
+                row[1] = user.getUserName();
+                row[2] = user.getUserPassword();
                 // model.addRow(row);
             }
 
@@ -106,18 +109,61 @@ public class CreateDoc extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         genderDropDown = new javax.swing.JComboBox<>();
-        ErrorPhoneLbl = new javax.swing.JLabel();
         ErrorEmailLbl = new javax.swing.JLabel();
-        lblErrorAddress = new javax.swing.JLabel();
-        lblErrorSpecialist = new javax.swing.JLabel();
         lblErrorWorkExperience = new javax.swing.JLabel();
         ErrorUserNameLbl = new javax.swing.JLabel();
-        ErrorPasswordLbl = new javax.swing.JLabel();
         lblPhotoImage = new javax.swing.JLabel();
         uploadDocImgBtn = new javax.swing.JButton();
         lblErrorDoctorWorkID = new javax.swing.JLabel();
         birthDateCalender = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
+        lblErrorDoctorWorkID1 = new javax.swing.JLabel();
+        lblErrorWorkExperience2 = new javax.swing.JLabel();
+        lblErrorSpecialist = new javax.swing.JLabel();
+        lblErrorFname1 = new javax.swing.JLabel();
+        lblErrorLname1 = new javax.swing.JLabel();
+        lblErrorAddress1 = new javax.swing.JLabel();
+        lNameTxt1 = new javax.swing.JTextField();
+        addressTxt1 = new javax.swing.JTextField();
+        UserNameLbl1 = new javax.swing.JLabel();
+        workIDTxt1 = new javax.swing.JTextField();
+        DoctorWorkIDLbl1 = new javax.swing.JLabel();
+        lblExperience1 = new javax.swing.JLabel();
+        mobileTxt1 = new javax.swing.JTextField();
+        submitBtn1 = new javax.swing.JButton();
+        userNameTxt1 = new javax.swing.JTextField();
+        FirstNameLbl1 = new javax.swing.JLabel();
+        lblSpeciality1 = new javax.swing.JLabel();
+        passwordTxt1 = new javax.swing.JTextField();
+        DateOfBirthLbl1 = new javax.swing.JLabel();
+        expTxt1 = new javax.swing.JTextField();
+        PhoneNoLbl1 = new javax.swing.JLabel();
+        GenderLbl1 = new javax.swing.JLabel();
+        PasswordLbl1 = new javax.swing.JLabel();
+        lLastNameLbl1 = new javax.swing.JLabel();
+        fNameTxt1 = new javax.swing.JTextField();
+        lblRestaurantInfo1 = new javax.swing.JLabel();
+        mailTxt1 = new javax.swing.JTextField();
+        EmailLbl1 = new javax.swing.JLabel();
+        specializationTxt1 = new javax.swing.JTextField();
+        AddressLbl1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        genderDropDown1 = new javax.swing.JComboBox<>();
+        ErrorEmailLbl2 = new javax.swing.JLabel();
+        lblErrorWorkExperience1 = new javax.swing.JLabel();
+        ErrorPasswordLbl1 = new javax.swing.JLabel();
+        lblPhotoImage1 = new javax.swing.JLabel();
+        uploadDocImgBtn1 = new javax.swing.JButton();
+        lblErrorDoctorWorkID2 = new javax.swing.JLabel();
+        birthDateCalender1 = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        lblErrorDoctorWorkID3 = new javax.swing.JLabel();
+        ErrorEmailLbl3 = new javax.swing.JLabel();
+        lblErrorSpecialist1 = new javax.swing.JLabel();
+        lblErrorFname2 = new javax.swing.JLabel();
+        ErrorPhoneLbl3 = new javax.swing.JLabel();
+        lblErrorAddress2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,7 +179,7 @@ public class CreateDoc extends javax.swing.JPanel {
                 lNameTxtKeyReleased(evt);
             }
         });
-        add(lNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 170, 30));
+        add(lNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 170, 30));
 
         addressTxt.setBackground(new java.awt.Color(153, 153, 153));
         addressTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +198,7 @@ public class CreateDoc extends javax.swing.JPanel {
         UserNameLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         UserNameLbl.setForeground(new java.awt.Color(255, 255, 255));
         UserNameLbl.setText("User Name");
-        add(UserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 100, -1));
+        add(UserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 100, -1));
 
         workIDTxt.setBackground(new java.awt.Color(153, 153, 153));
         workIDTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +226,6 @@ public class CreateDoc extends javax.swing.JPanel {
         lblExperience.setText("Experience");
         add(lblExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 127, 20));
 
-        mobileTxt.setEditable(false);
         mobileTxt.setBackground(new java.awt.Color(153, 153, 153));
         mobileTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,14 +261,14 @@ public class CreateDoc extends javax.swing.JPanel {
                 userNameTxtKeyReleased(evt);
             }
         });
-        add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 170, 30));
+        add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 170, 30));
 
         FirstNameLbl.setBackground(new java.awt.Color(0, 0, 0));
         FirstNameLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         FirstNameLbl.setForeground(new java.awt.Color(255, 255, 255));
         FirstNameLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FirstNameLbl.setText("First Name");
-        add(FirstNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 110, -1));
+        add(FirstNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 110, -1));
 
         lblSpeciality.setBackground(new java.awt.Color(255, 255, 255));
         lblSpeciality.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -243,7 +288,7 @@ public class CreateDoc extends javax.swing.JPanel {
                 passwordTxtKeyReleased(evt);
             }
         });
-        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 170, 30));
+        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 170, 30));
 
         DateOfBirthLbl.setBackground(new java.awt.Color(255, 255, 255));
         DateOfBirthLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -281,14 +326,14 @@ public class CreateDoc extends javax.swing.JPanel {
         PasswordLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         PasswordLbl.setForeground(new java.awt.Color(255, 255, 255));
         PasswordLbl.setText("Password");
-        add(PasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 90, -1));
+        add(PasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 90, -1));
 
         lLastNameLbl.setBackground(new java.awt.Color(0, 0, 0));
         lLastNameLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lLastNameLbl.setForeground(new java.awt.Color(255, 255, 255));
         lLastNameLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lLastNameLbl.setText("Last Name");
-        add(lLastNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 110, -1));
+        add(lLastNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 110, -1));
 
         fNameTxt.setBackground(new java.awt.Color(153, 153, 153));
         fNameTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +346,7 @@ public class CreateDoc extends javax.swing.JPanel {
                 fNameTxtKeyReleased(evt);
             }
         });
-        add(fNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 170, 30));
+        add(fNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 170, 30));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -357,7 +402,7 @@ public class CreateDoc extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Qualification  Information ");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 370, 330, 30));
-        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 370, 20));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 370, 10));
 
         genderDropDown.setBackground(new java.awt.Color(153, 153, 153));
         genderDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -367,15 +412,6 @@ public class CreateDoc extends javax.swing.JPanel {
             }
         });
         add(genderDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 170, 30));
-
-        ErrorPhoneLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
-        ErrorPhoneLbl.setForeground(new java.awt.Color(255, 51, 51));
-        ErrorPhoneLbl.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ErrorPhoneLblKeyReleased(evt);
-            }
-        });
-        add(ErrorPhoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 170, 20));
 
         ErrorEmailLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorEmailLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -387,24 +423,6 @@ public class CreateDoc extends javax.swing.JPanel {
         });
         add(ErrorEmailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 230, 130));
 
-        lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
-        lblErrorAddress.setForeground(new java.awt.Color(255, 51, 51));
-        lblErrorAddress.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                lblErrorAddressKeyReleased(evt);
-            }
-        });
-        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 210, 30));
-
-        lblErrorSpecialist.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
-        lblErrorSpecialist.setForeground(new java.awt.Color(255, 51, 51));
-        lblErrorSpecialist.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                lblErrorSpecialistKeyReleased(evt);
-            }
-        });
-        add(lblErrorSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 530, 170, 20));
-
         lblErrorWorkExperience.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorWorkExperience.setForeground(new java.awt.Color(255, 51, 51));
         lblErrorWorkExperience.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/adddoctor.png"))); // NOI18N
@@ -415,25 +433,14 @@ public class CreateDoc extends javax.swing.JPanel {
         });
         add(lblErrorWorkExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 70, 70));
 
-        ErrorUserNameLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
-        ErrorUserNameLbl.setForeground(new java.awt.Color(255, 51, 51));
+        ErrorUserNameLbl.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        ErrorUserNameLbl.setForeground(new java.awt.Color(255, 0, 0));
         ErrorUserNameLbl.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ErrorUserNameLblKeyReleased(evt);
             }
         });
-        add(ErrorUserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 200, 26));
-
-        ErrorPasswordLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
-        ErrorPasswordLbl.setForeground(new java.awt.Color(255, 51, 51));
-        ErrorPasswordLbl.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ErrorPasswordLblKeyReleased(evt);
-            }
-        });
-        add(ErrorPasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 480, 200, 26));
-
-        lblPhotoImage.setText("doctor_Image");
+        add(ErrorUserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 290, 26));
         add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 180, 200));
 
         uploadDocImgBtn.setBackground(new java.awt.Color(51, 51, 255));
@@ -456,6 +463,333 @@ public class CreateDoc extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-qualification-45.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 360, 40, 40));
+
+        lblErrorDoctorWorkID1.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorDoctorWorkID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 440, 260, 30));
+
+        lblErrorWorkExperience2.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorWorkExperience2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 540, 330, 30));
+
+        lblErrorSpecialist.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 490, 300, 30));
+
+        lblErrorFname1.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorFname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 200, 30));
+
+        lblErrorLname1.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorLname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 280, 30));
+
+        lblErrorAddress1.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 170, 30));
+
+        lNameTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        lNameTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lNameTxt1ActionPerformed(evt);
+            }
+        });
+        lNameTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lNameTxt1KeyReleased(evt);
+            }
+        });
+        add(lNameTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 170, 30));
+
+        addressTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        addressTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressTxt1ActionPerformed(evt);
+            }
+        });
+        addressTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                addressTxt1KeyReleased(evt);
+            }
+        });
+        add(addressTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 170, 70));
+
+        UserNameLbl1.setBackground(new java.awt.Color(0, 0, 0));
+        UserNameLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        UserNameLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        UserNameLbl1.setText("User Name");
+        add(UserNameLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 100, -1));
+
+        workIDTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        workIDTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                workIDTxt1ActionPerformed(evt);
+            }
+        });
+        workIDTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                workIDTxt1KeyReleased(evt);
+            }
+        });
+        add(workIDTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, 170, 30));
+
+        DoctorWorkIDLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        DoctorWorkIDLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        DoctorWorkIDLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        DoctorWorkIDLbl1.setText("Doctor Work ID");
+        add(DoctorWorkIDLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, -1, 20));
+
+        lblExperience1.setBackground(new java.awt.Color(255, 255, 255));
+        lblExperience1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblExperience1.setForeground(new java.awt.Color(255, 255, 255));
+        lblExperience1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExperience1.setText("Experience");
+        add(lblExperience1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 127, 20));
+
+        mobileTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        mobileTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mobileTxt1ActionPerformed(evt);
+            }
+        });
+        mobileTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                mobileTxt1KeyReleased(evt);
+            }
+        });
+        add(mobileTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 170, 30));
+
+        submitBtn1.setBackground(new java.awt.Color(51, 51, 255));
+        submitBtn1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        submitBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        submitBtn1.setText("Submit");
+        submitBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtn1ActionPerformed(evt);
+            }
+        });
+        add(submitBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, 100, 30));
+
+        userNameTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        userNameTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameTxt1ActionPerformed(evt);
+            }
+        });
+        userNameTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                userNameTxt1KeyReleased(evt);
+            }
+        });
+        add(userNameTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 170, 30));
+
+        FirstNameLbl1.setBackground(new java.awt.Color(0, 0, 0));
+        FirstNameLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        FirstNameLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        FirstNameLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FirstNameLbl1.setText("First Name");
+        add(FirstNameLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 110, -1));
+
+        lblSpeciality1.setBackground(new java.awt.Color(255, 255, 255));
+        lblSpeciality1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblSpeciality1.setForeground(new java.awt.Color(255, 255, 255));
+        lblSpeciality1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSpeciality1.setText("Specialist");
+        add(lblSpeciality1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 110, 20));
+
+        passwordTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        passwordTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTxt1ActionPerformed(evt);
+            }
+        });
+        passwordTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                passwordTxt1KeyReleased(evt);
+            }
+        });
+        add(passwordTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 170, 30));
+
+        DateOfBirthLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        DateOfBirthLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        DateOfBirthLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        DateOfBirthLbl1.setText("Date of Birth");
+        add(DateOfBirthLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 120, -1));
+
+        expTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        expTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                expTxt1ActionPerformed(evt);
+            }
+        });
+        expTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                expTxt1KeyReleased(evt);
+            }
+        });
+        add(expTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 540, 170, 30));
+
+        PhoneNoLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        PhoneNoLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        PhoneNoLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        PhoneNoLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PhoneNoLbl1.setText("Phone Number");
+        add(PhoneNoLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+
+        GenderLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        GenderLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        GenderLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        GenderLbl1.setText("Gender");
+        add(GenderLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
+
+        PasswordLbl1.setBackground(new java.awt.Color(0, 0, 0));
+        PasswordLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        PasswordLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        PasswordLbl1.setText("Password");
+        add(PasswordLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 90, -1));
+
+        lLastNameLbl1.setBackground(new java.awt.Color(0, 0, 0));
+        lLastNameLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lLastNameLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        lLastNameLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lLastNameLbl1.setText("Last Name");
+        add(lLastNameLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 110, -1));
+
+        fNameTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        fNameTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fNameTxt1ActionPerformed(evt);
+            }
+        });
+        fNameTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                fNameTxt1KeyReleased(evt);
+            }
+        });
+        add(fNameTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 170, 30));
+
+        lblRestaurantInfo1.setBackground(new java.awt.Color(255, 255, 255));
+        lblRestaurantInfo1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblRestaurantInfo1.setForeground(new java.awt.Color(255, 255, 255));
+        lblRestaurantInfo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRestaurantInfo1.setText("ADD A DOCTOR");
+        add(lblRestaurantInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 310, -1));
+
+        mailTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        mailTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mailTxt1ActionPerformed(evt);
+            }
+        });
+        mailTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                mailTxt1KeyReleased(evt);
+            }
+        });
+        add(mailTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 600, 170, 30));
+
+        EmailLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        EmailLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        EmailLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        EmailLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EmailLbl1.setText("Email");
+        add(EmailLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 600, 60, -1));
+
+        specializationTxt1.setBackground(new java.awt.Color(153, 153, 153));
+        specializationTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                specializationTxt1ActionPerformed(evt);
+            }
+        });
+        specializationTxt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                specializationTxt1KeyReleased(evt);
+            }
+        });
+        add(specializationTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 170, 30));
+
+        AddressLbl1.setBackground(new java.awt.Color(255, 255, 255));
+        AddressLbl1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        AddressLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        AddressLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AddressLbl1.setText("Address");
+        add(AddressLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 127, 30));
+
+        jLabel5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Qualification  Information ");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 370, 330, 30));
+        add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 370, 10));
+
+        genderDropDown1.setBackground(new java.awt.Color(153, 153, 153));
+        genderDropDown1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        genderDropDown1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genderDropDown1ActionPerformed(evt);
+            }
+        });
+        add(genderDropDown1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 170, 30));
+
+        ErrorEmailLbl2.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        ErrorEmailLbl2.setForeground(new java.awt.Color(255, 51, 51));
+        ErrorEmailLbl2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/doctor gif.gif"))); // NOI18N
+        ErrorEmailLbl2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ErrorEmailLbl2KeyReleased(evt);
+            }
+        });
+        add(ErrorEmailLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 230, 130));
+
+        lblErrorWorkExperience1.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
+        lblErrorWorkExperience1.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorWorkExperience1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/adddoctor.png"))); // NOI18N
+        lblErrorWorkExperience1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lblErrorWorkExperience1KeyReleased(evt);
+            }
+        });
+        add(lblErrorWorkExperience1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 70, 70));
+
+        ErrorPasswordLbl1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        ErrorPasswordLbl1.setForeground(new java.awt.Color(255, 0, 0));
+        ErrorPasswordLbl1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ErrorPasswordLbl1KeyReleased(evt);
+            }
+        });
+        add(ErrorPasswordLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 280, 26));
+        add(lblPhotoImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 180, 200));
+
+        uploadDocImgBtn1.setBackground(new java.awt.Color(51, 51, 255));
+        uploadDocImgBtn1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        uploadDocImgBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        uploadDocImgBtn1.setText("Upload Image");
+        uploadDocImgBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadDocImgBtn1ActionPerformed(evt);
+            }
+        });
+        add(uploadDocImgBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, -1, -1));
+        add(lblErrorDoctorWorkID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 170, 20));
+
+        birthDateCalender1.setBackground(new java.awt.Color(153, 153, 153));
+        birthDateCalender1.setDateFormatString("MM-dd-yyyy");
+        birthDateCalender.setMaxSelectableDate(new Date());
+        add(birthDateCalender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 180, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/icons8-qualification-45.png"))); // NOI18N
+        jLabel6.setText("jLabel2");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 360, 40, 40));
+
+        lblErrorDoctorWorkID3.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorDoctorWorkID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 440, 90, 30));
+
+        ErrorEmailLbl3.setForeground(new java.awt.Color(255, 0, 0));
+        add(ErrorEmailLbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 250, 30));
+
+        lblErrorSpecialist1.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorSpecialist1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 490, 170, 30));
+
+        lblErrorFname2.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblErrorFname2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 170, 30));
+
+        ErrorPhoneLbl3.setForeground(new java.awt.Color(255, 0, 0));
+        add(ErrorPhoneLbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 270, 30));
+        add(lblErrorAddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 170, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void lNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameTxtActionPerformed
@@ -488,28 +822,51 @@ public class CreateDoc extends javax.swing.JPanel {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
+        String name = fNameTxt.getText();
+        String lastname = fNameTxt.getText();
+        String doctorId = workIDTxt.getText();
+        String address = addressTxt.getText();
+        String phoneNumber = mobileTxt.getText();
+        String mail = mailTxt.getText();
+        String specialist = specializationTxt.getText();
+        String exp = expTxt.getText();
+        String username = userNameTxt.getText();
+        String password = passwordTxt.getText();
+        
+      if(name.isEmpty() || lastname.isEmpty() || doctorId.isEmpty() || address.isEmpty()
+            || phoneNumber.isEmpty() || mail.isEmpty() || specialist.isEmpty() || exp.isEmpty()
+            || username.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                "Enter all Fields",
+                "Try Again",
+                JOptionPane.ERROR_MESSAGE);
+      }
+      else{
+        
+        
         if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(passwordTxt.getText())
-                && (lblErrorAddress.getText() == null || lblErrorAddress.getText().equals(""))
+                && (lblErrorSpecialist.getText() == null || lblErrorSpecialist.getText().equals(""))
                 && (ErrorEmailLbl.getText() == null || ErrorEmailLbl.getText().equals(""))
-                && (ErrorPasswordLbl.getText() == null || ErrorPasswordLbl.getText().equals(""))
-                && (ErrorPhoneLbl.getText() == null || ErrorPhoneLbl.getText().equals(""))
+                && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))
+                && (lblErrorWorkExperience2.getText() == null || lblErrorWorkExperience2.getText().equals(""))
                 && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))     
                 ) {
             Dr doctor = new Dr(passwordTxt.getText());
             doctor.setdocFirstName(fNameTxt.getText());
             doctor.setdocLastName(lNameTxt.getText());
-            doctor.setdocAge((CalculateAge(birthDateCalender.getDate(), java.util.Calendar.getInstance().getTime())));
+            doctor.setdocAge(CalculateAge(birthDateCalender.getDate(), java.util.Calendar.getInstance().getTime()));
             doctor.setdocGender((String) genderDropDown.getSelectedItem());
             doctor.setdocWorkID(workIDTxt.getText());
             doctor.setdocAddress(addressTxt.getText());
             doctor.setdocMNo(mobileTxt.getText());
-            //doctor.setDateofBirth(txtDateOfBirth.getText());
+            doctor.setdocDOB(birthDateCalender.getDate());
             doctor.setdocEmail(mailTxt.getText());
             doctor.setdocSpecialization(specializationTxt.getText());
             doctor.setdocExp(expTxt.getText());
-            doctor.setdocUserName(passwordTxt.getText());
+            doctor.setdocUserName(userNameTxt.getText());
+            doctor.setdocPassword(passwordTxt.getText());
             imgDoc = doctor;
-            ecoSystem.getUserAccountDirectory().createUser(passwordTxt.getText(), userNameTxt.getText(), null, new Doctor_role());
+            ecoSystem.getUserAccountDirectory().createUser(passwordTxt.getText(), userNameTxt.getText(), null, new RoleDoc());
             ecoSystem.getDoctorDirect().createDoctor(doctor);
             JOptionPane.showMessageDialog(null, "Doctor added.");
             
@@ -518,10 +875,8 @@ public class CreateDoc extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProCont.getLayout();
             layout.next(userProCont);
             
-        } else 
-        {
-            JOptionPane.showMessageDialog(null, "Please Fill Correct Details");
         }
+      }
         
         
 
@@ -559,9 +914,9 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(fNameTxt.getText());
         if (!match.matches()) {
-            //lblErrorFname.setText("Wrong Input");
+            lblErrorFname1.setText("Wrong Input");
         } else {
-            //lblErrorFname.setText(null);
+           lblErrorFname1.setText(null);
         }
     }//GEN-LAST:event_fNameTxtKeyReleased
 
@@ -571,39 +926,19 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(lNameTxt.getText());
         if (!match.matches()) {
-            //lblErrorLname.setText("Wrong Input");
+            lblErrorLname1.setText("Wrong Input");
         } else {
-            //lblErrorLname.setText(null);
+           lblErrorLname1.setText(null);
         }
     }//GEN-LAST:event_lNameTxtKeyReleased
-
-    private void ErrorPhoneLblKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorPhoneLblKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorPhoneLblKeyReleased
 
     private void ErrorEmailLblKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorEmailLblKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_ErrorEmailLblKeyReleased
 
-    private void lblErrorAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblErrorAddressKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblErrorAddressKeyReleased
-
-    private void lblErrorSpecialistKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblErrorSpecialistKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblErrorSpecialistKeyReleased
-
     private void lblErrorWorkExperienceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblErrorWorkExperienceKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_lblErrorWorkExperienceKeyReleased
-
-    private void ErrorUserNameLblKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorUserNameLblKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorUserNameLblKeyReleased
-
-    private void ErrorPasswordLblKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorPasswordLblKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorPasswordLblKeyReleased
 
     private void workIDTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_workIDTxtKeyReleased
         // TODO add your handling code here:
@@ -611,21 +946,21 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(workIDTxt.getText());
         if (!match.matches()) {
-            lblErrorDoctorWorkID.setText("Wrong Input");
+            lblErrorDoctorWorkID1.setText("Wrong Input..Cannot be blank");
         } else {
-            lblErrorDoctorWorkID.setText(null);
+            lblErrorDoctorWorkID1.setText(null);
         }
     }//GEN-LAST:event_workIDTxtKeyReleased
 
     private void mobileTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mobileTxtKeyReleased
         // TODO add your handling code here:
-        String PATTERN = "^[0-9 +()-]{10,18}$";
+        String PATTERN = "\\d{10}";
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(mobileTxt.getText());
         if (!match.matches()) {
-            ErrorPhoneLbl.setText("Wrong Input");
+            ErrorPhoneLbl3.setText("Invalid!..Should be only 10 digits");
         } else {
-            ErrorPhoneLbl.setText(null);
+            ErrorPhoneLbl3.setText(null);
         }
     }//GEN-LAST:event_mobileTxtKeyReleased
 
@@ -635,9 +970,9 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(mailTxt.getText());
         if (!match.matches()) {
-            ErrorEmailLbl.setText("Wrong Input");
+            ErrorEmailLbl3.setText("Invalid!..Should have email format");
         } else {
-            ErrorEmailLbl.setText(null);
+            ErrorEmailLbl3.setText(null);
         }
     }//GEN-LAST:event_mailTxtKeyReleased
 
@@ -647,9 +982,9 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(addressTxt.getText());
         if (!match.matches()) {
-            lblErrorAddress.setText("Wrong Input");
+            lblErrorAddress1.setText("Invalid!..Cannot be blank");
         } else {
-            lblErrorAddress.setText(null);
+            lblErrorAddress1.setText(null);
         }
     }//GEN-LAST:event_addressTxtKeyReleased
 
@@ -659,7 +994,7 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(specializationTxt.getText());
         if (!match.matches()) {
-            lblErrorSpecialist.setText("Wrong Input");
+            lblErrorSpecialist.setText("Invalid!..Cannot be blank");
         } else {
             lblErrorSpecialist.setText(null);
         }
@@ -671,9 +1006,9 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(expTxt.getText());
         if (!match.matches()) {
-            lblErrorWorkExperience.setText("Wrong Input");
+            lblErrorWorkExperience2.setText("Invalid!..Cannot be blank");
         } else {
-            lblErrorWorkExperience.setText(null);
+            lblErrorWorkExperience2.setText(null);
         }
     }//GEN-LAST:event_expTxtKeyReleased
 
@@ -683,21 +1018,21 @@ public class CreateDoc extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(userNameTxt.getText());
         if (!match.matches()) {
-            ErrorPasswordLbl.setText("Wrong Input");
+            ErrorUserNameLbl.setText("Invalid!..Cannot be blank");
         } else {
-            ErrorPasswordLbl.setText(null);
+            ErrorUserNameLbl.setText(null);
         }
     }//GEN-LAST:event_userNameTxtKeyReleased
 
     private void passwordTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTxtKeyReleased
         // TODO add your handling code here:
-        String PATTERN = "^[a-zA-Z '/:]+$";
+        String PATTERN = "^[a-zA-Z0-9 '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(passwordTxt.getText());
         if (!match.matches()) {
-            ErrorUserNameLbl.setText("Wrong Input");
+            ErrorPasswordLbl1.setText("Invalid!..Cannot be blank");
         } else {
-            ErrorUserNameLbl.setText(null);
+           ErrorPasswordLbl1.setText(null);
         }
     }//GEN-LAST:event_passwordTxtKeyReleased
 
@@ -724,47 +1059,198 @@ public class CreateDoc extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_uploadDocImgBtnActionPerformed
 
+    private void ErrorUserNameLblKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorUserNameLblKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ErrorUserNameLblKeyReleased
+
+    private void lNameTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lNameTxt1ActionPerformed
+
+    private void lNameTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lNameTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lNameTxt1KeyReleased
+
+    private void addressTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressTxt1ActionPerformed
+
+    private void addressTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressTxt1KeyReleased
+
+    private void workIDTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_workIDTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_workIDTxt1ActionPerformed
+
+    private void workIDTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_workIDTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_workIDTxt1KeyReleased
+
+    private void mobileTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobileTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mobileTxt1ActionPerformed
+
+    private void mobileTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mobileTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mobileTxt1KeyReleased
+
+    private void submitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submitBtn1ActionPerformed
+
+    private void userNameTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userNameTxt1ActionPerformed
+
+    private void userNameTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userNameTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userNameTxt1KeyReleased
+
+    private void passwordTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTxt1ActionPerformed
+
+    private void passwordTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTxt1KeyReleased
+
+    private void expTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_expTxt1ActionPerformed
+
+    private void expTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_expTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_expTxt1KeyReleased
+
+    private void fNameTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNameTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fNameTxt1ActionPerformed
+
+    private void fNameTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fNameTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fNameTxt1KeyReleased
+
+    private void mailTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mailTxt1ActionPerformed
+
+    private void mailTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mailTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mailTxt1KeyReleased
+
+    private void specializationTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specializationTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_specializationTxt1ActionPerformed
+
+    private void specializationTxt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_specializationTxt1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_specializationTxt1KeyReleased
+
+    private void genderDropDown1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderDropDown1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderDropDown1ActionPerformed
+
+    private void ErrorEmailLbl2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorEmailLbl2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ErrorEmailLbl2KeyReleased
+
+    private void lblErrorWorkExperience1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblErrorWorkExperience1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblErrorWorkExperience1KeyReleased
+
+    private void ErrorPasswordLbl1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ErrorPasswordLbl1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ErrorPasswordLbl1KeyReleased
+
+    private void uploadDocImgBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadDocImgBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uploadDocImgBtn1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddressLbl;
+    private javax.swing.JLabel AddressLbl1;
     private javax.swing.JLabel DateOfBirthLbl;
+    private javax.swing.JLabel DateOfBirthLbl1;
     private javax.swing.JLabel DoctorWorkIDLbl;
+    private javax.swing.JLabel DoctorWorkIDLbl1;
     private javax.swing.JLabel EmailLbl;
+    private javax.swing.JLabel EmailLbl1;
     private javax.swing.JLabel ErrorEmailLbl;
-    private javax.swing.JLabel ErrorPasswordLbl;
-    private javax.swing.JLabel ErrorPhoneLbl;
+    private javax.swing.JLabel ErrorEmailLbl2;
+    private javax.swing.JLabel ErrorEmailLbl3;
+    private javax.swing.JLabel ErrorPasswordLbl1;
+    private javax.swing.JLabel ErrorPhoneLbl3;
     private javax.swing.JLabel ErrorUserNameLbl;
     private javax.swing.JLabel FirstNameLbl;
+    private javax.swing.JLabel FirstNameLbl1;
     private javax.swing.JLabel GenderLbl;
+    private javax.swing.JLabel GenderLbl1;
     private javax.swing.JLabel PasswordLbl;
+    private javax.swing.JLabel PasswordLbl1;
     private javax.swing.JLabel PhoneNoLbl;
+    private javax.swing.JLabel PhoneNoLbl1;
     private javax.swing.JLabel UserNameLbl;
+    private javax.swing.JLabel UserNameLbl1;
     private javax.swing.JTextField addressTxt;
+    private javax.swing.JTextField addressTxt1;
     private com.toedter.calendar.JDateChooser birthDateCalender;
+    private com.toedter.calendar.JDateChooser birthDateCalender1;
     private javax.swing.JTextField expTxt;
+    private javax.swing.JTextField expTxt1;
     private javax.swing.JTextField fNameTxt;
+    private javax.swing.JTextField fNameTxt1;
     private javax.swing.JComboBox<String> genderDropDown;
+    private javax.swing.JComboBox<String> genderDropDown1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lLastNameLbl;
+    private javax.swing.JLabel lLastNameLbl1;
     private javax.swing.JTextField lNameTxt;
-    private javax.swing.JLabel lblErrorAddress;
+    private javax.swing.JTextField lNameTxt1;
+    private javax.swing.JLabel lblErrorAddress1;
+    private javax.swing.JLabel lblErrorAddress2;
     private javax.swing.JLabel lblErrorDoctorWorkID;
+    private javax.swing.JLabel lblErrorDoctorWorkID1;
+    private javax.swing.JLabel lblErrorDoctorWorkID2;
+    private javax.swing.JLabel lblErrorDoctorWorkID3;
+    private javax.swing.JLabel lblErrorFname1;
+    private javax.swing.JLabel lblErrorFname2;
+    private javax.swing.JLabel lblErrorLname1;
     private javax.swing.JLabel lblErrorSpecialist;
+    private javax.swing.JLabel lblErrorSpecialist1;
     private javax.swing.JLabel lblErrorWorkExperience;
+    private javax.swing.JLabel lblErrorWorkExperience1;
+    private javax.swing.JLabel lblErrorWorkExperience2;
     private javax.swing.JLabel lblExperience;
+    private javax.swing.JLabel lblExperience1;
     private javax.swing.JLabel lblPhotoImage;
+    private javax.swing.JLabel lblPhotoImage1;
     private javax.swing.JLabel lblRestaurantInfo;
+    private javax.swing.JLabel lblRestaurantInfo1;
     private javax.swing.JLabel lblSpeciality;
+    private javax.swing.JLabel lblSpeciality1;
     private javax.swing.JTextField mailTxt;
+    private javax.swing.JTextField mailTxt1;
     private javax.swing.JTextField mobileTxt;
+    private javax.swing.JTextField mobileTxt1;
     private javax.swing.JTextField passwordTxt;
+    private javax.swing.JTextField passwordTxt1;
     private javax.swing.JTextField specializationTxt;
+    private javax.swing.JTextField specializationTxt1;
     private javax.swing.JButton submitBtn;
+    private javax.swing.JButton submitBtn1;
     private javax.swing.JButton uploadDocImgBtn;
+    private javax.swing.JButton uploadDocImgBtn1;
     private javax.swing.JTextField userNameTxt;
+    private javax.swing.JTextField userNameTxt1;
     private javax.swing.JTextField workIDTxt;
+    private javax.swing.JTextField workIDTxt1;
     // End of variables declaration//GEN-END:variables
 }

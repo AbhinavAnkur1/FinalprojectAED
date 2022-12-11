@@ -73,29 +73,29 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         lblAddress.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 240, -1, 30));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, -1, 30));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
         lblName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, 30));
 
-        nameTxt.setText("HUSKY BLOOD BANK");
+        nameTxt.setText("Life Source BloodBank");
         nameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTxtActionPerformed(evt);
             }
         });
-        add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 200, 170, 30));
+        add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 190, 170, 30));
 
-        addressTxt.setText("North Eastern University");
+        addressTxt.setText("Forest Hills");
         addressTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressTxtActionPerformed(evt);
             }
         });
-        add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 170, 30));
+        add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 170, 30));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
@@ -108,29 +108,29 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         lblEmail.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, 30));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, -1, 30));
 
         lblPhoneNumber.setBackground(new java.awt.Color(0, 0, 0));
         lblPhoneNumber.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblPhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber.setText("Phone Number");
-        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, 30));
+        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, -1, 30));
 
-        mobileTxt.setText("8579087561");
+        mobileTxt.setText("8603701320");
         mobileTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mobileTxtActionPerformed(evt);
             }
         });
-        add(mobileTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 280, 170, 30));
+        add(mobileTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 170, 30));
 
-        emailTxt.setText("neu.bloodBank@gmail.com");
+        emailTxt.setText("lifesourceBB@gmail.com");
         emailTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTxtActionPerformed(evt);
             }
         });
-        add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 320, 170, 30));
+        add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, 170, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
         btnBack.setBackground(new java.awt.Color(0, 0, 204));
@@ -144,9 +144,9 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Blood bank.gif"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/blood bank main page.gif"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(1000, 500));
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 770, 570));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 480, 570));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxtActionPerformed
