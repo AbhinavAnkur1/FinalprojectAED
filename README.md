@@ -35,3 +35,8 @@ A user can directly go to the health care and contact reception or he can reach 
 
 Model diagram
 ![image](https://user-images.githubusercontent.com/114640094/206950875-a3a9ae2d-4536-42bf-b168-9001d97f9aef.png)
+
+
+Class diagram
+![image](https://user-images.githubusercontent.com/114640094/206960730-9d6956f1-c95d-4fb5-b451-05622ee1d95f.png)
+
