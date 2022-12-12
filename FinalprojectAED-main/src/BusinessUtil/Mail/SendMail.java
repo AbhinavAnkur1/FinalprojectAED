@@ -64,7 +64,7 @@ public class SendMail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepientEmail));
-            message.setSubject("Your account has been created");
+            message.setSubject("Welcome to our Healthcare");
             message.setText(msg);
             return message;
         } catch (Exception ex) {
