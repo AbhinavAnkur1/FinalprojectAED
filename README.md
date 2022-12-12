@@ -40,3 +40,39 @@ Model diagram
 Class diagram
 ![image](https://user-images.githubusercontent.com/114640094/206960730-9d6956f1-c95d-4fb5-b451-05622ee1d95f.png)
 
+UML sequence diagram
+Blood Bank Admin
+![image](https://user-images.githubusercontent.com/114640094/206962129-bf4ca7ef-fdce-4def-8b63-f074cf8b9694.png)
+
+Health Insurance Admin
+![image](https://user-images.githubusercontent.com/114640094/206962267-fc273703-6846-4cc7-9351-ac8a9b161e94.png)
+
+All Users
+![image](https://user-images.githubusercontent.com/114640094/206962302-fc5c52a6-4b41-40ef-85a1-9510d2d310c2.png)
+
+Ambulance Admin
+![image](https://user-images.githubusercontent.com/114640094/206962385-97200d64-1b99-47fa-8e0b-979e8ac19f33.png)
+
+Police Admin
+![image](https://user-images.githubusercontent.com/114640094/206962566-777a2e2b-dc50-4f0f-96c9-255ea9aa67bb.png)
+
+Lab Admin
+![image](https://user-images.githubusercontent.com/114640094/206962590-70545703-0426-4b93-ae00-ad8f55a9dc1d.png)
+
+Pharmacy Admin
+![image](https://user-images.githubusercontent.com/114640094/206962773-5a0c934d-d5e5-4b3d-8768-94b8a812189d.png)
+
+Doctor Admin
+![image](https://user-images.githubusercontent.com/114640094/206963018-f6f84de3-c447-41b7-b710-bac492f2c577.png)
+
+Patient
+![image](https://user-images.githubusercontent.com/114640094/206963840-0d8ea659-495c-4304-98e2-e08c46c6276a.png)
+
+Doctor
+![image](https://user-images.githubusercontent.com/114640094/206963714-b48ab8ba-cef0-4d81-b786-6a9cbcc656f5.png)
+
+Reception Admin
+![image](https://user-images.githubusercontent.com/114640094/206964039-9bef1f49-fd43-4f7d-8614-b5b8dbebde20.png)
+
+
+
