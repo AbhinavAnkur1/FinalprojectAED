@@ -44,7 +44,7 @@ public class DoctorWorkArea extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) PatientTable.getModel();
         model.setRowCount(0);
         for (Dr doctor : ecoSystem.getDoctorDirect().getDoctors()) {
-            if (doctor.getdocUserName().equals(userAccount.getUsername())) {
+            if (doctor.getdocUserName().equals(userAccount.getUserName())) {
                 for (Patient patient : doctor.getTreatedPatientList()) 
                 {
                     Object[] row = new Object[8];
@@ -75,7 +75,7 @@ public class DoctorWorkArea extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Dr doctor : ecoSystem.getDoctorDirect().getDoctors()) {
-            if (doctor.getdocUserName().equals(userAccount.getUsername())) {
+            if (doctor.getdocUserName().equals(userAccount.getUserName())) {
                 for (Patient patient : doctor.getTreatedPatientList()) 
                 {
                     Object[] row = new Object[8];
